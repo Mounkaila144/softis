@@ -27,7 +27,7 @@ const Services: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-serif font-bold mb-4"
             >
-              サービス
+              スタジオについて
             </motion.h1>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
@@ -35,12 +35,123 @@ const Services: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-white/90"
             >
-              あなたのフィットネス目標を達成するための各種プログラムをご用意しています。
-              それぞれのプログラムは、個々のニーズに応じてカスタマイズ可能です。
+              Softisでは、質の高いピラティス指導と最新のマシンで、あなたのカラダをサポートします
             </motion.p>
           </div>
         </Container>
       </div>
+
+      {/* Studio Section */}
+      <Section>
+        <Container>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
+              Studioについて
+            </h2>
+            <p className="text-neutral-600 text-lg">
+              Coming Soon…
+            </p>
+          </div>
+
+          <div className="max-w-3xl mx-auto">
+            <p className="text-lg text-neutral-700 mb-8">
+              ピラティスリフォーマー、バレル、チェア、タワー、スパインコレクターなど多種に渡るマシンを取り揃えております。そのためお一人お一人に合わせたいろいろなエクササイズが可能となります。マシンの使い方はインストラクターから都度説明がありますのでご安心ください。
+            </p>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Equipment Section */}
+      <Section className="bg-primary-50">
+        <Container>
+          <div className="mb-16 text-center max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
+              ピラティスマシン
+            </h2>
+            <p className="text-neutral-600 text-lg">
+              Softisで使用する最新ピラティスマシンの紹介
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-56 bg-neutral-200 relative">
+                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-neutral-500">リフォーマー画像</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-primary-700 mb-2">ピラティスリフォーマー</h3>
+                <p className="text-neutral-600">
+                  リフォーマーは最も多目的なピラティスマシンです。スプリングの抵抗を利用して、筋力と柔軟性を同時に向上させることができます。
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-56 bg-neutral-200 relative">
+                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-neutral-500">バレル画像</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-primary-700 mb-2">バレル</h3>
+                <p className="text-neutral-600">
+                  バレルは背骨のアーチを伸ばし、脊柱の柔軟性を高める効果があります。姿勢改善に特に効果的なマシンです。
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-white rounded-lg shadow-md overflow-hidden">
+              <div className="h-56 bg-neutral-200 relative">
+                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <span className="text-neutral-500">チェア画像</span>
+                </div>
+              </div>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-primary-700 mb-2">チェア</h3>
+                <p className="text-neutral-600">
+                  チェアは主に下半身と体幹の筋力を鍛えるためのマシンです。バランスと安定性の向上に役立ちます。
+                </p>
+              </div>
+            </div>
+          </div>
+        </Container>
+      </Section>
+
+      {/* Philosophy Section */}
+      <Section>
+        <Container>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-6">
+                Softisの理念
+              </h2>
+              <p className="text-lg text-neutral-700 mb-4">
+                Softisでは、お一人お一人の身体の状態を丁寧に評価し、それぞれに最適なプログラムを提供することを大切にしています。
+              </p>
+              <p className="text-lg text-neutral-700 mb-4">
+                健康な身体は日々の小さな積み重ねから生まれるものと考え、無理なく継続できるピラティスの習慣づくりをサポートします。
+              </p>
+              <p className="text-lg text-neutral-700">
+                理学療法士の知識と経験を活かし、科学的根拠に基づいたアプローチで、お客様の健康と美しさを引き出します。
+              </p>
+            </div>
+            <div className="bg-neutral-100 p-6 rounded-lg">
+              <div className="h-80 bg-neutral-200 rounded-lg mb-6 flex items-center justify-center">
+                {/* Remplacer par une image du studio lorsqu'elle sera disponible */}
+                <span className="text-neutral-500">スタジオイメージ</span>
+              </div>
+              <p className="text-neutral-600 italic">
+                "自分の身体を大切にできるのは自分だけ。自分の身体を自分が1番愛してあげよう"
+              </p>
+            </div>
+          </div>
+        </Container>
+      </Section>
 
       {/* Programs Section */}
       <Section>

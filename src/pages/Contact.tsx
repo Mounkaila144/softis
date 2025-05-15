@@ -42,8 +42,7 @@ const Contact: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-white/90"
             >
-              softisは、東京のビジネスと文化の中心地である六本木ヒルズに位置しています。
-              お気軽にお問い合わせまたはご来店ください。
+              【豊田市駅徒歩１分 ビルの前に無料駐車場６台完備】
             </motion.p>
           </div>
         </Container>
@@ -66,9 +65,9 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">住所</h3>
                     <p className="text-neutral-600">
-                      〒106-0032<br />
-                      東京都港区六本木6-10-1<br />
-                      六本木ヒルズ森タワー 5F
+                      愛知県豊田市若宮町1-26<br />
+                      セントラルビル2階<br />
+                      セントラルビルを目印にお越しください
                     </p>
                   </div>
                 </div>
@@ -102,21 +101,13 @@ const Contact: React.FC = () => {
                     <Clock className="text-primary-500" size={24} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-primary-700 mb-2">営業時間</h3>
-                    <ul className="text-neutral-600 space-y-1">
-                      <li className="flex justify-between">
-                        <span>月曜日 - 金曜日:</span>
-                        <span className="font-medium">7:00 - 22:00</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>土曜日:</span>
-                        <span className="font-medium">8:00 - 20:00</span>
-                      </li>
-                      <li className="flex justify-between">
-                        <span>日曜日:</span>
-                        <span className="font-medium">9:00 - 18:00</span>
-                      </li>
-                    </ul>
+                    <h3 className="text-xl font-bold text-primary-700 mb-2">アクセス詳細</h3>
+                    <p className="text-neutral-600 mb-2">
+                      T-face前のサイゼリア向かい側の通りすぐ
+                    </p>
+                    <p className="text-neutral-600 font-medium text-sm">
+                      （豊田市駅フリーパーキングは提携していないためご注意ください）
+                    </p>
                   </div>
                 </div>
               </div>
@@ -127,22 +118,15 @@ const Contact: React.FC = () => {
                   <li className="flex items-start">
                     <span className="text-turquoise-500 mr-2 font-bold">•</span>
                     <div>
-                      <p className="font-medium text-primary-600">地下鉄日比谷線</p>
-                      <p className="text-neutral-600">六本木駅より徒歩3分</p>
+                      <p className="font-medium text-primary-600">名鉄豊田線</p>
+                      <p className="text-neutral-600">豊田市駅より徒歩1分</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-turquoise-500 mr-2 font-bold">•</span>
                     <div>
-                      <p className="font-medium text-primary-600">地下鉄大江戸線</p>
-                      <p className="text-neutral-600">六本木駅より徒歩4分</p>
-                    </div>
-                  </li>
-                  <li className="flex items-start">
-                    <span className="text-turquoise-500 mr-2 font-bold">•</span>
-                    <div>
-                      <p className="font-medium text-primary-600">都営バス</p>
-                      <p className="text-neutral-600">六本木ヒルズ前バス停より徒歩1分</p>
+                      <p className="font-medium text-primary-600">愛知環状鉄道</p>
+                      <p className="text-neutral-600">新豊田駅より徒歩10分</p>
                     </div>
                   </li>
                 </ul>
@@ -160,12 +144,11 @@ const Contact: React.FC = () => {
               <div className="bg-primary-50 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-4">駐車場情報</h3>
                 <p className="text-neutral-600 mb-4">
-                  六本木ヒルズの地下駐車場をご利用いただけます。
-                  softisのメンバーは、2時間分の駐車料金が無料になります。
-                  受付にてご申告ください。
+                  ビルの前に無料駐車場が6台完備されています。
+                  駐車場が満車の場合は、お近くの有料駐車場をご利用ください。
                 </p>
-                <p className="text-neutral-600">
-                  ※ 満車の場合は近隣のコインパーキングもございます。
+                <p className="text-neutral-600 font-bold">
+                  豊田市駅フリーパーキングは提携していないためご注意ください
                 </p>
               </div>
             </div>

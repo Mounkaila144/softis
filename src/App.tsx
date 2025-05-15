@@ -11,6 +11,7 @@ import Services from './pages/Services';
 import Instructors from './pages/Instructors';
 import Booking from './pages/Booking';
 import Contact from './pages/Contact';
+import Faq from './pages/Faq';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
             <Route path="instructors" element={<Instructors />} />
             <Route path="booking" element={<Booking />} />
             <Route path="contact" element={<Contact />} />
+            <Route path="faq" element={<Faq />} />
           </Route>
         </Routes>
       </AnimatePresence>

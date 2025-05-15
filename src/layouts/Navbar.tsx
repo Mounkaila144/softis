@@ -17,11 +17,11 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   };
 
   const navItems = [
-    { title: 'ホーム', path: '/' },
-    { title: 'サービス', path: '/services' },
-    { title: 'インストラクター', path: '/instructors' },
-    { title: '予約', path: '/booking' },
+    { title: 'プレゼンテーション', path: '/' },
+    { title: 'スタジオについて', path: '/services' },
     { title: 'アクセス', path: '/contact' },
+    { title: 'ご利用の流れ', path: '/booking' },
+    { title: 'よくある質問', path: '/faq' },
   ];
 
   return (
@@ -36,13 +36,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <img 
-              src="/src/assets/logo.png"
-              alt="softis" 
-              className="h-8 w-auto mr-2"
-            />
             <span className={`font-serif font-bold text-xl ${scrolled ? 'text-primary-500' : 'text-white'}`}>
-              softis
+              Softis
             </span>
           </Link>
 

@@ -22,10 +22,12 @@ export const getOptimizedImageUrl = (
     return src;
   }
 
-  // Pour les images locales, nous pouvons préparer un srcset
-  // En production, vous pourriez utiliser un CDN comme Cloudinary ou ImageKit
-  // Mais pour cette implémentation simple, nous allons juste ajouter des paramètres
-  // à l'URL qui seront ensuite traités par le serveur ou lors du build
+  // Pour les images src/assets, utiliser le chemin import.meta.env.BASE_URL
+  // qui correspondra à la racine du site en production
+  if (src.startsWith('/src/assets/')) {
+    // Remplacer /src/assets/ par /assets/ pour la production
+    return src.replace('/src/assets/', import.meta.env.BASE_URL + 'assets/');
+  }
   
   // Assurons-nous que l'URL est correctement formatée
   const baseUrl = src.startsWith('/') ? src : `/${src}`;

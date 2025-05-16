@@ -1,0 +1,22 @@
+# Activation des modules nécessaires d'Apache
+sudo a2enmod rewrite
+sudo a2enmod headers
+sudo a2enmod ssl
+
+# Vérifier que la configuration Apache est correcte
+sudo apache2ctl configtest
+
+# Mise à jour des permissions
+sudo chmod -R 755 /var/www/softis/dist
+sudo chown -R www-data:www-data /var/www/softis/dist
+
+# Copier le fichier .htaccess s'il n'existe pas déjà
+# (ce fichier doit être créé localement et transféré)
+sudo touch /var/www/softis/dist/.htaccess
+sudo chmod 644 /var/www/softis/dist/.htaccess
+
+# Redémarrer Apache pour appliquer tous les changements
+sudo systemctl restart apache2
+
+# Vérifier le statut d'Apache
+sudo systemctl status apache2 

@@ -1,0 +1,56 @@
+<VirtualHost *:80>
+    ServerName softis.jp
+    ServerAlias www.softis.jp
+
+    DocumentRoot /var/www/softis/dist
+
+    <Directory /var/www/softis/dist>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # Activer mod_headers pour le cache
+    <IfModule mod_headers.c>
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set X-Frame-Options "SAMEORIGIN"
+    </IfModule>
+
+    # Redirection HTTP vers HTTPS
+    RewriteEngine On
+    RewriteCond %{HTTPS} off
+    RewriteRule ^/?(.*) https://%{SERVER_NAME}/$1 [R=301,L]
+
+    ErrorLog ${APACHE_LOG_DIR}/softis.jp_error.log
+    CustomLog ${APACHE_LOG_DIR}/softis.jp_access.log combined
+</VirtualHost>
+
+<VirtualHost *:443>
+    ServerName softis.jp
+    ServerAlias www.softis.jp
+
+    DocumentRoot /var/www/softis/dist
+
+    <Directory /var/www/softis/dist>
+        Options -Indexes +FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
+
+    # Activer mod_headers pour le cache
+    <IfModule mod_headers.c>
+        Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains"
+        Header always set X-Content-Type-Options "nosniff"
+        Header always set X-XSS-Protection "1; mode=block"
+        Header always set X-Frame-Options "SAMEORIGIN"
+    </IfModule>
+
+    SSLEngine On
+    SSLCertificateFile /etc/letsencrypt/live/softis.jp/fullchain.pem
+    SSLCertificateKeyFile /etc/letsencrypt/live/softis.jp/privkey.pem
+    Include /etc/letsencrypt/options-ssl-apache.conf
+
+    ErrorLog ${APACHE_LOG_DIR}/softis.jp_ssl_error.log
+    CustomLog ${APACHE_LOG_DIR}/softis.jp_ssl_access.log combined
+</VirtualHost> 

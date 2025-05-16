@@ -58,9 +58,30 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
     };
     
     img.onerror = () => {
-      setError(true);
-      // En cas d'erreur, utiliser l'image source originale
-      setImgSrc(src);
+      // En cas d'erreur, tenter avec un chemin alternatif
+      if (src.startsWith('/src/assets/') && !import.meta.env.DEV) {
+        // Essayer avec le chemin original (sans modification)
+        const originalPath = import.meta.env.BASE_URL + src.substring(1);
+        
+        const fallbackImg = new Image();
+        fallbackImg.src = originalPath;
+        
+        fallbackImg.onload = () => {
+          setImgSrc(originalPath);
+          setLoaded(true);
+          if (onLoad) onLoad();
+        };
+        
+        fallbackImg.onerror = () => {
+          setError(true);
+          // Si tous les chemins échouent, utiliser l'image source originale
+          setImgSrc(src);
+        };
+      } else {
+        setError(true);
+        // Utiliser l'image source originale
+        setImgSrc(src);
+      }
     };
   }, [src, width, height, quality, format, onLoad]);
 
@@ -90,8 +111,15 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       srcSet={srcSet}
       onLoad={() => setLoaded(true)}
       onError={() => {
-        setError(true);
-        setImgSrc(src); // Fallback à l'image source en cas d'erreur
+        // En cas d'erreur, tenter avec un chemin alternatif
+        if (src.startsWith('/src/assets/') && !error && !import.meta.env.DEV) {
+          // Essayer avec le chemin original (sans modification)
+          const originalPath = import.meta.env.BASE_URL + src.substring(1);
+          setImgSrc(originalPath);
+        } else {
+          setError(true);
+          setImgSrc(src); // Fallback à l'image source en cas d'erreur
+        }
       }}
     />
   );

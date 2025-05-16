@@ -22,11 +22,19 @@ rsync -avz --delete dist/ user@server:/var/www/softis/dist/
 echo "Copie du fichier .htaccess..."
 rsync -avz .htaccess user@server:/var/www/softis/dist/
 
-# 5. Mise à jour des permissions
+# 5. Copier le script de copie des assets
+echo "Copie du script copy-assets.sh..."
+rsync -avz copy-assets.sh user@server:/var/www/softis/
+
+# 6. Exécuter le script de copie des assets sur le serveur
+echo "Exécution du script de copie des assets..."
+ssh user@server "chmod +x /var/www/softis/copy-assets.sh && sudo /var/www/softis/copy-assets.sh"
+
+# 7. Mise à jour des permissions
 echo "Mise à jour des permissions..."
 ssh user@server "sudo chmod -R 755 /var/www/softis/dist && sudo chown -R www-data:www-data /var/www/softis/dist"
 
-# 6. Redémarrer Apache
+# 8. Redémarrer Apache
 echo "Redémarrage d'Apache..."
 ssh user@server "sudo systemctl restart apache2"
 

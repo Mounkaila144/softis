@@ -22,11 +22,23 @@ export const getOptimizedImageUrl = (
     return src;
   }
 
-  // Pour les images src/assets, utiliser le chemin import.meta.env.BASE_URL
-  // qui correspondra à la racine du site en production
+  // Pour les images src/assets, utiliser une approche compatible avec la production
   if (src.startsWith('/src/assets/')) {
-    // Remplacer /src/assets/ par /assets/ pour la production
-    return src.replace('/src/assets/', import.meta.env.BASE_URL + 'assets/');
+    // En développement, utiliser le chemin tel quel
+    if (import.meta.env.DEV) {
+      return src;
+    }
+    
+    // En production:
+    // 1. Essayer d'utiliser le chemin transformé avec /assets/
+    const prodPath = src.replace('/src/assets/', import.meta.env.BASE_URL + 'assets/');
+    
+    // 2. Garder aussi le chemin original en fallback, car nous copions les images
+    // dans le répertoire dist/src/assets/ via notre script de déploiement
+    const originalPath = import.meta.env.BASE_URL + src.substring(1); // enlever le premier slash
+    
+    // Retourner le chemin directement, le fallback sera géré par le composant
+    return prodPath;
   }
   
   // Assurons-nous que l'URL est correctement formatée

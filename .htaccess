@@ -1,10 +1,16 @@
 # Activer le module de réécriture
 RewriteEngine On
 
+# Ne pas rediriger les requêtes vers les assets
+RewriteRule ^assets/(.*)$ - [L]
+
 # Si le fichier ou le répertoire existe physiquement, servir directement
 RewriteCond %{REQUEST_FILENAME} -f [OR]
 RewriteCond %{REQUEST_FILENAME} -d
 RewriteRule ^ - [L]
+
+# Ajouter une règle spécifique pour les requêtes /src/assets/
+RewriteRule ^src/assets/(.*) /assets/$1 [L]
 
 # Rediriger toutes les autres requêtes vers index.html
 RewriteRule ^ index.html [L]

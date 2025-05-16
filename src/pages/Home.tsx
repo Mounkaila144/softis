@@ -11,12 +11,8 @@ const Home: React.FC = () => {
   const navigate = useNavigate();
 
   const heroImages = [
+    "/src/assets/IMG/img.png",
     "/src/assets/IMG/IMG_2593.jpeg",
-    "/src/assets/IMG/1.jpeg",
-    "/src/assets/IMG/IMG_2602.jpeg",
-    "/src/assets/IMG/2.jpeg",
-    "/src/assets/IMG/IMG_2364.jpeg",
-    "/src/assets/IMG/IMG_1114.jpeg",
     "/src/assets/IMG/IMG_1601.jpeg",
     "/src/assets/IMG/IMG_2616.jpeg",
   ];

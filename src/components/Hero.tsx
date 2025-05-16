@@ -65,10 +65,10 @@ const Hero: React.FC<HeroProps> = ({
           <div className="absolute inset-0">
             {/* Utilisation de la div en background pour maintenir la compatibilité */}
             <div
-              className="absolute inset-0 bg-black"
-              style={{ 
+              className="absolute inset-0 bg-turquoise-300"
+              style={{
                 opacity: loadedImages[currentImageIndex] ? 0 : 1,
-                transition: 'opacity 0.5s ease'
+                transition: 'opacity 0.5s ease',
               }}
             />
             <OptimizedImage

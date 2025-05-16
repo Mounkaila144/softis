@@ -1,0 +1,22 @@
+# Activer le moteur de réécriture
+RewriteEngine On
+
+# Rediriger les anciens chemins /src/assets vers /assets
+RewriteRule ^src/assets/(.*)$ /assets/$1 [L,R=301]
+
+# Assurer que les fichiers et répertoires existants soient servis directement
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Rediriger les autres requêtes vers index.html pour le routing SPA
+RewriteRule ^ index.html [L]
+
+# Cache des assets statiques
+<FilesMatch "\.(ico|pdf|jpg|jpeg|png|webp|gif|svg|js|css|woff|woff2|ttf|eot)$">
+  Header set Cache-Control "max-age=31536000, public"
+</FilesMatch>
+
+# Pas de cache pour HTML et données JSON
+<FilesMatch "\.(html|json)$">
+  Header set Cache-Control "no-cache, no-store, must-revalidate"
+</FilesMatch> 

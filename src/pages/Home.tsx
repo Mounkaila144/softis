@@ -41,13 +41,13 @@ const Home: React.FC = () => {
 />
 
       {/* ピラティスに通うとどうなるの？ */}
-      <Section className="bg-primary-50">
+      <Section className="bg-turquoise-200">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               ピラティスに通うとどうなるの？
             </h2>
-            <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+            <p className="text-white text-lg max-w-3xl mx-auto">
               身体ガチガチさん運動初心者さんのための身体を労るスタジオ
             </p>
           </div>
@@ -62,15 +62,15 @@ const Home: React.FC = () => {
               <div className="mb-8">
                 <h3 className="text-xl font-bold mb-2">Softis代表</h3>
                 <p className="text-lg mb-1">秋間まゆ</p>
-                <p className="text-neutral-600 mb-1">理学療法士免許保有</p>
-                <p className="text-neutral-600">BESJピラティス認定インストラクター</p>
+                <p className="text-white mb-1">理学療法士免許保有</p>
+                <p className="text-white">BESJピラティス認定インストラクター</p>
               </div>
             </div>
           </div>
           
           {/* イメージカード */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-turquoise-200 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/home2/1.png" 
@@ -100,7 +100,7 @@ const Home: React.FC = () => {
               </div>
             </div>
             
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
+            <div className="bg-turquoise-200 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/home2/2.png" 
@@ -145,27 +145,27 @@ const Home: React.FC = () => {
           <div className="max-w-2xl mx-auto">
             <div className="flex flex-col space-y-8">
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                <div className="w-12 h-12 bg-turquoise-2000 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                   <span className="text-white text-xl font-bold">1</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">LINE登録</h3>
-                  <p className="text-neutral-600">公式LINEアカウントに登録します</p>
+                  <p className="text-white">公式LINEアカウントに登録します</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                <div className="w-12 h-12 bg-turquoise-2000 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                   <span className="text-white text-xl font-bold">2</span>
                 </div>
                 <div>
                   <h3 className="text-xl font-bold mb-2">予約サイトから体験予約</h3>
-                  <p className="text-neutral-600">（6/1予約受付開始予定）</p>
+                  <p className="text-white">（6/1予約受付開始予定）</p>
                 </div>
               </div>
               
               <div className="flex items-start">
-                <div className="w-12 h-12 bg-primary-500 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
+                <div className="w-12 h-12 bg-turquoise-2000 rounded-full flex items-center justify-center flex-shrink-0 mr-6">
                   <span className="text-white text-xl font-bold">3</span>
                 </div>
                 <div>

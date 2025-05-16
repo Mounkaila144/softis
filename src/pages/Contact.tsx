@@ -67,7 +67,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">住所</h3>
-                    <p className="text-neutral-600">
+                    <p className="text-white">
                       愛知県豊田市若宮町1-26<br />
                       セントラルビル2階<br />
                       セントラルビルを目印にお越しください
@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">電話番号</h3>
-                    <p className="text-neutral-600">
+                    <p className="text-white">
                       03-1234-5678
                     </p>
                   </div>
@@ -93,7 +93,7 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">メールアドレス</h3>
-                    <p className="text-neutral-600">
+                    <p className="text-white">
                       info@softis.jp
                     </p>
                   </div>
@@ -105,10 +105,10 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">アクセス詳細</h3>
-                    <p className="text-neutral-600 mb-2">
+                    <p className="text-white mb-2">
                       T-face前のサイゼリア向かい側の通りすぐ
                     </p>
-                    <p className="text-neutral-600 font-medium text-sm">
+                    <p className="text-white font-medium text-sm">
                       （豊田市駅フリーパーキングは提携していないためご注意ください）
                     </p>
                   </div>
@@ -122,14 +122,14 @@ const Contact: React.FC = () => {
                     <span className="text-turquoise-500 mr-2 font-bold">•</span>
                     <div>
                       <p className="font-medium text-primary-600">名鉄豊田線</p>
-                      <p className="text-neutral-600">豊田市駅より徒歩1分</p>
+                      <p className="text-white">豊田市駅より徒歩1分</p>
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-turquoise-500 mr-2 font-bold">•</span>
                     <div>
                       <p className="font-medium text-primary-600">愛知環状鉄道</p>
-                      <p className="text-neutral-600">新豊田駅より徒歩10分</p>
+                      <p className="text-white">新豊田駅より徒歩10分</p>
                     </div>
                   </li>
                 </ul>
@@ -149,13 +149,13 @@ const Contact: React.FC = () => {
                 ></iframe>
               </div>
               
-              <div className="bg-primary-50 rounded-lg p-6">
+              <div className="bg-turquoise-200 rounded-lg p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-4">駐車場情報</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   ビルの前に無料駐車場が6台完備されています。
                   駐車場が満車の場合は、お近くの有料駐車場をご利用ください。
                 </p>
-                <p className="text-neutral-600 font-bold">
+                <p className="text-white font-bold">
                   豊田市駅フリーパーキングは提携していないためご注意ください
                 </p>
               </div>
@@ -165,20 +165,20 @@ const Contact: React.FC = () => {
       </Section>
 
       {/* Contact Form Section */}
-      <Section className="bg-primary-50">
+      <Section className="bg-turquoise-200">
         <Container>
           <div className="max-w-3xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-3xl font-serif font-bold text-primary-700 mb-4">
                 お問い合わせ
               </h2>
-              <p className="text-neutral-600 text-lg">
+              <p className="text-white text-lg">
                 ご質問、ご意見、お問い合わせなどがございましたら、下記のフォームよりお気軽にご連絡ください。
                 24時間以内に担当者より返信いたします。
               </p>
             </div>
             
-            <div className="bg-white rounded-lg shadow-md p-8">
+            <div className="bg-turquoise-200 rounded-lg shadow-md p-8">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -248,7 +248,7 @@ const Contact: React.FC = () => {
                     className="mr-2"
                     required
                   />
-                  <label htmlFor="privacy" className="text-sm text-neutral-600">
+                  <label htmlFor="privacy" className="text-sm text-white">
                     <a href="#" className="text-primary-500 hover:underline">プライバシーポリシー</a>に同意します。
                   </label>
                 </div>

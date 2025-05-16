@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({
           <div className="absolute inset-0">
             {/* Utilisation de la div en background pour maintenir la compatibilité */}
             <div
-              className="absolute inset-0 bg-turquoise-300"
+              className="absolute inset-0 bg-turquoise-200"
               style={{
                 opacity: loadedImages[currentImageIndex] ? 0 : 1,
                 transition: 'opacity 0.5s ease',
@@ -111,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentImageIndex
-                  ? 'bg-white w-8'
+                  ? 'bg-turquoise-200 w-8'
                   : 'bg-white/50 hover:bg-white/75'
               }`}
               aria-label={`Go to slide ${index + 1}`}

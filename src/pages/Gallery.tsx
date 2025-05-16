@@ -101,7 +101,7 @@ const Gallery: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-turquoise-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <OptimizedImage 
@@ -116,7 +116,7 @@ const Gallery: React.FC = () => {
                 </div>
                 <div className="p-4">
                   <h3 className="font-bold text-primary-700">{image.alt}</h3>
-                  <p className="text-neutral-600 text-sm">{image.description}</p>
+                  <p className="text-white text-sm">{image.description}</p>
                 </div>
               </motion.div>
             ))}

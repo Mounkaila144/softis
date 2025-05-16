@@ -40,7 +40,7 @@ const Services: React.FC = () => {
             >
               Softisでは、質の高いピラティス指導と最新のマシンで、あなたのカラダをサポートします
               ピラティスリフォーマー、バレル、チェア、タワー、スパインコレクターなど多種に渡るマシンを取り揃えております。そのためお一人お一人に合わせたいろいろなエクササイズが可能となります。マシンの使い方はインストラクターから都度説明がありますのでご安心ください。
-              <p className="text-neutral-600 text-lg">
+              <p className="text-white text-lg">
               Coming Soon…
             </p>
             </motion.p>
@@ -50,19 +50,19 @@ const Services: React.FC = () => {
 
 
       {/* Equipment Section */}
-      <Section className="bg-primary-50">
+      <Section className="bg-turquoise-200">
         <Container>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               ピラティスマシン
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               Softisで使用する最新ピラティスマシンの紹介
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-turquoise-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/machine/IMG_6780.jpeg" 
@@ -76,13 +76,13 @@ const Services: React.FC = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">ピラティスリフォーマー</h3>
-                <p className="text-neutral-600">
+                <p className="text-white">
                   リフォーマーは最も多目的なピラティスマシンです。スプリングの抵抗を利用して、筋力と柔軟性を同時に向上させることができます。
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-turquoise-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/machine/IMG_1119.jpeg" 
@@ -96,13 +96,13 @@ const Services: React.FC = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">バレル</h3>
-                <p className="text-neutral-600">
+                <p className="text-white">
                   バレルは背骨のアーチを伸ばし、脊柱の柔軟性を高める効果があります。姿勢改善に特に効果的なマシンです。
                 </p>
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+            <div className="bg-turquoise-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/machine/IMG_8645.jpeg" 
@@ -116,7 +116,7 @@ const Services: React.FC = () => {
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">チェア</h3>
-                <p className="text-neutral-600">
+                <p className="text-white">
                   チェアは主に下半身と体幹の筋力を鍛えるためのマシンです。バランスと安定性の向上に役立ちます。
                 </p>
               </div>
@@ -143,7 +143,7 @@ const Services: React.FC = () => {
                 理学療法士の知識と経験を活かし、科学的根拠に基づいたアプローチで、お客様の健康と美しさを引き出します。
               </p>
             </div>
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-turquoise-200 rounded-lg shadow-lg overflow-hidden">
               <div className="overflow-hidden">
                 <OptimizedImage 
                   src="/src/assets/studio/Softis.png" 
@@ -156,7 +156,7 @@ const Services: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <p className="text-neutral-600 italic">
+                <p className="text-white italic">
                   "自分の身体を大切にできるのは自分だけ。自分の身体を自分が1番愛してあげよう"
                 </p>
               </div>
@@ -172,7 +172,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               トレーニングプログラム
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               あなたの目標、スケジュール、フィットネスレベルに合わせた様々なプログラムをご用意しています。
               全てのプログラムは、経験豊富なインストラクターによるサポートが含まれています。
             </p>
@@ -232,13 +232,13 @@ const Services: React.FC = () => {
       </Section>
 
       {/* Specialized Services */}
-      <Section className="bg-primary-50">
+      <Section className="bg-turquoise-200">
         <Container>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               専門サービス
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               フィットネスだけでなく、総合的な健康とウェルネスをサポートする専門サービスもご用意しています。
             </p>
           </div>
@@ -253,7 +253,7 @@ const Services: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-primary-700 mb-2">栄養カウンセリング</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   資格を持った栄養士があなたの目標、食の好み、ライフスタイルに合わせた食事プランを作成します。
                   体の変化を実現するために最も重要な食事のアドバイスを提供します。
                 </p>
@@ -270,7 +270,7 @@ const Services: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-primary-700 mb-2">リカバリー & リラクゼーション</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   トレーニングの効果を最大化するための回復プログラム。ストレッチ、マッサージ、温熱療法などを
                   組み合わせて、筋肉の回復を促進し、パフォーマンスを向上させます。
                 </p>
@@ -287,7 +287,7 @@ const Services: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-primary-700 mb-2">フィットネスアセスメント</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   詳細な体組成分析、筋力テスト、柔軟性評価、有酸素能力測定などを通じて、
                   あなたの現在のフィットネスレベルを正確に把握し、効果的なトレーニングプランを設計します。
                 </p>
@@ -305,7 +305,7 @@ const Services: React.FC = () => {
               </div>
               <div>
                 <h3 className="text-xl font-bold text-primary-700 mb-2">マインドフルネス & メディテーション</h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   心と体のバランスを整えるマインドフルネスプログラム。ストレス軽減、
                   睡眠の質向上、集中力強化を通じて、総合的な健康をサポートします。
                 </p>
@@ -323,7 +323,7 @@ const Services: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               メンバーシッププラン
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               定期的にトレーニングをご希望の方には、お得なメンバーシッププランをご用意しています。
               あなたのライフスタイルに合わせて柔軟に選べるプランです。
             </p>
@@ -334,7 +334,7 @@ const Services: React.FC = () => {
             <div className="border border-neutral-200 rounded-lg overflow-hidden">
               <div className="bg-primary-100 p-6 text-center">
                 <h3 className="text-xl font-bold text-primary-700">ベーシック</h3>
-                <p className="text-4xl font-bold text-primary-500 mt-4">¥45,000<span className="text-sm font-normal text-neutral-600">/月</span></p>
+                <p className="text-4xl font-bold text-primary-500 mt-4">¥45,000<span className="text-sm font-normal text-white">/月</span></p>
               </div>
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
@@ -359,7 +359,7 @@ const Services: React.FC = () => {
                     <span className="text-neutral-400">専用ロッカー</span>
                   </li>
                 </ul>
-                <button className="w-full py-2 px-4 bg-primary-500 text-white rounded hover:bg-primary-600 transition-colors">
+                <button className="w-full py-2 px-4 bg-turquoise-2000 text-white rounded hover:bg-primary-600 transition-colors">
                   選択する
                 </button>
               </div>
@@ -367,7 +367,7 @@ const Services: React.FC = () => {
 
             {/* Membership 2 */}
             <div className="border-2 border-gold-500 rounded-lg overflow-hidden shadow-lg relative">
-              <div className="absolute top-0 right-0 bg-gold-500 text-primary-900 text-xs font-bold px-3 py-1 rounded-bl">
+              <div className="absolute top-0 right-0 bg-turquoise-500 text-primary-900 text-xs font-bold px-3 py-1 rounded-bl">
                 おすすめ
               </div>
               <div className="bg-primary-600 p-6 text-center text-white">
@@ -397,7 +397,7 @@ const Services: React.FC = () => {
                     <span>専用ロッカー</span>
                   </li>
                 </ul>
-                <button className="w-full py-2 px-4 bg-gold-500 text-primary-900 rounded hover:bg-gold-400 transition-colors">
+                <button className="w-full py-2 px-4 bg-turquoise-400 text-primary-900 rounded hover:bg-turquoise-400 transition-colors">
                   選択する
                 </button>
               </div>
@@ -407,7 +407,7 @@ const Services: React.FC = () => {
             <div className="border border-neutral-200 rounded-lg overflow-hidden">
               <div className="bg-primary-100 p-6 text-center">
                 <h3 className="text-xl font-bold text-primary-700">エグゼクティブ</h3>
-                <p className="text-4xl font-bold text-primary-500 mt-4">¥120,000<span className="text-sm font-normal text-neutral-600">/月</span></p>
+                <p className="text-4xl font-bold text-primary-500 mt-4">¥120,000<span className="text-sm font-normal text-white">/月</span></p>
               </div>
               <div className="p-6">
                 <ul className="space-y-3 mb-6">
@@ -432,7 +432,7 @@ const Services: React.FC = () => {
                     <span>専用ロッカー & タオルサービス</span>
                   </li>
                 </ul>
-                <button className="w-full py-2 px-4 bg-primary-500 text-white rounded hover:bg-primary-600 transition-colors">
+                <button className="w-full py-2 px-4 bg-turquoise-2000 text-white rounded hover:bg-primary-600 transition-colors">
                   選択する
                 </button>
               </div>

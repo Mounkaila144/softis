@@ -35,7 +35,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
           className="w-full h-full object-cover"
         />
         {popular && (
-          <div className="absolute top-4 right-4 bg-gold-500 text-primary-900 text-xs font-bold px-3 py-1 rounded-full">
+          <div className="absolute top-4 right-4 bg-turquoise-500 text-primary-900 text-xs font-bold px-3 py-1 rounded-full">
             人気
           </div>
         )}
@@ -43,7 +43,7 @@ const ProgramCard: React.FC<ProgramCardProps> = ({
       
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-primary-700 mb-2">{title}</h3>
-        <p className="text-neutral-600 mb-4">{description}</p>
+        <p className="text-white mb-4">{description}</p>
         
         <p className="text-2xl font-bold text-primary-500 mb-4">{price}</p>
         

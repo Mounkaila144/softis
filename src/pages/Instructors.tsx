@@ -52,7 +52,7 @@ const Instructors: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               エキスパートチーム
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               各トレーナーは、それぞれの専門分野で豊富な経験と実績を持ち、
               お客様一人ひとりに合わせたアプローチでトレーニングをサポートします。
             </p>
@@ -117,13 +117,13 @@ const Instructors: React.FC = () => {
       </Section>
 
       {/* Certifications Section */}
-      <Section className="bg-primary-50">
+      <Section className="bg-turquoise-200">
         <Container>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
               資格と専門知識
             </h2>
-            <p className="text-neutral-600 text-lg">
+            <p className="text-white text-lg">
               Zen Fitness Tokyoのトレーナーたちは、国際的に認められた様々な資格を保有しています。
               あなたの体と健康を安全かつ効果的にサポートするための専門知識を備えています。
             </p>
@@ -131,40 +131,40 @@ const Instructors: React.FC = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Certification 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-turquoise-200 p-6 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-primary-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-primary-700 mb-2">国際資格保有</h3>
-              <p className="text-neutral-600">
+              <p className="text-white">
                 NSCA、ACE、ACSMなどの国際的に認められた資格を保有。世界基準の知識とスキルに基づいたトレーニングを提供します。
               </p>
             </div>
 
             {/* Certification 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-turquoise-200 p-6 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-turquoise-100 rounded-full flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-turquoise-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-primary-700 mb-2">継続的な教育</h3>
-              <p className="text-neutral-600">
+              <p className="text-white">
                 全てのスタッフは定期的に最新のトレーニング方法、栄養学、リハビリテーションに関する研修を受けています。常に最新の知識を更新しています。
               </p>
             </div>
 
             {/* Certification 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <div className="bg-turquoise-200 p-6 rounded-lg shadow-md">
               <div className="w-16 h-16 bg-gold-100 rounded-full flex items-center justify-center mb-4">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-8 w-8 text-gold-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-primary-700 mb-2">専門分野での豊富な経験</h3>
-              <p className="text-neutral-600">
+              <p className="text-white">
                 各トレーナーは、スポーツパフォーマンス、リハビリテーション、栄養学、マインドフルネスなど、それぞれの専門分野で実績を積んでいます。
               </p>
             </div>
@@ -180,7 +180,7 @@ const Instructors: React.FC = () => {
               <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-6">
                 私たちのトレーニング哲学
               </h2>
-              <p className="text-neutral-600 text-lg mb-6">
+              <p className="text-white text-lg mb-6">
                 Zen Fitness Tokyoでは、「持続可能な変化」を信念としています。
                 短期的な結果だけでなく、長期的に健康的なライフスタイルを維持できるよう、
                 お客様一人ひとりに合わせたアプローチを大切にしています。

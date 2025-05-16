@@ -18,7 +18,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 }) => {
   return (
     <motion.div 
-      className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="bg-turquoise-200 p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
       whileHover={{ y: -5 }}
     >
       {imageBefore && imageAfter && (

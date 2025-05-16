@@ -70,7 +70,7 @@ const Faq: React.FC = () => {
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-primary-700 mb-4">
               よくある質問
             </h1>
-            <p className="text-neutral-600 text-lg max-w-3xl mx-auto">
+            <p className="text-white text-lg max-w-3xl mx-auto">
               Softisについてのよくある質問をまとめました
             </p>
           </div>
@@ -82,9 +82,9 @@ const Faq: React.FC = () => {
           <div className="max-w-3xl mx-auto">
             <div className="space-y-8">
               {faqItems.map((item, index) => (
-                <div key={index} className="bg-white p-6 rounded-lg shadow-md">
+                <div key={index} className="bg-turquoise-200 p-6 rounded-lg shadow-md">
                   <h3 className="text-xl font-bold mb-3 text-primary-700">{item.question}</h3>
-                  <p className="text-neutral-600">{item.answer}</p>
+                  <p className="text-white">{item.answer}</p>
                 </div>
               ))}
             </div>

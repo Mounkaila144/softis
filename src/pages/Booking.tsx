@@ -95,14 +95,14 @@ const Booking: React.FC = () => {
                         onClick={() => setSelectedService(service.id)}
                         className={`border rounded-lg p-4 cursor-pointer transition-colors ${
                           selectedService === service.id 
-                            ? 'border-primary-500 bg-primary-50' 
+                            ? 'border-primary-500 bg-turquoise-200' 
                             : 'border-neutral-200 hover:border-primary-300'
                         }`}
                       >
                         <div className="flex items-center">
                           <div className={`w-4 h-4 rounded-full mr-3 flex-shrink-0 ${
                             selectedService === service.id 
-                              ? 'bg-primary-500' 
+                              ? 'bg-turquoise-2000' 
                               : 'bg-neutral-200'
                           }`}></div>
                           <span>{service.name}</span>
@@ -143,7 +143,7 @@ const Booking: React.FC = () => {
                           onClick={() => setSelectedTime(time)}
                           className={`flex items-center justify-center p-2 border rounded cursor-pointer transition-colors ${
                             selectedTime === time 
-                              ? 'bg-primary-500 text-white border-primary-500' 
+                              ? 'bg-turquoise-2000 text-white border-primary-500' 
                               : 'border-neutral-200 hover:border-primary-300'
                           }`}
                         >
@@ -254,11 +254,11 @@ const Booking: React.FC = () => {
                 予約に関する情報
               </h2>
               
-              <div className="bg-primary-50 rounded-lg p-6 mb-8">
+              <div className="bg-turquoise-200 rounded-lg p-6 mb-8">
                 <h3 className="text-xl font-bold text-primary-700 mb-4">
                   無料体験セッションについて
                 </h3>
-                <p className="text-neutral-600 mb-4">
+                <p className="text-white mb-4">
                   softisでは、新規のお客様に60分間の無料体験セッションを提供しています。
                   このセッションには以下が含まれます：
                 </p>
@@ -290,15 +290,15 @@ const Booking: React.FC = () => {
                   <h3 className="text-xl font-bold text-primary-700 mb-3">営業時間</h3>
                   <ul className="space-y-2">
                     <li className="flex justify-between">
-                      <span className="text-neutral-600">月曜日 - 金曜日:</span>
+                      <span className="text-white">月曜日 - 金曜日:</span>
                       <span className="text-neutral-800 font-medium">7:00 - 22:00</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-neutral-600">土曜日:</span>
+                      <span className="text-white">土曜日:</span>
                       <span className="text-neutral-800 font-medium">8:00 - 20:00</span>
                     </li>
                     <li className="flex justify-between">
-                      <span className="text-neutral-600">日曜日:</span>
+                      <span className="text-white">日曜日:</span>
                       <span className="text-neutral-800 font-medium">9:00 - 18:00</span>
                     </li>
                   </ul>
@@ -306,7 +306,7 @@ const Booking: React.FC = () => {
                 
                 <div>
                   <h3 className="text-xl font-bold text-primary-700 mb-3">キャンセルポリシー</h3>
-                  <p className="text-neutral-600">
+                  <p className="text-white">
                     予約の24時間前までにキャンセルのご連絡をいただいた場合は、キャンセル料は発生しません。
                     24時間を切ったキャンセルについては、セッション料金の50%をキャンセル料として申し受けます。
                   </p>
@@ -317,15 +317,15 @@ const Booking: React.FC = () => {
                   <div className="space-y-4">
                     <div>
                       <h4 className="font-medium text-primary-600">どのような服装で行けばいいですか？</h4>
-                      <p className="text-neutral-600">動きやすいスポーツウェアとスポーツシューズをご用意ください。更衣室とロッカーを完備しています。</p>
+                      <p className="text-white">動きやすいスポーツウェアとスポーツシューズをご用意ください。更衣室とロッカーを完備しています。</p>
                     </div>
                     <div>
                       <h4 className="font-medium text-primary-600">タオルは持参する必要がありますか？</h4>
-                      <p className="text-neutral-600">フェイスタオルとバスタオルは無料でご用意しております。</p>
+                      <p className="text-white">フェイスタオルとバスタオルは無料でご用意しております。</p>
                     </div>
                     <div>
                       <h4 className="font-medium text-primary-600">初心者でも大丈夫ですか？</h4>
-                      <p className="text-neutral-600">はい、どのレベルの方でも対応可能です。初心者の方には特に丁寧に基本から指導いたします。</p>
+                      <p className="text-white">はい、どのレベルの方でも対応可能です。初心者の方には特に丁寧に基本から指導いたします。</p>
                     </div>
                   </div>
                 </div>

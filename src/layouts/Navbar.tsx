@@ -30,7 +30,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled 
-          ? 'bg-white shadow-md py-3' 
+          ? 'bg-turquoise-200 shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -46,17 +46,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                   marginTop: scrolled ? '0px' : '5px'
                 }}
               >
-                {scrolled ? (
-                  <OptimizedImage
-                    src="/src/assets/logoblack.png"
-                    alt="Softis Logo"
-                    className="h-full w-auto transition-all duration-500 opacity-90"
-                    width={250}
-                    height={250}
-                    loading="eager"
-                    quality={100}
-                  />
-                ) : (
                   <OptimizedImage
                     src="/src/assets/logo.png"
                     alt="Softis Logo"
@@ -66,7 +55,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                     loading="eager"
                     quality={100}
                   />
-                )}
               </div>
             </Link>
           </div>
@@ -95,7 +83,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                     {isActive && (
                       <motion.span
                         layoutId="activeNavIndicator"
-                        className={`absolute -bottom-1 left-0 right-0 h-0.5 ${scrolled ? 'bg-primary-500' : 'bg-white'}`}
+                        className={`absolute -bottom-1 left-0 right-0 h-0.5 ${scrolled ? 'bg-turquoise-2000' : 'bg-turquoise-200'}`}
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -129,7 +117,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-white"
+            className="md:hidden bg-turquoise-200"
           >
             <Container>
               <div className="py-4 space-y-4">

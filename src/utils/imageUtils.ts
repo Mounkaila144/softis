@@ -22,12 +22,10 @@ export const getOptimizedImageUrl = (
     return src;
   }
 
-  // Corriger les chemins qui commencent par /src/ pour la production
-  // En production, les assets sont copiés dans le dossier dist et ne sont plus dans /src/
-  if (src.startsWith('/src/')) {
-    // Supprimer le préfixe /src/ pour avoir un chemin relatif aux assets
-    return src.replace('/src/', '/');
-  }
+  // Pour les images locales, nous pouvons préparer un srcset
+  // En production, vous pourriez utiliser un CDN comme Cloudinary ou ImageKit
+  // Mais pour cette implémentation simple, nous allons juste ajouter des paramètres
+  // à l'URL qui seront ensuite traités par le serveur ou lors du build
   
   // Assurons-nous que l'URL est correctement formatée
   const baseUrl = src.startsWith('/') ? src : `/${src}`;
@@ -35,7 +33,8 @@ export const getOptimizedImageUrl = (
   // Pour une implémentation plus complète, vous pourriez utiliser
   // un service comme Vite Image Tools ou next/image
 
-  // Puisque nous n'avons pas de CDN, retournons simplement l'URL corrigée
+  // Puisque nous n'avons pas de CDN, retournons simplement l'URL d'origine
+  // En production, vous remplaceriez cette partie par un appel à votre service d'optimisation
   return baseUrl;
 };
 

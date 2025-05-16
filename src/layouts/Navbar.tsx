@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Container from '../components/Container';
 import Button from '../components/Button';
+import OptimizedImage from '../components/OptimizedImage';
 
 type NavbarProps = {
   scrolled: boolean;
@@ -22,6 +23,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     { title: 'アクセス', path: '/contact' },
     { title: 'ご利用の流れ', path: '/booking' },
     { title: 'よくある質問', path: '/faq' },
+    { title: 'ギャラリー', path: '/gallery' },
   ];
 
   return (
@@ -33,16 +35,44 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
       }`}
     >
       <Container>
-        <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className={`font-serif font-bold text-xl ${scrolled ? 'text-primary-500' : 'text-white'}`}>
-              Softis
-            </span>
-          </Link>
+        <div className="flex items-center justify-between h-16 md:h-20 relative">
+          {/* Logo - positioned absolutely to avoid shifting layout */}
+          <div className="relative z-10" style={{ width: '130px', height: '20px' }}>
+            <Link to="/" className="block">
+              <div 
+                className="absolute top-1/2 transform -translate-y-1/2" 
+                style={{ 
+                  height: scrolled ? '80px' : '100px',
+                  marginTop: scrolled ? '0px' : '5px'
+                }}
+              >
+                {scrolled ? (
+                  <OptimizedImage
+                    src="/src/assets/logoblack.png"
+                    alt="Softis Logo"
+                    className="h-full w-auto transition-all duration-500 opacity-90"
+                    width={250}
+                    height={250}
+                    loading="eager"
+                    quality={100}
+                  />
+                ) : (
+                  <OptimizedImage
+                    src="/src/assets/logo.png"
+                    alt="Softis Logo"
+                    className="h-full w-auto transition-all duration-500 opacity-90"
+                    width={250}
+                    height={250}
+                    loading="eager"
+                    quality={100}
+                  />
+                )}
+              </div>
+            </Link>
+          </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-8 ml-auto">
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -73,13 +103,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 )}
               </NavLink>
             ))}
-            <Button 
-              variant={scrolled ? "gold" : "outline"} 
-              size="sm"
-              className={scrolled ? '' : 'border-white text-white hover:bg-white/10'}
-            >
-              無料体験
-            </Button>
+          
           </nav>
 
           {/* Mobile Menu Toggle */}

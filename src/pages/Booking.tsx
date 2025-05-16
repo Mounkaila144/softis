@@ -5,6 +5,7 @@ import { Calendar, Clock, User, Mail, Phone, MessageSquare } from 'lucide-react'
 import Container from '../components/Container';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Booking: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState<string>('');
@@ -33,17 +34,21 @@ const Booking: React.FC = () => {
 
   return (
     <>
-      {/* Page Header */}
-      <div className="relative pt-32 pb-16 text-white">
-        <div 
-          className="absolute inset-0 z-0" 
-          style={{
-            backgroundImage: `url('/src/assets/IMG/IMG_2602.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+      {/* Hero section */}
+      <div className="relative h-[40vh] min-h-[300px] flex items-center">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <OptimizedImage
+            src="/src/assets/IMG/IMG_2602.jpeg"
+            alt="Pilates studio"
+            className="w-full h-full object-cover"
+            loading="eager"
+            quality={90}
+            format="webp"
+          />
+          <div 
+            className="absolute inset-0 bg-primary-900/50"
+          />
+        </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <motion.h1 

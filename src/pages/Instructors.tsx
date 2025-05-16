@@ -4,21 +4,24 @@ import { motion } from 'framer-motion';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import InstructorCard from '../components/InstructorCard';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Instructors: React.FC = () => {
   return (
     <>
       {/* Page Header */}
       <div className="relative pt-32 pb-16 text-white">
-        <div 
-          className="absolute inset-0 z-0" 
-          style={{
-            backgroundImage: `url('/src/assets/IMG/IMG_2593.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <OptimizedImage
+            src="/src/assets/IMG/IMG_2593.jpeg"
+            alt="Instructors background"
+            className="w-full h-full object-cover"
+            loading="eager"
+            quality={90}
+            format="webp"
+          />
+          <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
@@ -206,11 +209,16 @@ const Instructors: React.FC = () => {
               </ul>
             </div>
             <div className="rounded-lg overflow-hidden shadow-lg">
-              <img 
-                src="https://images.pexels.com/photos/6551088/pexels-photo-6551088.jpeg" 
-                alt="Training Philosophy" 
-                className="w-full h-auto"
-              />
+              <div className="h-64 overflow-hidden">
+                <OptimizedImage 
+                  src="https://images.pexels.com/photos/6551088/pexels-photo-6551088.jpeg" 
+                  alt="Training Philosophy" 
+                  className="w-full h-full object-cover"
+                  loading="lazy"
+                  quality={85}
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
+              </div>
             </div>
           </div>
         </Container>

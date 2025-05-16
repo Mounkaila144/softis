@@ -4,21 +4,24 @@ import { motion } from 'framer-motion';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import ProgramCard from '../components/ProgramCard';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Services: React.FC = () => {
   return (
     <>
       {/* Page Header */}
       <div className="relative pt-32 pb-16 text-white">
-        <div 
-          className="absolute inset-0 z-0" 
-          style={{
-            backgroundImage: `url('/src/assets/IMG/IMG_1186-scaled.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <OptimizedImage
+            src="/src/assets/IMG/IMG_1114.jpeg"
+            alt="Services background"
+            className="w-full h-full object-cover"
+            loading="eager"
+            quality={90}
+            format="webp"
+          />
+          <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
@@ -36,30 +39,15 @@ const Services: React.FC = () => {
               className="text-xl text-white/90"
             >
               Softisでは、質の高いピラティス指導と最新のマシンで、あなたのカラダをサポートします
+              ピラティスリフォーマー、バレル、チェア、タワー、スパインコレクターなど多種に渡るマシンを取り揃えております。そのためお一人お一人に合わせたいろいろなエクササイズが可能となります。マシンの使い方はインストラクターから都度説明がありますのでご安心ください。
+              <p className="text-neutral-600 text-lg">
+              Coming Soon…
+            </p>
             </motion.p>
           </div>
         </Container>
       </div>
 
-      {/* Studio Section */}
-      <Section>
-        <Container>
-          <div className="mb-16 text-center max-w-3xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-serif font-bold text-primary-700 mb-4">
-              Studioについて
-            </h2>
-            <p className="text-neutral-600 text-lg">
-              Coming Soon…
-            </p>
-          </div>
-
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg text-neutral-700 mb-8">
-              ピラティスリフォーマー、バレル、チェア、タワー、スパインコレクターなど多種に渡るマシンを取り揃えております。そのためお一人お一人に合わせたいろいろなエクササイズが可能となります。マシンの使い方はインストラクターから都度説明がありますのでご安心ください。
-            </p>
-          </div>
-        </Container>
-      </Section>
 
       {/* Equipment Section */}
       <Section className="bg-primary-50">
@@ -74,12 +62,17 @@ const Services: React.FC = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-56 bg-neutral-200 relative">
-                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-neutral-500">リフォーマー画像</span>
-                </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-64 overflow-hidden">
+                <OptimizedImage 
+                  src="/src/assets/machine/IMG_6780.jpeg" 
+                  alt="ピラティスリフォーマー" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  quality={85}
+                  format="webp"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">ピラティスリフォーマー</h3>
@@ -89,12 +82,17 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-56 bg-neutral-200 relative">
-                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-neutral-500">バレル画像</span>
-                </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-64 overflow-hidden">
+                <OptimizedImage 
+                  src="/src/assets/machine/IMG_1119.jpeg" 
+                  alt="バレル" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  quality={85}
+                  format="webp"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">バレル</h3>
@@ -104,12 +102,17 @@ const Services: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white rounded-lg shadow-md overflow-hidden">
-              <div className="h-56 bg-neutral-200 relative">
-                {/* Remplacer par l'image réelle lorsqu'elle sera disponible */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <span className="text-neutral-500">チェア画像</span>
-                </div>
+            <div className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+              <div className="h-64 overflow-hidden">
+                <OptimizedImage 
+                  src="/src/assets/machine/IMG_8645.jpeg" 
+                  alt="チェア" 
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                  loading="lazy"
+                  quality={85}
+                  format="webp"
+                  sizes="(max-width: 768px) 100vw, 33vw"
+                />
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-primary-700 mb-2">チェア</h3>
@@ -140,14 +143,23 @@ const Services: React.FC = () => {
                 理学療法士の知識と経験を活かし、科学的根拠に基づいたアプローチで、お客様の健康と美しさを引き出します。
               </p>
             </div>
-            <div className="bg-neutral-100 p-6 rounded-lg">
-              <div className="h-80 bg-neutral-200 rounded-lg mb-6 flex items-center justify-center">
-                {/* Remplacer par une image du studio lorsqu'elle sera disponible */}
-                <span className="text-neutral-500">スタジオイメージ</span>
+            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+              <div className="overflow-hidden">
+                <OptimizedImage 
+                  src="/src/assets/studio/Softis.png" 
+                  alt="Softisスタジオ" 
+                  className="w-full h-auto"
+                  loading="lazy"
+                  quality={90}
+                  format="webp"
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                />
               </div>
-              <p className="text-neutral-600 italic">
-                "自分の身体を大切にできるのは自分だけ。自分の身体を自分が1番愛してあげよう"
-              </p>
+              <div className="p-6">
+                <p className="text-neutral-600 italic">
+                  "自分の身体を大切にできるのは自分だけ。自分の身体を自分が1番愛してあげよう"
+                </p>
+              </div>
             </div>
           </div>
         </Container>

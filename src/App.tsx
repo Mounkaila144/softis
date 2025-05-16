@@ -12,6 +12,7 @@ import Instructors from './pages/Instructors';
 import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
+import Gallery from './pages/Gallery';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
             <Route path="booking" element={<Booking />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faq" element={<Faq />} />
+            <Route path="gallery" element={<Gallery />} />
           </Route>
         </Routes>
       </AnimatePresence>

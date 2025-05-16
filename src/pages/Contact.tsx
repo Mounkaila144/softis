@@ -5,6 +5,7 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 import Container from '../components/Container';
 import Section from '../components/Section';
 import Button from '../components/Button';
+import OptimizedImage from '../components/OptimizedImage';
 
 const Contact: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -17,15 +18,17 @@ const Contact: React.FC = () => {
     <>
       {/* Page Header */}
       <div className="relative pt-32 pb-16 text-white">
-        <div 
-          className="absolute inset-0 z-0" 
-          style={{
-            backgroundImage: `url('/src/assets/IMG/IMG_2364.jpeg')`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-          }}
-        />
-        <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <OptimizedImage
+            src="/src/assets/IMG/IMG_2364.jpeg"
+            alt="Contact background"
+            className="w-full h-full object-cover"
+            loading="eager"
+            quality={90}
+            format="webp"
+          />
+          <div className="absolute inset-0 bg-primary-900 bg-opacity-70 z-0" />
+        </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
             <motion.h1 
@@ -91,7 +94,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h3 className="text-xl font-bold text-primary-700 mb-2">メールアドレス</h3>
                     <p className="text-neutral-600">
-                      info@zenfitnesstokyo.jp
+                      info@softis.jp
                     </p>
                   </div>
                 </div>
@@ -135,10 +138,15 @@ const Contact: React.FC = () => {
             
             <div>
               <div className="h-96 bg-neutral-200 rounded-lg overflow-hidden mb-8">
-                {/* In a real implementation, this would be a Google Maps embed */}
-                <div className="w-full h-full bg-neutral-300 flex items-center justify-center">
-                  <p className="text-neutral-600 font-medium">Google Map would be embedded here</p>
-                </div>
+                {/* Google Maps embed */}
+                <iframe 
+                  loading="lazy"
+                  src="https://maps.google.com/maps?q=%E6%84%9B%E7%9F%A5%E7%9C%8C%E8%B1%8A%E7%94%B0%E5%B8%82%E8%8B%A5%E5%AE%AE%E7%94%BA1-26%20%E3%82%BB%E3%83%B3%E3%83%88%E3%83%A9%E3%83%AB%E3%83%93%E3%83%AB2%E9%9A%8E&#038;t=m&#038;z=20&#038;output=embed&#038;iwloc=near"
+                  title="愛知県豊田市若宮町1-26 セントラルビル2階"
+                  aria-label="愛知県豊田市若宮町1-26 セントラルビル2階"
+                  className="w-full h-full border-0"
+                  allowFullScreen
+                ></iframe>
               </div>
               
               <div className="bg-primary-50 rounded-lg p-6">
@@ -260,74 +268,7 @@ const Contact: React.FC = () => {
         </Container>
       </Section>
 
-      {/* FAQ Section */}
-      <Section>
-        <Container>
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-serif font-bold text-primary-700 mb-4">
-                よくある質問
-              </h2>
-              <p className="text-neutral-600 text-lg">
-                お客様からよくいただくご質問と回答をまとめました。
-                ご不明な点がございましたら、お気軽にお問い合わせください。
-              </p>
-            </div>
-            
-            <div className="space-y-6">
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-bold text-primary-700 mb-2">
-                  初めての方でも利用できますか？
-                </h3>
-                <p className="text-neutral-600">
-                  はい、フィットネス初心者の方も大歓迎です。経験豊富なトレーナーが、あなたのフィットネスレベルや目標に合わせてサポートします。
-                  まずは無料体験セッションでスタジオの雰囲気を体験してみてください。
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-bold text-primary-700 mb-2">
-                  予約はどのように行えばよいですか？
-                </h3>
-                <p className="text-neutral-600">
-                  ウェブサイトの予約ページ、お電話、または直接スタジオにてご予約いただけます。
-                  初回の方は、カウンセリングの時間を含めますので、余裕をもってご予約ください。
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-bold text-primary-700 mb-2">
-                  どのような設備がありますか？
-                </h3>
-                <p className="text-neutral-600">
-                  最新のトレーニングマシン、フリーウェイトエリア、ストレッチスペース、シャワールーム、ロッカールーム、
-                  リラクゼーションエリアなどを完備しています。すべての設備は清潔に保たれ、快適にご利用いただけます。
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-bold text-primary-700 mb-2">
-                  キャンセルポリシーを教えてください。
-                </h3>
-                <p className="text-neutral-600">
-                  予約の24時間前までにキャンセルのご連絡をいただいた場合は、キャンセル料は発生しません。
-                  24時間を切ったキャンセルについては、セッション料金の50%をキャンセル料として申し受けます。
-                </p>
-              </div>
-              
-              <div className="bg-white rounded-lg shadow-sm p-6">
-                <h3 className="text-lg font-bold text-primary-700 mb-2">
-                  持ち物は何が必要ですか？
-                </h3>
-                <p className="text-neutral-600">
-                  動きやすいスポーツウェアとスポーツシューズをご用意ください。タオルやドリンクは無料でご用意しておりますが、
-                  お好みのものをお持ちいただいても構いません。
-                </p>
-              </div>
-            </div>
-          </div>
-        </Container>
-      </Section>
+  
     </>
   );
 };

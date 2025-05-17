@@ -18,13 +18,10 @@ const Home: React.FC = () => {
   ];
   
   const heroTitles = [
-    "黒でなく白メインで使って欲しい\n" +
-    "フリー素材の画像はなるべく使わないで欲しい",
     "豊田市パーソナルピラティススタジオ\n",
   ];
   
   const heroSubtitles = [
-    "",
     "完全パーソナルレッスンをご提供。",
   ];
 
@@ -141,6 +138,10 @@ const Home: React.FC = () => {
           </div>
           
           {/* イメージカード */}
+          <h2 className="text-3xl md:text-4xl text-center font-serif font-bold text-black mb-4">
+            ピラティスをするとどうなるの？
+          </h2>
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-turquoise-100 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
@@ -192,48 +193,46 @@ const Home: React.FC = () => {
         </div>
         <Container className="relative z-10">
           <div className="max-w-3xl">
-            <motion.h1 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-4xl md:text-5xl font-serif font-bold mb-4 text-white"
-            >
-              スタジオについて
-            </motion.h1>
+        
             <motion.div 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-              <p className="text-xl text-white/90">
-                Softisでは、質の高いピラティス指導と最新のマシンで、あなたのカラダをサポートします。
-              </p>
-              <p className="text-xl text-white/90">
-                ピラティスリフォーマー、バレル、チェア、タワー、スパインコレクターなど多種に渡るマシンを取り揃えております。そのためお一人お一人に合わせたいろいろなエクササイズが可能となります。マシンの使い方はインストラクターから都度説明がありますのでご安心ください。
-              </p>
-              
               <div className="mt-8 bg-white/10 p-6 rounded-lg backdrop-blur-sm">
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                  なぜSoftisを選ぶべきか
+                  Softisはこんな人におすすめ
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">1</span>
                     <p className="text-white/90">
-                      <strong className="text-white">専門知識を持つインストラクター：</strong> 理学療法士の資格を持つインストラクターがあなたの体の状態を理解し、最適なエクササイズを提案します。
+                      身体が硬くてなんとなく調子が悪い
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">2</span>
                     <p className="text-white/90">
-                      <strong className="text-white">パーソナライズされたアプローチ：</strong> お一人お一人の体の状態、目標、ライフスタイルに合わせたカスタムプログラムを提供しています。
+                      肩首こりや腰、膝痛がある
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">3</span>
                     <p className="text-white/90">
-                      <strong className="text-white">豊富な設備：</strong> 最新のピラティス機器を完備し、多様なエクササイズが可能です。初心者から上級者まで対応可能です。
+                      自分の姿勢が気に入らない
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">4</span>
+                    <p className="text-white/90">
+                      グループピラティスレッスンでは満足できない、他の人の目が気になる
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">5</span>
+                    <p className="text-white/90">
+                      自分の身体の特徴が知りたい
                     </p>
                   </li>
                 </ul>
@@ -241,34 +240,40 @@ const Home: React.FC = () => {
               
               <div className="mt-8 bg-white/10 p-6 rounded-lg backdrop-blur-sm">
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                  スタジオの特徴
+                  ピラティスの効果（個人差はあります）
                 </h3>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  <div className="flex flex-col">
-                    <h4 className="text-white font-bold mb-2">駅近の好立地</h4>
-                    <p className="text-white/90 bg-white/20 p-3 rounded-lg flex-grow">
-                      名鉄豊田線 豊田市駅から徒歩1分の便利なロケーション。忙しい日常の中でもピラティスを継続しやすい環境です。
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">1</span>
+                    <p className="text-white/90">
+                      身体が適度に柔らかくなってスッキリ
                     </p>
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-white font-bold mb-2">完全パーソナル制</h4>
-                    <p className="text-white/90 bg-white/20 p-3 rounded-lg flex-grow">
-                      マンツーマンでのレッスンで、あなただけの時間と空間を確保。周りを気にせず集中できます。
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">2</span>
+                    <p className="text-white/90">
+                      痛みや疲れなど不調が和らぐ
                     </p>
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-white font-bold mb-2">清潔な環境</h4>
-                    <p className="text-white/90 bg-white/20 p-3 rounded-lg flex-grow">
-                      衛生管理を徹底し、いつでも清潔な空間でトレーニングできます。
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">3</span>
+                    <p className="text-white/90">
+                      姿勢が良くなりオーラが変わる
                     </p>
-                  </div>
-                  <div className="flex flex-col">
-                    <h4 className="text-white font-bold mb-2">健康と美容の両立</h4>
-                    <p className="text-white/90 bg-white/20 p-3 rounded-lg flex-grow">
-                      内側からのボディメイクで、健康と美しさの両方を実現します。
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">4</span>
+                    <p className="text-white/90">
+                      自律神経が整い思考が前向きになる
                     </p>
-                  </div>
-                </div>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">5</span>
+                    <p className="text-white/90">
+                      自分の身体の特徴を知れるため日常生活で意識すべきことがわかる
+                    </p>
+                  </li>
+                </ul>
               </div>
               
               <p className="text-white text-lg font-bold mt-4">
@@ -384,7 +389,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/IMG_1119.jpeg" 
+                  src="/src/assets/machine/IMG_1541.jpeg" 
                   alt="ピラティスバレル" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -411,7 +416,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/IMG_8645.jpeg" 
+                  src="/src/assets/machine/IMG_1542.jpeg" 
                   alt="ピラティスチェア" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -475,9 +480,10 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">専用マシン 2</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">タワ</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  身体の深層部の筋肉に効果的にアプローチできるように設計された高性能マシン。
+                固定された台の上で動くバネを自由に扱いながら動きます
+
                 </p>
               </div>
             </motion.div>
@@ -502,9 +508,10 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">専用マシン 3</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">スパインコレクタ</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  プロフェッショナル仕様の最新ピラティスマシン。快適性と効果を両立します。
+                背骨の動きや形を修正するマシンです
+                身体がちがちさんはこちらの湾曲を使いながら背骨を動かしていくと動きやすくなる場合があります
                 </p>
               </div>
             </motion.div>

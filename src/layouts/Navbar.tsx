@@ -22,7 +22,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     { title: 'インストラクター', path: '/instructors' },
     { title: 'アクセス', path: '/contact' },
     { title: 'よくある質問', path: '/faq' },
-    { title: 'ギャラリー', path: '/gallery' },
     { title: 'ブログ', path: '/blog' },
   ];
 

@@ -78,22 +78,33 @@ const Gallery: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl md:text-5xl font-serif font-bold mb-4 text-white"
             >
-              Notre Galerie
+              ギャラリー
             </motion.h1>
+            <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mb-6"></div>
             <motion.p 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
               className="text-xl text-white/90"
             >
-              Découvrez notre studio et nos équipements à travers cette galerie d'images.
+              スタジオと設備の写真をご覧ください。
             </motion.p>
           </div>
         </Container>
       </OptimizedBackgroundImage>
 
-      <Section>
+      <Section className="bg-turquoise-50">
         <Container>
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-serif font-bold text-turquoise-700 mb-4">
+              スタジオフォト
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
+            <p className="text-gray-800 text-lg max-w-2xl mx-auto bg-white/80 p-3 rounded-lg shadow-sm">
+              当スタジオの設備と雰囲気をご覧ください
+            </p>
+          </div>
+
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {images.map((image, index) => (
               <motion.div
@@ -101,7 +112,7 @@ const Gallery: React.FC = () => {
                 initial={{ opacity: 0, y: 50 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="bg-turquoise-200 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
+                className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <OptimizedImage 
@@ -114,9 +125,9 @@ const Gallery: React.FC = () => {
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
-                <div className="p-4">
-                  <h3 className="font-bold text-primary-700">{image.alt}</h3>
-                  <p className="text-white text-sm">{image.description}</p>
+                <div className="p-6">
+                  <h3 className="font-bold text-turquoise-700 mb-2">{image.alt}</h3>
+                  <p className="text-gray-800 bg-white/80 p-2 rounded-lg shadow-sm text-sm">{image.description}</p>
                 </div>
               </motion.div>
             ))}

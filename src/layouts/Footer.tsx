@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter } from 'lucide-react';
+import { MapPin, Instagram } from 'lucide-react';
 import Container from '../components/Container';
 
 const Footer: React.FC = () => {
@@ -9,9 +9,9 @@ const Footer: React.FC = () => {
   return (
     <footer className="bg-turquoise-700 text-white pt-16 pb-8">
       <Container>
-        <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
           {/* Brand */}
-          <div className="lg:col-span-1">
+          <div className="md:col-span-1">
             <Link to="/" className="flex items-center mb-4">
               <img 
                 src="/src/assets/logo.png"
@@ -19,21 +19,19 @@ const Footer: React.FC = () => {
                 className="h-8 w-auto mr-2 filter brightness-0 invert"
               />
               <span className="font-serif font-bold text-xl">
-                softis
+                Softis
               </span>
             </Link>
             <p className="text-neutral-300 mb-6">
-              自分を超える、毎日を変える。東京で最も洗練されたフィットネス体験をあなたに。
+              理学療法士が導く豊田市のパーソナルピラティススタジオ
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-gold-400 transition-colors">
-                <Instagram size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-gold-400 transition-colors">
-                <Facebook size={20} />
-              </a>
-              <a href="#" className="text-white hover:text-gold-400 transition-colors">
-                <Twitter size={20} />
+              <a href="https://www.instagram.com/softis__pilates/?igsh=bTZ5d2Z2NzgwZGQw" 
+                 target="_blank" 
+                 rel="noopener noreferrer" 
+                 className="text-white hover:text-gold-400 transition-colors flex items-center">
+                <Instagram size={20} className="mr-2" />
+                <span>@softis__pilates</span>
               </a>
             </div>
           </div>
@@ -43,55 +41,33 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-bold mb-4">クイックリンク</h3>
             <ul className="space-y-2">
               <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">ホーム</Link></li>
-              <li><Link to="/services" className="text-neutral-300 hover:text-white transition-colors">サービス</Link></li>
               <li><Link to="/instructors" className="text-neutral-300 hover:text-white transition-colors">インストラクター</Link></li>
-              <li><Link to="/booking" className="text-neutral-300 hover:text-white transition-colors">予約</Link></li>
+              <li><Link to="/pricing" className="text-neutral-300 hover:text-white transition-colors">料金</Link></li>
               <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">アクセス</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h3 className="text-lg font-bold mb-4">サービス</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">パーソナルトレーニング</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">グループセッション</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">ボディメイク</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">ヨガ & マインドフルネス</a></li>
-              <li><a href="#" className="text-neutral-300 hover:text-white transition-colors">栄養カウンセリング</a></li>
+              <li><Link to="/gallery" className="text-neutral-300 hover:text-white transition-colors">ギャラリー</Link></li>
+              <li><Link to="/faq" className="text-neutral-300 hover:text-white transition-colors">よくある質問</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">お問い合わせ</h3>
-            <ul className="space-y-4">
-              <li className="flex">
-                <MapPin className="mr-2 flex-shrink-0 text-turquoise-400" size={20} />
-                <span className="text-neutral-300">〒106-0032 東京都港区六本木6-10-1 六本木ヒルズ森タワー</span>
-              </li>
-              <li className="flex">
-                <Phone className="mr-2 flex-shrink-0 text-turquoise-400" size={20} />
-                <span className="text-neutral-300">03-1234-5678</span>
-              </li>
-              <li className="flex">
-                <Mail className="mr-2 flex-shrink-0 text-turquoise-400" size={20} />
-                <span className="text-neutral-300">info@zenftitnesstokyo.jp</span>
-              </li>
-            </ul>
+            <h3 className="text-lg font-bold mb-4">アクセス</h3>
+            <div className="flex">
+              <MapPin className="mr-2 flex-shrink-0 text-turquoise-400" size={20} />
+              <span className="text-neutral-300">愛知県豊田市若宮町1-26 セントラルビル2階</span>
+            </div>
+            <p className="text-neutral-300 mt-4">
+              名鉄豊田線 豊田市駅より徒歩1分
+            </p>
           </div>
         </div>
 
         <hr className="border-primary-700 mb-8" />
 
-        <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-neutral-400 text-sm mb-4 md:mb-0">
-            &copy; {currentYear} softis. All rights reserved.
+        <div className="text-center">
+          <p className="text-neutral-400 text-sm">
+            &copy; {currentYear} Softis. All rights reserved.
           </p>
-          <div className="flex space-x-4 text-sm text-neutral-400">
-            <a href="#" className="hover:text-white transition-colors">プライバシーポリシー</a>
-            <a href="#" className="hover:text-white transition-colors">利用規約</a>
-          </div>
         </div>
       </Container>
     </footer>

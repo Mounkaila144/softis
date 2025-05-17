@@ -1,0 +1,25 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Règles pour la collection de questions (FAQ)
+    match /questions/{questionId} {
+      // Tout le monde peut lire les questions
+      allow read: if true;
+      
+      // Seuls les utilisateurs authentifiés peuvent créer des questions
+      allow create: if true;
+      
+      // Seuls les administrateurs peuvent modifier/supprimer des questions
+      allow update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+    
+    // Règles pour la collection de blog
+    match /blog/{postId} {
+      // Tout le monde peut lire les articles publiés
+      allow read: if true;
+      
+      // Seuls les administrateurs peuvent créer, modifier ou supprimer des articles
+      allow create, update, delete: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+} 

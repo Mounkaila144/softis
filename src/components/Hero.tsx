@@ -65,7 +65,7 @@ const Hero: React.FC<HeroProps> = ({
           <div className="absolute inset-0">
             {/* Utilisation de la div en background pour maintenir la compatibilité */}
             <div
-              className="absolute inset-0 bg-turquoise-200"
+              className="absolute inset-0 bg-turquoise-100"
               style={{
                 opacity: loadedImages[currentImageIndex] ? 0 : 1,
                 transition: 'opacity 0.5s ease',
@@ -81,7 +81,7 @@ const Hero: React.FC<HeroProps> = ({
               onLoad={() => handleImageLoad(currentImageIndex)}
             />
           </div>
-          <div className="absolute inset-0 bg-primary-900 bg-opacity-40" />
+          <div className="absolute inset-0 bg-turquoise-900 bg-opacity-40" />
         </motion.div>
       </AnimatePresence>
 
@@ -111,7 +111,7 @@ const Hero: React.FC<HeroProps> = ({
               }}
               className={`w-2 h-2 rounded-full transition-all duration-300 ${
                 index === currentImageIndex
-                  ? 'bg-turquoise-200 w-8'
+                  ? 'bg-turquoise-500 w-8'
                   : 'bg-white/50 hover:bg-white/75'
               }`}
               aria-label={`Go to slide ${index + 1}`}
@@ -153,7 +153,7 @@ const Hero: React.FC<HeroProps> = ({
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6 }}
           >
-            <Button variant="gold" size="lg" onClick={onCtaClick}>
+            <Button variant="primary" size="lg" onClick={onCtaClick}>
               {ctaText}
             </Button>
           </motion.div>

@@ -36,54 +36,64 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
   const [loaded, setLoaded] = useState(false);
   const [imgSrc, setImgSrc] = useState(placeholder || createPlaceholder());
   const [error, setError] = useState(false);
+  const [attemptedFallback, setAttemptedFallback] = useState(false);
 
   useEffect(() => {
-    // Préchargement de l'image optimisée
-    const img = new Image();
-    
-    // Utiliser l'URL optimisée
-    const optimizedSrc = getOptimizedImageUrl(src, { 
-      width, 
-      height, 
-      quality,
-      format 
-    });
-    
-    img.src = optimizedSrc;
-    
-    img.onload = () => {
-      setImgSrc(optimizedSrc);
-      setLoaded(true);
-      if (onLoad) onLoad();
-    };
-    
-    img.onerror = () => {
-      // En cas d'erreur, tenter avec un chemin alternatif
-      if (src.startsWith('/src/assets/') && !import.meta.env.DEV) {
-        // Essayer avec le chemin original (sans modification)
-        const originalPath = import.meta.env.BASE_URL + src.substring(1);
-        
-        const fallbackImg = new Image();
-        fallbackImg.src = originalPath;
-        
-        fallbackImg.onload = () => {
-          setImgSrc(originalPath);
-          setLoaded(true);
-          if (onLoad) onLoad();
-        };
-        
-        fallbackImg.onerror = () => {
+    // Réinitialiser les états lors du changement de source
+    if (!attemptedFallback) {
+      const img = new Image();
+      
+      // Utiliser l'URL optimisée
+      const optimizedSrc = getOptimizedImageUrl(src, { 
+        width, 
+        height, 
+        quality,
+        format 
+      });
+      
+      img.src = optimizedSrc;
+      
+      img.onload = () => {
+        setImgSrc(optimizedSrc);
+        setLoaded(true);
+        if (onLoad) onLoad();
+      };
+      
+      img.onerror = () => {
+        // En cas d'erreur, tenter avec un chemin alternatif
+        if (src.startsWith('/src/assets/') && !import.meta.env.DEV) {
+          setAttemptedFallback(true);
+          // Essayer avec le chemin original (sans modification)
+          const originalPath = import.meta.env.BASE_URL + src.substring(1);
+          
+          const fallbackImg = new Image();
+          fallbackImg.src = originalPath;
+          
+          fallbackImg.onload = () => {
+            setImgSrc(originalPath);
+            setLoaded(true);
+            if (onLoad) onLoad();
+          };
+          
+          fallbackImg.onerror = () => {
+            setError(true);
+            // Si tous les chemins échouent, utiliser l'image source originale
+            setImgSrc(src);
+          };
+        } else {
           setError(true);
-          // Si tous les chemins échouent, utiliser l'image source originale
+          // Utiliser l'image source originale
           setImgSrc(src);
-        };
-      } else {
-        setError(true);
-        // Utiliser l'image source originale
-        setImgSrc(src);
-      }
+        }
+      };
+    }
+    
+    // Nettoyage lors du démontage
+    return () => {
+      // Réinitialiser l'état en cas de changement de source
+      setAttemptedFallback(false);
     };
-  }, [src, width, height, quality, format, onLoad]);
+  }, [src]); // Ne dépend que de src, pas des options de formatage
 
   // Générer un srcset approprié
   const srcSet = !error ? generateSrcSet(src, {
@@ -111,8 +121,9 @@ const OptimizedImage: React.FC<OptimizedImageProps> = ({
       srcSet={srcSet}
       onLoad={() => setLoaded(true)}
       onError={() => {
-        // En cas d'erreur, tenter avec un chemin alternatif
-        if (src.startsWith('/src/assets/') && !error && !import.meta.env.DEV) {
+        // Éviter les tentatives multiples qui pourraient causer une boucle
+        if (src.startsWith('/src/assets/') && !error && !import.meta.env.DEV && !attemptedFallback) {
+          setAttemptedFallback(true);
           // Essayer avec le chemin original (sans modification)
           const originalPath = import.meta.env.BASE_URL + src.substring(1);
           setImgSrc(originalPath);

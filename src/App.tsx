@@ -7,12 +7,20 @@ import MainLayout from './layouts/MainLayout';
 
 // Pages
 import Home from './pages/Home';
-import Services from './pages/Services';
+import Pricing from './pages/Pricing';
 import Instructors from './pages/Instructors';
-import Booking from './pages/Booking';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import Gallery from './pages/Gallery';
+import Questions from './pages/Questions';
+import Admin from './pages/Admin';
+import AdminLogin from './pages/AdminLogin';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
+import NewBlogPost from './pages/NewBlogPost';
+import EditBlogPost from './pages/EditBlogPost';
+import BlogAdmin from './pages/BlogAdmin';
+import FirebaseAdmin from './pages/FirebaseAdmin';
 
 function App() {
   return (
@@ -21,13 +29,21 @@ function App() {
         <Routes>
           <Route path="/" element={<MainLayout />}>
             <Route index element={<Home />} />
-            <Route path="services" element={<Services />} />
+            <Route path="pricing" element={<Pricing />} />
             <Route path="instructors" element={<Instructors />} />
-            <Route path="booking" element={<Booking />} />
             <Route path="contact" element={<Contact />} />
             <Route path="faq" element={<Faq />} />
             <Route path="gallery" element={<Gallery />} />
+            <Route path="questions" element={<Questions />} />
+            <Route path="blog" element={<Blog />} />
+            <Route path="blog/:id" element={<BlogPost />} />
+            <Route path="blog/new" element={<NewBlogPost />} />
+            <Route path="blog/:id/edit" element={<EditBlogPost />} />
           </Route>
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin" element={<Admin />} />
+          <Route path="/admin/blog" element={<BlogAdmin />} />
+          <Route path="/admin/firebase" element={<FirebaseAdmin />} />
         </Routes>
       </AnimatePresence>
     </Router>

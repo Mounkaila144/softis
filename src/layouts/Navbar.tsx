@@ -3,7 +3,6 @@ import { Link, NavLink } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Container from '../components/Container';
-import Button from '../components/Button';
 import OptimizedImage from '../components/OptimizedImage';
 
 type NavbarProps = {
@@ -18,19 +17,23 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   };
 
   const navItems = [
-    { title: 'プレゼンテーション', path: '/' },
-    { title: 'スタジオについて', path: '/services' },
+    { title: 'ホーム', path: '/' },
+    { title: '料金', path: '/pricing' },
+    { title: 'インストラクター', path: '/instructors' },
     { title: 'アクセス', path: '/contact' },
-    { title: 'ご利用の流れ', path: '/booking' },
     { title: 'よくある質問', path: '/faq' },
     { title: 'ギャラリー', path: '/gallery' },
+    { title: 'ブログ', path: '/blog' },
   ];
+
+  // Le header aura l'apparence scrollée si scrolled est true OU si le menu mobile est ouvert
+  const headerScrolledStyle = scrolled || mobileMenuOpen;
 
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled 
-          ? 'bg-turquoise-200 shadow-md py-3' 
+        headerScrolledStyle 
+          ? 'bg-turquoise-100 shadow-md py-3' 
           : 'bg-transparent py-5'
       }`}
     >
@@ -42,8 +45,8 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
               <div 
                 className="absolute top-1/2 transform -translate-y-1/2" 
                 style={{ 
-                  height: scrolled ? '80px' : '100px',
-                  marginTop: scrolled ? '0px' : '5px'
+                  height: headerScrolledStyle ? '60px' : '80px',
+                  marginTop: headerScrolledStyle ? '0px' : '5px'
                 }}
               >
                   <OptimizedImage
@@ -67,10 +70,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 to={item.path}
                 className={({ isActive }) => 
                   `font-medium transition-colors relative ${
-                    scrolled 
+                    headerScrolledStyle 
                       ? isActive 
-                        ? 'text-primary-500'
-                        : 'text-neutral-700 hover:text-primary-500' 
+                        ? 'text-turquoise-500'
+                        : 'text-neutral-700 hover:text-turquoise-500' 
                       : isActive 
                         ? 'text-white'
                         : 'text-white/90 hover:text-white'
@@ -83,7 +86,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                     {isActive && (
                       <motion.span
                         layoutId="activeNavIndicator"
-                        className={`absolute -bottom-1 left-0 right-0 h-0.5 ${scrolled ? 'bg-turquoise-2000' : 'bg-turquoise-200'}`}
+                        className={`absolute -bottom-1 left-0 right-0 h-0.5 ${headerScrolledStyle ? 'bg-turquoise-500' : 'bg-turquoise-100'}`}
                         transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                       />
                     )}
@@ -101,9 +104,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             aria-label="Toggle Menu"
           >
             {mobileMenuOpen ? (
-              <X className={scrolled ? 'text-primary-500' : 'text-white'} size={24} />
+              <X className={headerScrolledStyle ? 'text-primary-500' : 'text-white'} size={24} />
             ) : (
-              <Menu className={scrolled ? 'text-primary-500' : 'text-white'} size={24} />
+              <Menu className={headerScrolledStyle ? 'text-primary-500' : 'text-white'} size={24} />
             )}
           </button>
         </div>
@@ -117,7 +120,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-turquoise-200"
+            className="md:hidden bg-turquoise-300"
           >
             <Container>
               <div className="py-4 space-y-4">
@@ -133,9 +136,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                     {item.title}
                   </NavLink>
                 ))}
-                <Button variant="gold" size="sm" className="w-full">
-                  無料体験
-                </Button>
               </div>
             </Container>
           </motion.div>

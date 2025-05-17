@@ -18,7 +18,7 @@ const InstructorCard: React.FC<InstructorCardProps> = ({
 }) => {
   return (
     <motion.div 
-      className="bg-turquoise-200 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
+      className="bg-turquoise-100 rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow duration-300"
       whileHover={{ y: -5 }}
     >
       <div className="aspect-[3/4] overflow-hidden">
@@ -41,7 +41,7 @@ const InstructorCard: React.FC<InstructorCardProps> = ({
             {specialties.map((specialty, index) => (
               <span 
                 key={index} 
-                className="bg-turquoise-200 text-primary-700 text-sm px-3 py-1 rounded-full"
+                className="bg-turquoise-100 text-primary-700 text-sm px-3 py-1 rounded-full"
               >
                 {specialty}
               </span>

@@ -26,7 +26,7 @@ const MainLayout: React.FC = () => {
   }, [pathname]);
 
   return (
-    <div className="flex flex-col min-h-screen font-sans bg-turquoise-200">
+    <div className="flex flex-col min-h-screen font-sans bg-turquoise-100">
       <Navbar scrolled={scrolled} />
       
       <main className="flex-grow">

@@ -14,6 +14,13 @@ const AdminNavBar: React.FC<AdminNavBarProps> = ({ onLogout }) => {
   return (
     <div className="mb-6 flex flex-wrap items-center justify-between bg-white rounded-xl shadow p-2 mb-6">
       <div className="flex items-center space-x-2 overflow-x-auto pb-2 sm:pb-0">
+      <Link 
+          to="/admin/translations" 
+          className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${location.pathname === '/admin/translations' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
+        >
+          <Globe className="h-4 w-4" />
+          <span>{t('admin.translations')}</span>
+        </Link>
         <Link 
           to="/admin" 
           className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${location.pathname === '/admin' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
@@ -29,22 +36,9 @@ const AdminNavBar: React.FC<AdminNavBarProps> = ({ onLogout }) => {
           <BookOpen className="h-4 w-4" />
           <span>{t('admin.blog')}</span>
         </Link>
+     
         
-        <Link 
-          to="/admin/firebase" 
-          className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${location.pathname === '/admin/firebase' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-        >
-          <Database className="h-4 w-4" />
-          <span>{t('admin.firebase')}</span>
-        </Link>
-        
-        <Link 
-          to="/admin/translations" 
-          className={`px-4 py-2 rounded-lg flex items-center space-x-2 ${location.pathname === '/admin/translations' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-700 hover:bg-gray-200'}`}
-        >
-          <Globe className="h-4 w-4" />
-          <span>{t('admin.translations')}</span>
-        </Link>
+     
       </div>
       
       <div className="flex items-center space-x-3">

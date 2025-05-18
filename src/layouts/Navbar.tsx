@@ -4,6 +4,8 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import Container from '../components/Container';
 import OptimizedImage from '../components/OptimizedImage';
+import { LanguageSelector, useTranslation } from '../i18n/useTranslation';
+import '../i18n/languageSelector.css';
 
 type NavbarProps = {
   scrolled: boolean;
@@ -11,21 +13,21 @@ type NavbarProps = {
 
 const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { t } = useTranslation();
 
   const toggleMobileMenu = () => {
     setMobileMenuOpen(!mobileMenuOpen);
   };
 
   const navItems = [
-    { title: 'ホーム', path: '/' },
-    { title: '料金', path: '/pricing' },
-    { title: 'インストラクター', path: '/instructors' },
-    { title: 'アクセス', path: '/contact' },
-    { title: 'よくある質問', path: '/faq' },
-    { title: 'ブログ', path: '/blog' },
+    { title: t('common.home'), path: '/' },
+    { title: t('common.pricing'), path: '/pricing' },
+    { title: t('common.instructors'), path: '/instructors' },
+    { title: t('common.contact'), path: '/contact' },
+    { title: t('common.faq'), path: '/faq' },
+    { title: t('common.blog'), path: '/blog' },
   ];
 
-  // Le header aura l'apparence scrollée si scrolled est true OU si le menu mobile est ouvert
   const headerScrolledStyle = scrolled || mobileMenuOpen;
 
   return (
@@ -38,7 +40,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
     >
       <Container>
         <div className="flex items-center justify-between h-16 md:h-20 relative">
-          {/* Logo - positioned absolutely to avoid shifting layout */}
           <div className="relative z-10" style={{ width: '130px', height: '20px' }}>
             <Link to="/" className="block">
               <div 
@@ -61,8 +62,9 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8 ml-auto">
+            <LanguageSelector />
+            
             {navItems.map((item) => (
               <NavLink
                 key={item.path}
@@ -96,7 +98,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           
           </nav>
 
-          {/* Mobile Menu Toggle */}
           <button 
             onClick={toggleMobileMenu}
             className="md:hidden p-2"
@@ -111,7 +112,6 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
         </div>
       </Container>
 
-      {/* Mobile Menu */}
       <AnimatePresence>
         {mobileMenuOpen && (
           <motion.div
@@ -123,6 +123,10 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
           >
             <Container>
               <div className="py-4 space-y-4">
+                <div className="flex justify-start py-2">
+                  <LanguageSelector />
+                </div>
+                
                 {navItems.map((item) => (
                   <NavLink
                     key={item.path}

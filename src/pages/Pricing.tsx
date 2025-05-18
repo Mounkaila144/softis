@@ -4,10 +4,22 @@ import Section from '../components/Section';
 import Container from '../components/Container';
 import OptimizedBackgroundImage from '../components/OptimizedBackgroundImage';
 import Button from '../components/Button';
-import { Gem, Calendar, Award, Tag, Gift, Clock, Coins, CreditCard, Check, Users, CircleDollarSign, ClipboardCheck, Zap, Medal } from 'lucide-react';
+import { Gem, Calendar, Award, Tag, Gift, Clock, Coins, CreditCard, Check, Users, CircleDollarSign, ClipboardCheck, Zap, Medal, LucideIcon } from 'lucide-react';
+import { useTranslation } from '../i18n/useTranslation';
 
 // Nouveau composant pour remplacer ProgramCard avec des icônes
-const PriceCard = ({ 
+interface PriceCardProps {
+  title: string;
+  description: string;
+  price: string;
+  features: string[];
+  icon: LucideIcon;
+  color?: "turquoise" | "gold" | "pink";
+  ctaText: string;
+  popular?: boolean;
+}
+
+const PriceCard: React.FC<PriceCardProps> = ({ 
   title, 
   description, 
   price, 
@@ -17,6 +29,7 @@ const PriceCard = ({
   ctaText, 
   popular = false 
 }) => {
+  const { t } = useTranslation();
   const colorStyles = {
     turquoise: "bg-gradient-to-br from-turquoise-50 via-turquoise-100/30 to-white",
     gold: "bg-gradient-to-br from-gold-50 via-gold-100/30 to-white",
@@ -32,7 +45,7 @@ const PriceCard = ({
     >
       {popular && (
         <div className="absolute top-4 right-4 bg-gold-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-          おすすめ here you can change
+          {t('pricing.recommended')}
         </div>
       )}
       
@@ -69,6 +82,8 @@ const PriceCard = ({
 };
 
 const Pricing = () => {
+  const { t } = useTranslation();
+  
   return (
     <div className="min-h-screen">
       {/* En-tête de page avec fond coloré au lieu d'une image */}
@@ -87,7 +102,7 @@ const Pricing = () => {
                 transition={{ duration: 0.6 }}
                 className="text-4xl md:text-5xl font-serif font-bold mb-4"
             >
-              料金案内
+              {t('pricing.title')}
             </motion.h1>
             <motion.p
                 initial={{ opacity: 0, y: 20 }}
@@ -95,7 +110,7 @@ const Pricing = () => {
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className="text-xl text-white/90"
             >
-              あなたのニーズに合わせたさまざまなオプションをご用意しています
+              {t('pricing.subtitle')}
             </motion.p>
           </div>
         </Container>
@@ -106,65 +121,64 @@ const Pricing = () => {
         <Container>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-turquoise-700 mb-4">
-              料金表
+              {t('pricing.priceList')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
             <p className="text-gray-800 text-lg p-3 bg-white/80 rounded-lg shadow-sm max-w-2xl mx-auto">
-              オープニングキャンペーン料金　先着20名様
+              {t('pricing.openingCampaign')}
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {/* Program 1 */}
             <PriceCard
-              title="初回体験"
-              description="特別価格でトレーニングを体験できます。"
-              price="3000円"
+              title={t('pricing.firstTrial')}
+              description={t('pricing.firstTrialDesc')}
+              price={t('pricing.firstTrialPrice')}
               features={[
-                "通常価格: 5000円",
-                "専門的なフィットネス評価",
-                "個別プログラム",
-                "栄養アドバイス",
-                "先着20名様限定"
+                t('pricing.normalPrice'),
+                t('pricing.professionalEvaluation'),
+                t('pricing.individualProgram'),
+                t('pricing.nutritionAdvice'),
+                t('pricing.limitedOffer')
               ]}
               icon={Gift}
               color="turquoise"
-              ctaText="予約する"
+              ctaText={t('pricing.bookNow')}
               popular
             />
 
             {/* Program 2 */}
             <PriceCard
-              title="5回券"
-              description="フレキシブルな利用が可能なお得なチケット。"
-              price="39000円"
+              title={t('pricing.fiveTickets')}
+              description={t('pricing.fiveTicketsDesc')}
+              price={t('pricing.fiveTicketsPrice')}
               features={[
-                "通常価格: 42000円",
-                "1回あたり 7800円",
-                "有効期限: 3ヶ月",
-                "現金・クレジットカード払い可能",
-                "パーソナルフォロー"
+                t('pricing.perSession'),
+                t('pricing.validityMonths'),
+                t('pricing.paymentOptions'),
+                t('pricing.personalFollow')
               ]}
               icon={Calendar}
               color="pink"
-              ctaText="選択する"
+              ctaText={t('pricing.choose')}
             />
 
             {/* Program 3 */}
             <PriceCard
-              title="10回券"
-              description="定期的なトレーニングと持続的な結果を望む方に最適。"
-              price="80000円"
+              title={t('pricing.tenTickets')}
+              description={t('pricing.tenTicketsDesc')}
+              price={t('pricing.tenTicketsPrice')}
               features={[
-                "1回あたり 8000円",
-                "有効期限: 5ヶ月",
-                "現金または銀行振込のみ",
-                "オーダーメイドプログラム",
-                "詳細な進捗管理"
+                t('pricing.perSession2'),
+                t('pricing.validityMonths2'),
+                t('pricing.cashOrBankTransfer'),
+                t('pricing.customProgram'),
+                t('pricing.detailedProgress')
               ]}
               icon={Award}
               color="turquoise"
-              ctaText="選択する"
+              ctaText={t('pricing.choose')}
             />
           </div>
         </Container>
@@ -175,11 +189,11 @@ const Pricing = () => {
         <Container>
           <div className="mb-16 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-turquoise-700 mb-4">
-              料金詳細
+              {t('pricing.priceDetails')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
             <p className="text-gray-800 text-lg p-3 bg-white/80 rounded-lg shadow-sm max-w-2xl mx-auto">
-              オープニングキャンペーン：先着20名様限定の特別オファー！
+              {t('pricing.openingCampaignDetails')}
             </p>
           </div>
 
@@ -190,12 +204,12 @@ const Pricing = () => {
                 <Tag className="h-8 w-8 text-turquoise-600" />
               </div>
               <div className="flex-grow">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-3 text-center md:text-left">入会・管理金</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-3 text-center md:text-left">{t('pricing.membershipFee')}</h3>
                 <p className="text-gray-800 mb-4 p-3 bg-white/80 rounded-lg">
                   <span className="line-through text-gray-500">5500円</span>
                   <span className="text-turquoise-700 font-bold text-xl ml-3">0円</span>
                   <br />
-                  オープニングキャンペーンとして、先着20名様は入会金無料！
+                  {t('pricing.membershipFeeDesc')}
                 </p>
               </div>
             </div>
@@ -206,11 +220,11 @@ const Pricing = () => {
                 <Coins className="h-8 w-8 text-gold-500" />
               </div>
               <div className="flex-grow">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-3 text-center md:text-left">単発</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-3 text-center md:text-left">{t('pricing.singleSession')}</h3>
                 <p className="text-gray-800 mb-4 p-3 bg-white/80 rounded-lg">
-                  <span className="text-turquoise-700 font-bold text-xl">9000円</span> / 1回
+                  <span className="text-turquoise-700 font-bold text-xl">{t('pricing.singleSessionPrice')}</span>
                   <br />
-                  現金またはクレジットカードでのお支払いが可能です。
+                  {t('pricing.singleSessionDesc')}
                 </p>
               </div>
             </div>
@@ -223,7 +237,7 @@ const Pricing = () => {
         <Container>
           <div className="mb-12 text-center max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-turquoise-700 mb-4">
-              お支払い・キャンセルについて
+              {t('pricing.paymentAndCancellation')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
           </div>
@@ -231,20 +245,20 @@ const Pricing = () => {
           <div className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg p-6 mb-8">
             <div className="flex items-center mb-4">
               <CreditCard className="h-6 w-6 text-turquoise-500 mr-3" />
-              <h3 className="text-xl font-bold text-turquoise-700">お支払い方法</h3>
+              <h3 className="text-xl font-bold text-turquoise-700">{t('pricing.paymentMethods')}</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <Clock className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">※回数券は有効期限がございます。5回券→3ヶ月 10回券→5ヶ月</span>
+                <span className="text-gray-700">{t('pricing.ticketValidity')}</span>
               </li>
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <CreditCard className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">※体験料金、入会金、単発券、5回券は以下のお支払い方法から選択できます。現金、クレジットカード</span>
+                <span className="text-gray-700">{t('pricing.paymentOptionsDetails')}</span>
               </li>
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <CircleDollarSign className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">※ 10回券は現金払いもしくは銀行振り込み（手数料はお客様負担となります）でのみお支払いが可能です。</span>
+                <span className="text-gray-700">{t('pricing.tenTicketPayment')}</span>
               </li>
             </ul>
           </div>
@@ -252,20 +266,20 @@ const Pricing = () => {
           <div className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg p-6">
             <div className="flex items-center mb-4">
               <ClipboardCheck className="h-6 w-6 text-turquoise-500 mr-3" />
-              <h3 className="text-xl font-bold text-turquoise-700">キャンセルポリシー</h3>
+              <h3 className="text-xl font-bold text-turquoise-700">{t('pricing.cancellationPolicy')}</h3>
             </div>
             <ul className="space-y-3">
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <Check className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">・レッスンの変更やキャンセルはレッスン前日の午前9時までに予約サイトから操作をしてください。</span>
+                <span className="text-gray-700">{t('pricing.cancelPolicyRule1')}</span>
               </li>
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <Check className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">それ以降のキャンセルは公式LINEにご連絡ください。</span>
+                <span className="text-gray-700">{t('pricing.cancelPolicyRule2')}</span>
               </li>
               <li className="flex items-start p-3 bg-white/80 rounded-lg">
                 <Check className="h-5 w-5 text-turquoise-500 mr-3 mt-0.5 flex-shrink-0" />
-                <span className="text-gray-700">その場合レッスン料100%の金額もしくは回数券1回消費の対応をさせていただきますのでご了承をお願いいたします。（例外もありますのでご相談ください）。</span>
+                <span className="text-gray-700">{t('pricing.cancelPolicyRule3')}</span>
               </li>
             </ul>
           </div>

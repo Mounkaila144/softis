@@ -256,8 +256,8 @@ const BlogAdmin: React.FC = () => {
         <Container>
           <AdminNavBar onLogout={handleLogout} />
           
-          <div className="mb-6 flex flex-wrap justify-between items-center">
-            <div className="flex items-center space-x-2">
+          <div className="mb-6 flex flex-col sm:flex-row flex-wrap justify-between items-center gap-4">
+            <div className="flex items-center space-x-2 w-full sm:w-auto">
               <h2 className="text-2xl font-bold text-gray-800">記事一覧</h2>
               <Link 
                 to="/blog/new" 
@@ -266,7 +266,7 @@ const BlogAdmin: React.FC = () => {
                 新規作成
               </Link>
             </div>
-            <div className="flex items-center space-x-4 mt-4 sm:mt-0">
+            <div className="flex items-center space-x-4 w-full sm:w-auto justify-end">
               <div className="flex items-center space-x-2 p-2 border border-gray-300 rounded-lg bg-white">
                 <button 
                   className={`p-1 rounded ${filter === 'all' ? 'bg-purple-100 text-purple-600' : 'text-gray-500'}`}
@@ -308,71 +308,73 @@ const BlogAdmin: React.FC = () => {
           {filteredPosts.length > 0 ? (
             viewMode === 'list' ? (
               <div className="bg-white rounded-xl shadow overflow-hidden">
-                <table className="w-full">
-                  <thead className="bg-gray-50">
-                    <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">タイトル</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">著者</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日付</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ステータス</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">コメント</th>
-                      <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">アクション</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-gray-200">
-                    {filteredPosts.map(post => (
-                      <tr key={post.id} className="hover:bg-gray-50 cursor-pointer" onClick={() => handleSelectPost(post)}>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm font-medium text-gray-900 truncate max-w-xs">{post.title}</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">{post.author}</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">{formatDate(post.date)}</div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
-                            post.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                          }`}>
-                            {post.status === 'published' ? '公開' : '下書き'}
-                          </span>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap">
-                          <div className="text-sm text-gray-500">
-                            {post.comments.length} 
-                            <span className="ml-1 text-xs">
-                              ({post.comments.filter(c => c.status === 'pending').length} 未承認)
-                            </span>
-                          </div>
-                        </td>
-                        <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                          <div className="flex items-center justify-end space-x-2">
-                            <Link 
-                              to={`/blog/${post.id}/edit`} 
-                              className="text-indigo-600 hover:text-indigo-900"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <Edit2 className="h-4 w-4" />
-                            </Link>
-                            <button
-                              onClick={(e) => {
-                                e.stopPropagation();
-                                handleDeletePost(post.id);
-                              }}
-                              className="text-red-600 hover:text-red-900"
-                            >
-                              <Trash2 className="h-4 w-4" />
-                            </button>
-                          </div>
-                        </td>
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead className="bg-gray-50">
+                      <tr>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">タイトル</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">著者</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">日付</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">ステータス</th>
+                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">コメント</th>
+                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">アクション</th>
                       </tr>
-                    ))}
-                  </tbody>
-                </table>
+                    </thead>
+                    <tbody className="divide-y divide-gray-200">
+                      {filteredPosts.map(post => (
+                        <tr key={post.id} className="hover:bg-gray-50 cursor-pointer" onClick={() => handleSelectPost(post)}>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <div className="text-sm font-medium text-gray-900 truncate max-w-xs">{post.title}</div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap hidden md:table-cell">
+                            <div className="text-sm text-gray-500">{post.author}</div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap hidden sm:table-cell">
+                            <div className="text-sm text-gray-500">{formatDate(post.date)}</div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap">
+                            <span className={`px-2 inline-flex text-xs leading-5 font-semibold rounded-full ${
+                              post.status === 'published' ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+                            }`}>
+                              {post.status === 'published' ? '公開' : '下書き'}
+                            </span>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap hidden md:table-cell">
+                            <div className="text-sm text-gray-500">
+                              {post.comments.length} 
+                              <span className="ml-1 text-xs">
+                                ({post.comments.filter(c => c.status === 'pending').length} 未承認)
+                              </span>
+                            </div>
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <div className="flex items-center justify-end space-x-2">
+                              <Link 
+                                to={`/blog/${post.id}/edit`} 
+                                className="text-indigo-600 hover:text-indigo-900"
+                                onClick={(e) => e.stopPropagation()}
+                              >
+                                <Edit2 className="h-4 w-4" />
+                              </Link>
+                              <button
+                                onClick={(e) => {
+                                  e.stopPropagation();
+                                  handleDeletePost(post.id);
+                                }}
+                                className="text-red-600 hover:text-red-900"
+                              >
+                                <Trash2 className="h-4 w-4" />
+                              </button>
+                            </div>
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
               </div>
             ) : (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {filteredPosts.map(post => (
                   <div 
                     key={post.id}
@@ -459,65 +461,67 @@ const BlogAdmin: React.FC = () => {
             {pendingComments.length > 0 ? (
               <div className="bg-white rounded-xl shadow overflow-hidden">
                 <div className="max-h-[500px] overflow-y-auto">
-                  <table className="w-full">
-                    <thead className="bg-gray-50 sticky top-0 z-10">
-                      <tr>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">投稿者</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">記事</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">コメント</th>
-                        <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">日付</th>
-                        <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">アクション</th>
-                      </tr>
-                    </thead>
-                    <tbody className="divide-y divide-gray-200">
-                      {pendingComments.map(({postId, comment}) => {
-                        const post = posts.find(p => p.id === postId);
-                        
-                        return (
-                          <tr key={comment.id}>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="flex items-center">
-                                <div className="flex-shrink-0 h-8 w-8 bg-gray-100 rounded-full flex items-center justify-center">
-                                  <User className="h-4 w-4 text-gray-500" />
+                  <div className="overflow-x-auto">
+                    <table className="w-full">
+                      <thead className="bg-gray-50 sticky top-0 z-10">
+                        <tr>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">投稿者</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden md:table-cell">記事</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">コメント</th>
+                          <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider hidden sm:table-cell">日付</th>
+                          <th className="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">アクション</th>
+                        </tr>
+                      </thead>
+                      <tbody className="divide-y divide-gray-200">
+                        {pendingComments.map(({postId, comment}) => {
+                          const post = posts.find(p => p.id === postId);
+                          
+                          return (
+                            <tr key={comment.id}>
+                              <td className="px-6 py-4 whitespace-nowrap">
+                                <div className="flex items-center">
+                                  <div className="flex-shrink-0 h-8 w-8 bg-gray-100 rounded-full flex items-center justify-center">
+                                    <User className="h-4 w-4 text-gray-500" />
+                                  </div>
+                                  <div className="ml-3">
+                                    <div className="text-sm font-medium text-gray-900">{comment.author}</div>
+                                    <div className="text-xs text-gray-500 truncate max-w-[150px]">{comment.email}</div>
+                                  </div>
                                 </div>
-                                <div className="ml-3">
-                                  <div className="text-sm font-medium text-gray-900">{comment.author}</div>
-                                  <div className="text-xs text-gray-500">{comment.email}</div>
+                              </td>
+                              <td className="px-6 py-4 hidden md:table-cell">
+                                <div className="text-sm text-gray-900 truncate max-w-xs">
+                                  {post?.title || '不明な記事'}
                                 </div>
-                              </div>
-                            </td>
-                            <td className="px-6 py-4">
-                              <div className="text-sm text-gray-900 truncate max-w-xs">
-                                {post?.title || '不明な記事'}
-                              </div>
-                            </td>
-                            <td className="px-6 py-4">
-                              <div className="text-sm text-gray-500">{truncateText(comment.content, 100)}</div>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap">
-                              <div className="text-sm text-gray-500">{formatDate(comment.date)}</div>
-                            </td>
-                            <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                              <div className="flex items-center justify-end space-x-2">
-                                <button
-                                  onClick={() => handleApproveComment(postId, comment.id)}
-                                  className="text-green-600 hover:text-green-900"
-                                >
-                                  <CheckCircle className="h-4 w-4" />
-                                </button>
-                                <button
-                                  onClick={() => handleDeleteComment(postId, comment.id)}
-                                  className="text-red-600 hover:text-red-900"
-                                >
-                                  <Trash2 className="h-4 w-4" />
-                                </button>
-                              </div>
-                            </td>
-                          </tr>
-                        );
-                      })}
-                    </tbody>
-                  </table>
+                              </td>
+                              <td className="px-6 py-4">
+                                <div className="text-sm text-gray-500 line-clamp-2">{truncateText(comment.content, 100)}</div>
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap hidden sm:table-cell">
+                                <div className="text-sm text-gray-500">{formatDate(comment.date)}</div>
+                              </td>
+                              <td className="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                                <div className="flex items-center justify-end space-x-2">
+                                  <button
+                                    onClick={() => handleApproveComment(postId, comment.id)}
+                                    className="text-green-600 hover:text-green-900"
+                                  >
+                                    <CheckCircle className="h-4 w-4" />
+                                  </button>
+                                  <button
+                                    onClick={() => handleDeleteComment(postId, comment.id)}
+                                    className="text-red-600 hover:text-red-900"
+                                  >
+                                    <Trash2 className="h-4 w-4" />
+                                  </button>
+                                </div>
+                              </td>
+                            </tr>
+                          );
+                        })}
+                      </tbody>
+                    </table>
+                  </div>
                 </div>
               </div>
             ) : (

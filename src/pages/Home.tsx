@@ -2,6 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Seo from '../components/Seo';
+import { useTranslation } from '../i18n/useTranslation';
 
 import Hero from '../components/Hero';
 import Container from '../components/Container';
@@ -11,6 +12,7 @@ import OptimizedImage from '../components/OptimizedImage';
 
 const Home: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   const heroImages = [
     "/src/assets/IMG/img.png",
@@ -18,11 +20,11 @@ const Home: React.FC = () => {
   ];
   
   const heroTitles = [
-    "豊田市パーソナルピラティススタジオ\n",
+    t('home.welcome')
   ];
   
   const heroSubtitles = [
-    "完全パーソナルレッスンをご提供。",
+    t('home.subtitle')
   ];
 
   // Schema.orgのデータ構造を作成
@@ -71,34 +73,44 @@ const Home: React.FC = () => {
         images={heroImages}
         onCtaClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
       />
+      
+      <div className="text-center mt-8">
+        <Button 
+          variant="primary" 
+          size="lg" 
+          onClick={() => navigate('/pricing')}
+        >
+          {t('home.getStarted')}
+        </Button>
+      </div>
 
       {/* ピラティスに通うとどうなるの？ */}
       <Section className="bg-turquoise-100">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-black mb-4">
-              Softisとは？
+              {t('home.aboutSoftis')}
             </h2>
             <div className="max-w-3xl mx-auto p-8 bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg">
-              <h3 className="text-xl font-bold text-turquoise-600 mb-4">理学療法士が導くパーソナルピラティス</h3>
+              <h3 className="text-xl font-bold text-turquoise-600 mb-4">{t('home.pilatesLedByTherapist')}</h3>
               <div className="flex items-center justify-center mb-4">
                 <span className="inline-block w-12 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full"></span>
               </div>
               <p className="text-gray-800 text-lg leading-relaxed mb-6">
-                豊田市駅徒歩1分の好立地にオープンするスタジオです。理学療法士資格を所有したピラティスインストラクターによるパーソナルレッスンが受けられます。
+                {t('home.studioDescription')}
               </p>
               <div className="grid grid-cols-2 gap-4 mt-4">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-turquoise-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-gray-700">専門的な指導</span>
+                  <span className="text-gray-700">{t('home.expertInstruction')}</span>
                 </div>
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-turquoise-500 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  <span className="text-gray-700">駅から徒歩1分</span>
+                  <span className="text-gray-700">{t('home.oneMinWalk')}</span>
                 </div>
               </div>
             </div>
@@ -108,29 +120,29 @@ const Home: React.FC = () => {
           <div className="mb-12">
             <div className="text-center max-w-3xl mx-auto">
               <div className="mb-8 bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg p-8">
-                <h3 className="text-xl font-bold text-turquoise-600 mb-4">当スタジオの特徴</h3>
+                <h3 className="text-xl font-bold text-turquoise-600 mb-4">{t('home.studioFeatures')}</h3>
                 <div className="flex items-center justify-center mb-6">
                   <span className="inline-block w-12 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full"></span>
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div className="flex items-start p-3 bg-white/80 rounded-lg shadow-sm">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-turquoise-100 text-turquoise-600 rounded-full mr-3 font-bold">1</span>
-                    <p className="text-gray-800 text-left">理学療法士資格所有インストラクターによる専門的なレッスン</p>
+                    <p className="text-gray-800 text-left">{t('home.feature1')}</p>
                   </div>
                   
                   <div className="flex items-start p-3 bg-white/80 rounded-lg shadow-sm">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-turquoise-100 text-turquoise-600 rounded-full mr-3 font-bold">2</span>
-                    <p className="text-gray-800 text-left">パーソナルレッスンで初心者や運動が苦手な方でも安心</p>
+                    <p className="text-gray-800 text-left">{t('home.feature2')}</p>
                   </div>
                   
                   <div className="flex items-start p-3 bg-white/80 rounded-lg shadow-sm">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-turquoise-100 text-turquoise-600 rounded-full mr-3 font-bold">3</span>
-                    <p className="text-gray-800 text-left">ピラティスマシン多数設置</p>
+                    <p className="text-gray-800 text-left">{t('home.feature3')}</p>
                   </div>
                   
                   <div className="flex items-start p-3 bg-white/80 rounded-lg shadow-sm">
                     <span className="flex-shrink-0 flex items-center justify-center w-8 h-8 bg-turquoise-100 text-turquoise-600 rounded-full mr-3 font-bold">4</span>
-                    <p className="text-gray-800 text-left">続けやすさは通いやすさ！抜群の駅近の好立地かつ無料駐車場完備</p>
+                    <p className="text-gray-800 text-left">{t('home.feature4')}</p>
                   </div>
                 </div>
               </div>
@@ -139,7 +151,7 @@ const Home: React.FC = () => {
           
           {/* イメージカード */}
           <h2 className="text-3xl md:text-4xl text-center font-serif font-bold text-black mb-4">
-            ピラティスをするとどうなるの？
+            {t('home.whatHappensPilates')}
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -202,37 +214,37 @@ const Home: React.FC = () => {
             >
               <div className="mt-8 bg-white/10 p-6 rounded-lg backdrop-blur-sm">
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                  Softisはこんな人におすすめ
+                  {t('home.recommendedFor')}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">1</span>
                     <p className="text-white/90">
-                      身体が硬くてなんとなく調子が悪い
+                      {t('home.recommendation1')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">2</span>
                     <p className="text-white/90">
-                      肩首こりや腰、膝痛がある
+                      {t('home.recommendation2')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">3</span>
                     <p className="text-white/90">
-                      自分の姿勢が気に入らない
+                      {t('home.recommendation3')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">4</span>
                     <p className="text-white/90">
-                      グループピラティスレッスンでは満足できない、他の人の目が気になる
+                      {t('home.recommendation4')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">5</span>
                     <p className="text-white/90">
-                      自分の身体の特徴が知りたい
+                      {t('home.recommendation5')}
                     </p>
                   </li>
                 </ul>
@@ -240,44 +252,44 @@ const Home: React.FC = () => {
               
               <div className="mt-8 bg-white/10 p-6 rounded-lg backdrop-blur-sm">
                 <h3 className="text-2xl font-serif font-bold text-white mb-4">
-                  ピラティスの効果（個人差はあります）
+                  {t('home.pilatesEffects')}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">1</span>
                     <p className="text-white/90">
-                      身体が適度に柔らかくなってスッキリ
+                      {t('home.effect1')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">2</span>
                     <p className="text-white/90">
-                      痛みや疲れなど不調が和らぐ
+                      {t('home.effect2')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">3</span>
                     <p className="text-white/90">
-                      姿勢が良くなりオーラが変わる
+                      {t('home.effect3')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">4</span>
                     <p className="text-white/90">
-                      自律神経が整い思考が前向きになる
+                      {t('home.effect4')}
                     </p>
                   </li>
                   <li className="flex items-start">
                     <span className="h-6 w-6 bg-turquoise-200 rounded-full flex items-center justify-center text-turquoise-700 font-bold mr-3 flex-shrink-0 mt-0.5">5</span>
                     <p className="text-white/90">
-                      自分の身体の特徴を知れるため日常生活で意識すべきことがわかる
+                      {t('home.effect5')}
                     </p>
                   </li>
                 </ul>
               </div>
               
               <p className="text-white text-lg font-bold mt-4">
-                Coming Soon…
+                {t('home.comingSoon')}
               </p>
             </motion.div>
           </div>
@@ -289,7 +301,7 @@ const Home: React.FC = () => {
         <Container>
           <div className="text-center mb-16 max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-black mb-4">
-              ご利用方法
+              {t('home.howToUse')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-8"></div>
           </div>
@@ -301,9 +313,9 @@ const Home: React.FC = () => {
                   <span className="text-white text-xl font-bold">①</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-turquoise-600">LINE登録</h3>
+                  <h3 className="text-xl font-bold mb-2 text-turquoise-600">{t('home.step1Title')}</h3>
                   <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                    店舗公式LINEをご登録し初回体験申し込み
+                    {t('home.step1Description')}
                   </p>
                 </div>
               </div>
@@ -313,9 +325,9 @@ const Home: React.FC = () => {
                   <span className="text-white text-xl font-bold">②</span>
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold mb-2 text-turquoise-600">初回体験レッスン</h3>
+                  <h3 className="text-xl font-bold mb-2 text-turquoise-600">{t('home.step2Title')}</h3>
                   <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                    来店し初回体験レッスンを受ける
+                    {t('home.step2Description')}
                   </p>
                 </div>
               </div>
@@ -323,7 +335,7 @@ const Home: React.FC = () => {
 
             <div className="mt-8 text-center">
               <p className="text-gray-800 mb-6 bg-white/80 p-3 rounded-lg shadow-sm">
-                初回体験レッスンを受ける
+                {t('home.firstLesson')}
               </p>
               <Button
                   variant="primary"
@@ -331,7 +343,7 @@ const Home: React.FC = () => {
                   onClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
                   className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
               >
-                LINEで予約する
+                {t('home.bookWithLine')}
               </Button>
             </div>
           </div>
@@ -343,11 +355,11 @@ const Home: React.FC = () => {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-turquoise-700 mb-4">
-              充実したマシン設備
+              {t('home.machines')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
             <p className="text-gray-800 text-lg bg-white/80 p-3 rounded-lg shadow-sm max-w-2xl mx-auto">
-              Softisでは最新のピラティスマシンを取り揃え、あなたの体に合わせたエクササイズをご提供します
+              {t('home.machinesDescription')}
             </p>
           </div>
 
@@ -372,9 +384,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">リフォーマー</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.reformer')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  ピラティスの代表的なマシン。スプリングの抵抗を利用して、全身の筋肉をバランスよく鍛えることができます。
+                  {t('home.reformerDescription')}
                 </p>
               </div>
             </motion.div>
@@ -399,9 +411,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">バレル</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.barrel')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  背骨の柔軟性を高め、姿勢改善に特に効果的なマシン。自然な脊柱のカーブをサポートします。
+                  {t('home.barrelDescription')}
                 </p>
               </div>
             </motion.div>
@@ -426,9 +438,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">チェア</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.chair')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  体幹の安定性と上半身・下半身の筋力強化に効果的。バランス能力も向上させます。
+                  {t('home.chairDescription')}
                 </p>
               </div>
             </motion.div>
@@ -453,9 +465,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">専用マシン 1</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.specialMachine1')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  ピラティスの動きを特化させた専用マシン。身体の様々な部位に効率よくアプローチします。
+                  {t('home.specialMachine1Description')}
                 </p>
               </div>
             </motion.div>
@@ -480,10 +492,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">タワ</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.tower')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                固定された台の上で動くバネを自由に扱いながら動きます
-
+                  {t('home.towerDescription')}
                 </p>
               </div>
             </motion.div>
@@ -508,10 +519,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">スパインコレクタ</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.spineCorrector')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                背骨の動きや形を修正するマシンです
-                身体がちがちさんはこちらの湾曲を使いながら背骨を動かしていくと動きやすくなる場合があります
+                  {t('home.spineCorrectorDescription')}
                 </p>
               </div>
             </motion.div>
@@ -536,9 +546,9 @@ const Home: React.FC = () => {
                 />
               </div>
               <div className="p-6">
-                <h3 className="text-xl font-bold text-turquoise-700 mb-2">専用マシン 4</h3>
+                <h3 className="text-xl font-bold text-turquoise-700 mb-2">{t('home.specialMachine4')}</h3>
                 <p className="text-gray-800 bg-white/80 p-3 rounded-lg shadow-sm">
-                  あらゆる体型、レベルに対応できる調整可能な設計。あなたに合わせたトレーニングが可能です。
+                  {t('home.specialMachine4Description')}
                 </p>
               </div>
             </motion.div>
@@ -551,7 +561,7 @@ const Home: React.FC = () => {
                 onClick={() => navigate('/gallery')}
                 className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
             >
-              もっと見る
+              {t('home.viewMore')}
             </Button>
           </div>
         </Container>

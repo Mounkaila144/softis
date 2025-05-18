@@ -2,8 +2,10 @@ import React, { useState } from 'react';
 import { Send } from 'lucide-react';
 import Button from './Button';
 import { addQuestionToFirebase } from '../utils/firebaseService';
+import { useTranslation } from '../i18n/useTranslation';
 
 const QuestionForm: React.FC = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -42,11 +44,11 @@ const QuestionForm: React.FC = () => {
           setSubmitted(false);
         }, 5000);
       } else {
-        setError('質問の送信中に問題が発生しました。もう一度お試しください。');
+        setError(t('questionForm.submissionError'));
       }
     } catch (error) {
       console.error('Erreur lors de la soumission de la question:', error);
-      setError('エラーが発生しました。後でもう一度お試しください。');
+      setError(t('questionForm.generalError'));
     } finally {
       setIsSubmitting(false);
     }
@@ -55,7 +57,7 @@ const QuestionForm: React.FC = () => {
   return (
     <div className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg p-8">
       <h2 className="text-2xl font-serif font-bold text-turquoise-700 mb-6">
-        ご質問はこちら
+        {t('questionForm.title')}
       </h2>
       <div className="w-20 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mb-6"></div>
       
@@ -67,13 +69,13 @@ const QuestionForm: React.FC = () => {
       
       {submitted ? (
         <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg">
-          ご質問ありがとうございます。スタッフが確認次第、ご回答させていただきます。
+          {t('questionForm.successMessage')}
         </div>
       ) : (
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-neutral-700 text-sm font-medium mb-1">
-              お名前 <span className="text-red-500">*</span>
+              {t('questionForm.name')} <span className="text-red-500">*</span>
             </label>
             <input
               type="text"
@@ -88,7 +90,7 @@ const QuestionForm: React.FC = () => {
 
           <div>
             <label htmlFor="email" className="block text-neutral-700 text-sm font-medium mb-1">
-              メールアドレス <span className="text-red-500">*</span>
+              {t('questionForm.email')} <span className="text-red-500">*</span>
             </label>
             <input
               type="email"
@@ -100,13 +102,13 @@ const QuestionForm: React.FC = () => {
               required
             />
             <p className="text-xs text-gray-500 mt-1">
-              ご回答はメールでお送りします
+              {t('questionForm.emailNote')}
             </p>
           </div>
 
           <div>
             <label htmlFor="question" className="block text-neutral-700 text-sm font-medium mb-1">
-              ご質問 <span className="text-red-500">*</span>
+              {t('questionForm.question')} <span className="text-red-500">*</span>
             </label>
             <textarea
               id="question"
@@ -124,10 +126,9 @@ const QuestionForm: React.FC = () => {
               variant="primary"
               size="lg"
               type="submit"
-              disabled={isSubmitting}
-              className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
+              className={`shadow-md hover:shadow-lg transform transition hover:-translate-y-1 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
             >
-              {isSubmitting ? '送信中...' : '質問を送信する'} {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
+              {isSubmitting ? t('questionForm.submitting') : t('questionForm.submit')} {!isSubmitting && <Send className="ml-2 h-4 w-4" />}
             </Button>
           </div>
         </form>

@@ -2,8 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Instagram } from 'lucide-react';
 import Container from '../components/Container';
+import { useTranslation } from '../i18n/useTranslation';
 
 const Footer: React.FC = () => {
+  const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
 
   return (
@@ -23,7 +25,7 @@ const Footer: React.FC = () => {
               </span>
             </Link>
             <p className="text-neutral-300 mb-6">
-              理学療法士が導く豊田市のパーソナルピラティススタジオ
+              {t('footer.studioDescription')}
             </p>
             <div className="flex space-x-4">
               <a href="https://www.instagram.com/softis__pilates/?igsh=bTZ5d2Z2NzgwZGQw" 
@@ -38,26 +40,26 @@ const Footer: React.FC = () => {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-lg font-bold mb-4">クイックリンク</h3>
+            <h3 className="text-lg font-bold mb-4">{t('footer.quickLinks')}</h3>
             <ul className="space-y-2">
-              <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">ホーム</Link></li>
-              <li><Link to="/instructors" className="text-neutral-300 hover:text-white transition-colors">インストラクター</Link></li>
-              <li><Link to="/pricing" className="text-neutral-300 hover:text-white transition-colors">料金</Link></li>
-              <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">アクセス</Link></li>
-              <li><Link to="/gallery" className="text-neutral-300 hover:text-white transition-colors">ギャラリー</Link></li>
-              <li><Link to="/faq" className="text-neutral-300 hover:text-white transition-colors">よくある質問</Link></li>
+              <li><Link to="/" className="text-neutral-300 hover:text-white transition-colors">{t('common.home')}</Link></li>
+              <li><Link to="/instructors" className="text-neutral-300 hover:text-white transition-colors">{t('common.instructors')}</Link></li>
+              <li><Link to="/pricing" className="text-neutral-300 hover:text-white transition-colors">{t('common.pricing')}</Link></li>
+              <li><Link to="/contact" className="text-neutral-300 hover:text-white transition-colors">{t('common.contact')}</Link></li>
+              <li><Link to="/gallery" className="text-neutral-300 hover:text-white transition-colors">{t('common.gallery')}</Link></li>
+              <li><Link to="/faq" className="text-neutral-300 hover:text-white transition-colors">{t('common.faq')}</Link></li>
             </ul>
           </div>
 
           {/* Contact */}
           <div>
-            <h3 className="text-lg font-bold mb-4">アクセス</h3>
+            <h3 className="text-lg font-bold mb-4">{t('footer.access')}</h3>
             <div className="flex">
               <MapPin className="mr-2 flex-shrink-0 text-turquoise-400" size={20} />
-              <span className="text-neutral-300">愛知県豊田市若宮町1-26 セントラルビル2階</span>
+              <span className="text-neutral-300">{t('footer.address')}</span>
             </div>
             <p className="text-neutral-300 mt-4">
-              名鉄豊田線 豊田市駅より徒歩1分
+              {t('footer.stationAccess')}
             </p>
           </div>
         </div>
@@ -66,7 +68,7 @@ const Footer: React.FC = () => {
 
         <div className="text-center">
           <p className="text-neutral-400 text-sm">
-            &copy; {currentYear} Softis. All rights reserved.
+            &copy; {currentYear} Softis. {t('footer.allRightsReserved')}
           </p>
         </div>
       </Container>

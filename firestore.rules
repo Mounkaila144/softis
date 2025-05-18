@@ -1,25 +1,22 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Règles pour la collection de questions (FAQ)
-    match /questions/{questionId} {
-      // Tout le monde peut lire les questions
-      allow read: if true;
-      
-      // Seuls les utilisateurs authentifiés peuvent créer des questions
-      allow create: if true;
-      
-      // Seuls les administrateurs peuvent modifier/supprimer des questions
-      allow update, delete: if request.auth != null && request.auth.token.admin == true;
+    // Règle de base: autoriser tout le monde pour le développement
+    match /{document=**} {
+      allow read, write;
     }
     
-    // Règles pour la collection de blog
-    match /blog/{postId} {
-      // Tout le monde peut lire les articles publiés
-      allow read: if true;
-      
-      // Seuls les administrateurs peuvent créer, modifier ou supprimer des articles
-      allow create, update, delete: if request.auth != null && request.auth.token.admin == true;
+    // À activer plus tard pour la production 
+    /* 
+    match /translations/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
     }
+    
+    match /users/{userId} {
+      allow read: if request.auth != null && (request.auth.uid == userId || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin');
+      allow write: if request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'admin';
+    }
+    */
   }
 } 

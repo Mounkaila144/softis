@@ -7,6 +7,7 @@ import { ChevronDown, ChevronUp, Clock, Users, Sparkles, MapPin, HelpCircle, Ale
 import { loadQuestionsFromFirebase } from '../utils/firebaseService';
 import { Question } from '../types/questions';
 import { Link } from 'react-router-dom';
+import { useTranslation } from '../i18n/useTranslation';
 
 // Map pour convertir les noms d'icônes en composants Lucide
 const iconMap: Record<string, React.ElementType> = {
@@ -14,6 +15,7 @@ const iconMap: Record<string, React.ElementType> = {
 };
 
 const Faq: React.FC = () => {
+  const { t } = useTranslation();
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [faqItems, setFaqItems] = useState<Array<{
     id: string;
@@ -66,7 +68,7 @@ const Faq: React.FC = () => {
       name: item.question,
       acceptedAnswer: {
         '@type': 'Answer',
-        text: typeof item.answer === 'string' ? item.answer : 'お問い合わせください'
+        text: typeof item.answer === 'string' ? item.answer : t('faq.contactUs')
       }
     })),
     ...userAnsweredQuestions.map(q => ({
@@ -88,9 +90,9 @@ const Faq: React.FC = () => {
   return (
       <>
         <Seo 
-          title="よくある質問 - ピラティススタジオSoftis"
-          description="Softisピラティススタジオに関するよくある質問をまとめました。レッスンの予約、持ち物、キャンセル方法などについてご案内します。"
-          keywords="ピラティス, よくある質問, FAQ, 初心者, 予約方法, キャンセル, 持ち物, Softis, ピラティススタジオ"
+          title={t('faq.seoTitle')}
+          description={t('faq.seoDescription')}
+          keywords={t('faq.seoKeywords')}
           structuredData={faqSchema}
         />
         {/* En-tête avec fond dégradé au lieu d'une image */}
@@ -110,11 +112,11 @@ const Faq: React.FC = () => {
               transition={{ duration: 0.7 }}
             >
               <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-                よくある質問
+                {t('faq.title')}
               </h1>
               <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-4"></div>
               <p className="text-white text-xl max-w-3xl mx-auto">
-                Softisに関するご質問にお答えします
+                {t('faq.subtitle')}
               </p>
             </motion.div>
           </Container>
@@ -126,13 +128,13 @@ const Faq: React.FC = () => {
               {loading ? (
                 <div className="text-center p-12">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-turquoise-700 mx-auto"></div>
-                  <p className="mt-4 text-gray-600">FAQを読み込んでいます...</p>
+                  <p className="mt-4 text-gray-600">{t('faq.loading')}</p>
                 </div>
               ) : (
                 <>
                   {/* FAQ公式の質問 */}
                   <h2 className="text-2xl font-serif font-bold text-gray-800 mb-8 text-center">
-                    スタッフからの回答
+                    {t('faq.staffAnswers')}
                   </h2>
                   {faqItems.length > 0 ? (
                     <div className="space-y-4">
@@ -195,7 +197,7 @@ const Faq: React.FC = () => {
                   ) : (
                     <div className="text-center p-8 bg-white/80 rounded-lg shadow-sm mb-12">
                       <HelpCircle className="h-12 w-12 text-turquoise-400 mx-auto mb-4" />
-                      <p className="text-gray-600">FAQデータがありません。</p>
+                      <p className="text-gray-600">{t('faq.noFaqData')}</p>
                     </div>
                   )}
                   
@@ -203,7 +205,7 @@ const Faq: React.FC = () => {
                   {userAnsweredQuestions.length > 0 && (
                     <>
                       <h2 className="text-2xl font-serif font-bold text-gray-800 mb-8 text-center mt-16">
-                        お客様からよくある質問
+                        {t('faq.customerQuestions')}
                       </h2>
                       <div className="space-y-4">
                         {userAnsweredQuestions.map((q, index) => {
@@ -280,17 +282,17 @@ const Faq: React.FC = () => {
                   </div>
                 </div>
                 <h3 className="text-xl font-bold text-turquoise-700 mb-3">
-                  まだ質問がありますか？
+                  {t('faq.moreQuestions')}
                 </h3>
                 <p className="text-gray-800 mb-6">
-                  他にわからないことがあれば、お気軽にお問い合わせください。
+                  {t('faq.contactInvitation')}
                 </p>
                 <Link 
                   to="/questions"
                   className="inline-flex items-center px-6 py-3 bg-turquoise-500 text-white font-medium rounded-lg shadow-md hover:bg-turquoise-600 transition-colors duration-300"
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  質問を投稿する
+                  {t('faq.postQuestion')}
                 </Link>
               </motion.div>
             </div>

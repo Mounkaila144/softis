@@ -7,8 +7,10 @@ import Section from '../components/Section';
 import Seo from '../components/Seo';
 import { BlogPost } from '../types/blog';
 import { loadBlogPostsFromFirebase } from '../utils/firebaseService';
+import { useTranslation } from '../i18n/useTranslation';
 
 const Blog: React.FC = () => {
+  const { t } = useTranslation();
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [selectedTag, setSelectedTag] = useState<string | null>(null);
   const [allTags, setAllTags] = useState<string[]>([]);
@@ -65,16 +67,16 @@ const Blog: React.FC = () => {
   const blogSchema = {
     '@context': 'https://schema.org',
     '@type': 'Blog',
-    'headline': 'Softis ピラティスブログ - 健康、姿勢改善、ピラティスに関する情報',
-    'description': 'ピラティス、姿勢改善、健康的な生活についての有益な情報をご紹介します。豊田市のピラティススタジオSoftisからのお役立ち情報。',
+    'headline': t('blog.schemaHeadline'),
+    'description': t('blog.schemaDescription'),
     'author': {
       '@type': 'Organization',
-      'name': 'Softis ピラティススタジオ',
+      'name': t('blog.schemaAuthorName'),
       'url': 'https://softis.jp'
     },
     'publisher': {
       '@type': 'Organization',
-      'name': 'Softis ピラティススタジオ',
+      'name': t('blog.schemaPublisherName'),
       'logo': {
         '@type': 'ImageObject',
         'url': 'https://softis.jp/logo.png'
@@ -96,9 +98,9 @@ const Blog: React.FC = () => {
   return (
     <>
       <Seo 
-        title="ブログ - ピラティススタジオSoftis"
-        description="ピラティス、姿勢改善、健康的な生活についての有益な情報をご紹介します。豊田市のピラティススタジオSoftisからのお役立ち情報。"
-        keywords="ピラティス, ブログ, 姿勢改善, 健康, エクササイズ, Softis, ピラティススタジオ"
+        title={t('blog.seoTitle')}
+        description={t('blog.seoDescription')}
+        keywords={t('blog.seoKeywords')}
         structuredData={blogSchema}
       />
 
@@ -119,11 +121,11 @@ const Blog: React.FC = () => {
             transition={{ duration: 0.7 }}
           >
             <h1 className="text-4xl md:text-5xl font-serif font-bold text-white mb-4">
-              ブログ
+              {t('blog.title')}
             </h1>
             <div className="w-24 h-1 bg-gradient-to-r from-pink-300 to-purple-300 rounded-full mx-auto mb-4"></div>
             <p className="text-white text-xl max-w-3xl mx-auto">
-              ピラティス、健康、姿勢改善に関する情報を発信しています
+              {t('blog.subtitle')}
             </p>
           </motion.div>
         </Container>
@@ -136,14 +138,14 @@ const Blog: React.FC = () => {
             <div className="lg:col-span-1">
               <div className="bg-white rounded-xl shadow-md p-6 sticky top-24">
                 <h2 className="text-xl font-serif font-bold text-gray-800 mb-4">
-                  カテゴリー
+                  {t('blog.categories')}
                 </h2>
                 <div className="space-y-2">
                   <button
                     className={`block w-full text-left px-3 py-2 rounded-lg transition ${selectedTag === null ? 'bg-purple-100 text-purple-700' : 'hover:bg-gray-100'}`}
                     onClick={() => setSelectedTag(null)}
                   >
-                    すべて
+                    {t('blog.allCategories')}
                   </button>
                   {allTags.map(tag => (
                     <button
@@ -163,7 +165,7 @@ const Blog: React.FC = () => {
               {loading ? (
                 <div className="text-center p-12">
                   <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-purple-700 mx-auto"></div>
-                  <p className="mt-4 text-gray-600">ブログ記事を読み込んでいます...</p>
+                  <p className="mt-4 text-gray-600">{t('blog.loading')}</p>
                 </div>
               ) : filteredPosts.length > 0 ? (
                 <div className="space-y-8">
@@ -217,13 +219,13 @@ const Blog: React.FC = () => {
                           <div className="mt-4 flex items-center justify-between">
                             <div className="flex items-center text-sm text-gray-500">
                               <MessageCircle className="h-4 w-4 mr-1" />
-                              <span>{post.comments.filter(c => c.status === 'approved').length} コメント</span>
+                              <span>{post.comments.filter(c => c.status === 'approved').length} {t('blog.comments')}</span>
                             </div>
                             <Link
                               to={`/blog/${post.id}`}
                               className="inline-flex items-center text-sm font-medium text-purple-600 hover:text-purple-800"
                             >
-                              続きを読む
+                              {t('blog.readMore')}
                               <ChevronRight className="h-4 w-4 ml-1" />
                             </Link>
                           </div>
@@ -234,7 +236,7 @@ const Blog: React.FC = () => {
                 </div>
               ) : (
                 <div className="bg-white p-8 rounded-xl shadow-md text-center">
-                  <p className="text-gray-600">記事が見つかりませんでした。</p>
+                  <p className="text-gray-600">{t('blog.noPostsFound')}</p>
                 </div>
               )}
               
@@ -245,7 +247,7 @@ const Blog: React.FC = () => {
                   className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-medium rounded-lg shadow-md hover:bg-purple-700 transition-colors duration-300"
                 >
                   <MessageCircle className="h-5 w-5 mr-2" />
-                  新しい記事を書く
+                  {t('blog.writeNewPost')}
                 </Link>
               </div>
             </div>

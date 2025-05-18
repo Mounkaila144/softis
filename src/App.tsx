@@ -21,6 +21,7 @@ import NewBlogPost from './pages/NewBlogPost';
 import EditBlogPost from './pages/EditBlogPost';
 import BlogAdmin from './pages/BlogAdmin';
 import FirebaseAdmin from './pages/FirebaseAdmin';
+import TranslationsAdmin from './pages/TranslationsAdmin';
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           <Route path="/admin" element={<Admin />} />
           <Route path="/admin/blog" element={<BlogAdmin />} />
           <Route path="/admin/firebase" element={<FirebaseAdmin />} />
+          <Route path="/admin/translations" element={<TranslationsAdmin />} />
         </Routes>
       </AnimatePresence>
     </Router>

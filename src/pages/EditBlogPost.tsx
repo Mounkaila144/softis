@@ -196,7 +196,7 @@ const EditBlogPost: React.FC = () => {
               </div>
             )}
             
-            <form onSubmit={handleSubmit} className="p-8">
+            <form onSubmit={handleSubmit} className="p-4 md:p-8">
               {/* Titre */}
               <div className="mb-6">
                 <label htmlFor="title" className="block text-sm font-medium text-gray-700 mb-1">
@@ -215,7 +215,7 @@ const EditBlogPost: React.FC = () => {
               </div>
               
               {/* Information auteur */}
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 mb-6">
                 <div>
                   <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">
                     著者名 <span className="text-red-500">*</span>
@@ -285,12 +285,12 @@ const EditBlogPost: React.FC = () => {
                     </div>
                   ))}
                   
-                  <div className="inline-flex">
+                  <div className="inline-flex w-full sm:w-auto mt-2 sm:mt-0">
                     <input
                       type="text"
                       value={newTag}
                       onChange={(e) => setNewTag(e.target.value)}
-                      className="px-3 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-purple-300 w-32"
+                      className="px-3 py-1 border border-gray-300 rounded-l-lg focus:outline-none focus:ring-1 focus:ring-purple-300 w-full sm:w-32"
                       placeholder="新しいタグ"
                       onKeyPress={(e) => e.key === 'Enter' && (e.preventDefault(), handleAddTag())}
                     />
@@ -341,7 +341,7 @@ const EditBlogPost: React.FC = () => {
                 <label htmlFor="content" className="block text-sm font-medium text-gray-700 mb-1">
                   内容 <span className="text-red-500">*</span>
                 </label>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
                   <div>
                     <textarea
                       id="content"
@@ -377,11 +377,12 @@ const EditBlogPost: React.FC = () => {
               )}
               
               {/* Boutons de soumission */}
-              <div className="flex justify-end gap-4">
+              <div className="flex flex-col sm:flex-row justify-end gap-4 mt-8">
                 <Button 
                   type="button" 
                   variant="outline"
                   onClick={() => navigate('/admin/blog')}
+                  className="w-full sm:w-auto"
                 >
                   キャンセル
                 </Button>
@@ -389,6 +390,7 @@ const EditBlogPost: React.FC = () => {
                   type="submit" 
                   variant="primary"
                   disabled={isSubmitting}
+                  className="w-full sm:w-auto"
                 >
                   {isSubmitting ? (
                     <>

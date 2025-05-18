@@ -9,9 +9,11 @@ import AdminNavBar from '../components/AdminNavBar';
 import { isAuthenticated, logout } from '../utils/authService';
 import { loadQuestionsFromFirebase, deleteQuestionFromFirebase, answerQuestionInFirebase, updateQuestionInFirebase } from '../utils/firebaseService';
 import { Question } from '../types/questions';
+import { useTranslation } from '../i18n/useTranslation';
 
 const AdminPage: React.FC = () => {
   const navigate = useNavigate();
+  const { t } = useTranslation();
   const [questions, setQuestions] = useState<Question[]>([]);
   const [selectedQuestion, setSelectedQuestion] = useState<Question | null>(null);
   const [answer, setAnswer] = useState('');
@@ -230,7 +232,7 @@ const AdminPage: React.FC = () => {
               transition={{ duration: 0.6 }}
               className="text-4xl font-serif font-bold"
             >
-              管理ダッシュボード
+              {t('admin.dashboard')}
             </motion.h1>
             
             <Button
@@ -239,7 +241,7 @@ const AdminPage: React.FC = () => {
               onClick={handleLogout}
               className="bg-white/10 backdrop-blur-sm hover:bg-white/20"
             >
-              ログアウト <LogOut className="ml-2 h-4 w-4" />
+              {t('admin.logout')} <LogOut className="ml-2 h-4 w-4" />
             </Button>
           </div>
           
@@ -251,17 +253,17 @@ const AdminPage: React.FC = () => {
           >
             <div className="bg-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
               <div className="text-xl font-bold">{questions.filter(q => q.status === 'pending').length}</div>
-              <div className="text-xs opacity-70">未回答</div>
+              <div className="text-xs opacity-70">{t('admin.pending')}</div>
             </div>
             
             <div className="bg-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
               <div className="text-xl font-bold">{questions.filter(q => q.status === 'answered').length}</div>
-              <div className="text-xs opacity-70">回答済み</div>
+              <div className="text-xs opacity-70">{t('admin.answered')}</div>
             </div>
             
             <div className="bg-white/10 rounded-lg px-4 py-3 backdrop-blur-sm">
               <div className="text-xl font-bold">{questions.length}</div>
-              <div className="text-xs opacity-70">合計</div>
+              <div className="text-xs opacity-70">{t('admin.all')}</div>
             </div>
           </motion.div>
 
@@ -284,28 +286,28 @@ const AdminPage: React.FC = () => {
           
           <div className="mb-6 flex flex-wrap justify-between items-center">
             {/* Sidebar */}
-            <div className="lg:col-span-1">
+            <div className="w-full lg:w-1/3 md:pr-6 mb-6 lg:mb-0">
               {/* Filters */}
               <div className="bg-white rounded-lg shadow p-5 mb-6">
-                <h2 className="text-lg font-bold text-gray-700 mb-4">フィルター</h2>
+                <h2 className="text-lg font-bold text-gray-700 mb-4">{t('admin.filters')}</h2>
                 <div className="flex flex-wrap gap-2">
                   <button 
                     className={`px-4 py-2 rounded-lg text-sm ${filter === 'all' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     onClick={() => setFilter('all')}
                   >
-                    全て
+                    {t('admin.all')}
                   </button>
                   <button 
                     className={`px-4 py-2 rounded-lg text-sm ${filter === 'pending' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     onClick={() => setFilter('pending')}
                   >
-                    未回答
+                    {t('admin.pending')}
                   </button>
                   <button 
                     className={`px-4 py-2 rounded-lg text-sm ${filter === 'answered' ? 'bg-purple-600 text-white' : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}`}
                     onClick={() => setFilter('answered')}
                   >
-                    回答済み
+                    {t('admin.answered')}
                   </button>
                 </div>
               </div>
@@ -313,7 +315,7 @@ const AdminPage: React.FC = () => {
               {/* Questions List */}
               <div className="bg-white rounded-lg shadow h-[500px] overflow-y-auto">
                 <div className="p-4 border-b">
-                  <h2 className="text-lg font-bold text-gray-700">質問一覧</h2>
+                  <h2 className="text-lg font-bold text-gray-700">{t('questions.list')}</h2>
                 </div>
                 
                 {loading && (
@@ -362,28 +364,28 @@ const AdminPage: React.FC = () => {
                 ) : !loading ? (
                   <div className="p-8 text-center text-gray-500">
                     <HelpCircle className="h-10 w-10 mx-auto mb-2 text-gray-300" />
-                    <p>質問がありません</p>
+                    <p>{t('admin.noResults')}</p>
                   </div>
                 ) : null}
               </div>
 
               {/* Import/Export */}
               <div className="bg-white rounded-lg shadow p-5 mt-6">
-                <h2 className="text-lg font-bold text-gray-700 mb-4">データ管理</h2>
+                <h2 className="text-lg font-bold text-gray-700 mb-4">{t('admin.dataManagement')}</h2>
                 <div className="space-y-3">
                   <button 
                     className="flex items-center w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200"
                     onClick={handleExport}
                     disabled={loading}
                   >
-                    <Download className="h-4 w-4 mr-2" /> 質問をエクスポート
+                    <Download className="h-4 w-4 mr-2" /> {t('admin.export')}
                     {loading && (
                       <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-700 ml-2"></div>
                     )}
                   </button>
                   
                   <label className="flex items-center w-full px-4 py-2 bg-gray-100 text-gray-700 rounded-lg hover:bg-gray-200 cursor-pointer">
-                    <Upload className="h-4 w-4 mr-2" /> 質問をインポート
+                    <Upload className="h-4 w-4 mr-2" /> {t('admin.import')}
                     <input 
                       type="file" 
                       accept=".json" 
@@ -398,21 +400,21 @@ const AdminPage: React.FC = () => {
                     onClick={() => navigate('/admin/firebase')}
                     disabled={loading}
                   >
-                    <Database className="h-4 w-4 mr-2" /> Firebase管理
+                    <Database className="h-4 w-4 mr-2" /> {t('admin.firebase')}
                   </button>
                 </div>
               </div>
             </div>
             
             {/* Question Detail */}
-            <div className="lg:col-span-2">
+            <div className="w-full lg:w-2/3">
               <div className="bg-white rounded-lg shadow h-full">
                 {selectedQuestion ? (
-                  <div className="p-6">
-                    <div className="flex justify-between items-start mb-6">
-                      <h2 className="text-xl font-bold text-gray-800">質問詳細</h2>
+                  <div className="p-4 md:p-6">
+                    <div className="flex flex-col md:flex-row md:justify-between md:items-start mb-6 gap-4">
+                      <h2 className="text-xl font-bold text-gray-800">{t('questions.details')}</h2>
                       
-                      <div className="space-x-2">
+                      <div className="flex gap-2">
                         {!editMode && (
                           <Button
                             variant="outline"
@@ -420,7 +422,7 @@ const AdminPage: React.FC = () => {
                             onClick={handleEditQuestion}
                             disabled={loading}
                           >
-                            <Edit2 className="h-4 w-4 mr-1" /> 編集
+                            <Edit2 className="h-4 w-4 mr-1" /> {t('admin.edit')}
                           </Button>
                         )}
                         {editMode && (
@@ -430,7 +432,7 @@ const AdminPage: React.FC = () => {
                             onClick={handleSaveEdit}
                             disabled={loading}
                           >
-                            <Save className="h-4 w-4 mr-1" /> 保存
+                            <Save className="h-4 w-4 mr-1" /> {t('admin.save')}
                             {loading && (
                               <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white ml-2"></div>
                             )}
@@ -443,7 +445,7 @@ const AdminPage: React.FC = () => {
                       {/* User Info */}
                       <div className="bg-gray-50 p-4 rounded-lg">
                         <h3 className="text-sm font-medium text-gray-500 mb-3">
-                          ユーザー情報
+                          {t('admin.userInfo')}
                         </h3>
                         <div className="flex flex-wrap gap-y-3 gap-x-6">
                           <div className="flex items-center">
@@ -452,7 +454,7 @@ const AdminPage: React.FC = () => {
                           </div>
                           <div className="flex items-center">
                             <Mail className="h-4 w-4 text-gray-400 mr-2" />
-                            <span className="text-sm text-gray-700">{selectedQuestion.email}</span>
+                            <span className="text-sm text-gray-700 break-all">{selectedQuestion.email}</span>
                           </div>
                           <div className="flex items-center">
                             <Clock className="h-4 w-4 text-gray-400 mr-2" />
@@ -464,7 +466,7 @@ const AdminPage: React.FC = () => {
                       {/* Question */}
                       <div>
                         <h3 className="text-sm font-medium text-gray-500 mb-2">
-                          質問内容
+                          {t('admin.questionContent')}
                         </h3>
                         {editMode ? (
                           <textarea
@@ -483,7 +485,7 @@ const AdminPage: React.FC = () => {
                       {/* Answer */}
                       <div>
                         <h3 className="text-sm font-medium text-gray-500 mb-2">
-                          回答
+                          {t('admin.answer')}
                         </h3>
                         {editMode || selectedQuestion.status === 'pending' ? (
                           <div className="space-y-3">
@@ -492,7 +494,7 @@ const AdminPage: React.FC = () => {
                               onChange={(e) => setAnswer(e.target.value)}
                               className="w-full p-3 border rounded-lg focus:ring focus:ring-purple-200 focus:outline-none"
                               rows={6}
-                              placeholder="回答を入力してください..."
+                              placeholder={t('questions.answerPlaceholder')}
                               disabled={loading}
                             />
                             {selectedQuestion.status === 'pending' && (
@@ -502,7 +504,7 @@ const AdminPage: React.FC = () => {
                                   onClick={handleSaveAnswer}
                                   disabled={!answer.trim() || loading}
                                 >
-                                  <CheckCircle className="h-4 w-4 mr-1" /> 回答を公開する
+                                  <CheckCircle className="h-4 w-4 mr-1" /> {t('admin.publishAnswer')}
                                   {loading && (
                                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white ml-2"></div>
                                   )}
@@ -512,10 +514,10 @@ const AdminPage: React.FC = () => {
                           </div>
                         ) : (
                           <div className="p-4 bg-green-50 rounded-lg text-gray-700">
-                            {selectedQuestion.answer || '回答がありません'}
+                            {selectedQuestion.answer || t('questions.noAnswer')}
                             {selectedQuestion.answerDate && (
                               <div className="mt-2 text-xs text-gray-500">
-                                回答日時: {formatDate(selectedQuestion.answerDate)}
+                                {t('questions.answerDate')}: {formatDate(selectedQuestion.answerDate)}
                               </div>
                             )}
                           </div>
@@ -526,9 +528,9 @@ const AdminPage: React.FC = () => {
                 ) : (
                   <div className="p-8 h-full flex flex-col items-center justify-center text-gray-500">
                     <HelpCircle className="h-16 w-16 mb-4 text-gray-300" />
-                    <p className="mb-2">質問を選択してください</p>
-                    <p className="text-sm text-gray-400">
-                      左側のリストから表示する質問を選びます
+                    <p className="mb-2">{t('questions.selectQuestion')}</p>
+                    <p className="text-sm text-gray-400 text-center">
+                      {t('questions.selectFromList')}
                     </p>
                   </div>
                 )}

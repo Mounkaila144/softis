@@ -74,15 +74,7 @@ const Home: React.FC = () => {
         onCtaClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
       />
       
-      <div className="text-center mt-8">
-        <Button 
-          variant="primary" 
-          size="lg" 
-          onClick={() => navigate('/pricing')}
-        >
-          {t('home.getStarted')}
-        </Button>
-      </div>
+
 
       {/* ピラティスに通うとどうなるの？ */}
       <Section className="bg-turquoise-100">
@@ -295,7 +287,15 @@ const Home: React.FC = () => {
           </div>
         </Container>
       </Section>
-
+      <div className="text-right mt-8">
+        <Button
+            variant="primary"
+            size="lg"
+            onClick={() => navigate('/pricing')}
+        >
+          {t('home.getStarted')} test
+        </Button>
+      </div>
       {/* ご利用方法 */}
       <Section id="flow">
         <Container>

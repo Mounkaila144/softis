@@ -18,8 +18,8 @@ const ToyotaCityPilates: React.FC = () => {
       '@type': 'WebPage',
       '@id': 'https://softis.jp/toyota-city-pilates'
     },
-    'headline': '豊田市のピラティススタジオ | 駅徒歩1分 | Softis',
-    'description': '豊田市駅徒歩1分のSoftisピラティススタジオ。理学療法士が運営する完全パーソナルピラティススタジオで姿勢改善、ボディメイク、健康促進。初心者歓迎！',
+    'headline': t('toyotaCityPilates.mainTitle'),
+    'description': t('toyotaCityPilates.seoDescription'),
     'image': 'https://softis.jp/src/assets/IMG/img.png',
     'author': {
       '@type': 'Organization',
@@ -40,9 +40,9 @@ const ToyotaCityPilates: React.FC = () => {
   return (
     <>
       <Seo 
-        title="豊田市 ピラティス | 駅徒歩1分 | 理学療法士経営 | Softis"
-        description="豊田市駅徒歩1分のSoftisピラティススタジオ。理学療法士が運営する完全パーソナルピラティススタジオで姿勢改善、ボディメイク、健康促進。初心者も安心の丁寧な指導と多数のピラティスマシンで効果的なトレーニングを。"
-        keywords="豊田市 ピラティス, 豊田市, ピラティス, Softis, softis, パーソナルトレーニング, 理学療法士, 姿勢改善, ボディメイク, 健康促進, 駅近"
+        title={t('toyotaCityPilates.seoTitle')}
+        description={t('toyotaCityPilates.seoDescription')}
+        keywords={t('toyotaCityPilates.seoKeywords')}
         structuredData={toyotaPilatesSchema}
         canonical="https://softis.jp/toyota-city-pilates"
       />
@@ -52,11 +52,11 @@ const ToyotaCityPilates: React.FC = () => {
         <Container>
           <div className="text-center mb-10">
             <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-              豊田市のピラティススタジオ <span className="text-turquoise-200">Softis</span>
+              {t('toyotaCityPilates.mainTitle')}
             </h1>
             <div className="w-24 h-1 bg-turquoise-300 rounded-full mx-auto mb-6"></div>
             <p className="text-xl max-w-3xl mx-auto leading-relaxed">
-              豊田市駅徒歩1分の好立地。理学療法士が運営する完全パーソナルピラティススタジオで、あなたの体と心を整えます。
+              {t('toyotaCityPilates.mainSubtitle')}
             </p>
           </div>
           
@@ -68,15 +68,15 @@ const ToyotaCityPilates: React.FC = () => {
               className="space-y-4"
             >
               <h2 className="text-3xl font-serif font-bold text-turquoise-200 mb-4">
-                豊田市でピラティスをお探しの方へ
+                {t('toyotaCityPilates.lookingForTitle')}
               </h2>
               
               <p className="text-lg">
-                Softisは豊田市駅から徒歩1分、便利なアクセスのピラティススタジオです。理学療法士の資格を持つインストラクターによる丁寧な指導で、初心者の方も安心してトレーニングいただけます。
+                {t('toyotaCityPilates.description1')}
               </p>
               
               <p className="text-lg">
-                身体の痛みや姿勢の悩み、健康増進まで、一人ひとりの目的に合わせたパーソナルプログラムをご提供します。
+                {t('toyotaCityPilates.description2')}
               </p>
               
               <div className="pt-4">
@@ -86,7 +86,7 @@ const ToyotaCityPilates: React.FC = () => {
                   onClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
                   className="shadow-lg hover:shadow-xl transform transition hover:-translate-y-1"
                 >
-                  無料カウンセリング予約
+                  {t('toyotaCityPilates.reserveButton')}
                 </Button>
               </div>
             </motion.div>
@@ -114,7 +114,7 @@ const ToyotaCityPilates: React.FC = () => {
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-serif font-bold text-gray-800 mb-4">
-              豊田市で選ばれる理由
+              {t('toyotaCityPilates.whyChooseTitle')}
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
           </div>
@@ -129,9 +129,9 @@ const ToyotaCityPilates: React.FC = () => {
                   <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">理学療法士が指導</h3>
+              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">{t('toyotaCityPilates.reason1Title')}</h3>
               <p className="text-gray-700 text-center">
-                医学的知識を持った理学療法士が指導するため、安全で効果的なトレーニングが可能です。
+                {t('toyotaCityPilates.reason1Desc')}
               </p>
             </div>
             
@@ -143,9 +143,9 @@ const ToyotaCityPilates: React.FC = () => {
                   <path d="M2 12l10 5 10-5"></path>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">駅徒歩1分の好立地</h3>
+              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">{t('toyotaCityPilates.reason2Title')}</h3>
               <p className="text-gray-700 text-center">
-                豊田市駅から徒歩たったの1分。通いやすさも大切なポイントです。
+                {t('toyotaCityPilates.reason2Desc')}
               </p>
             </div>
             
@@ -157,15 +157,22 @@ const ToyotaCityPilates: React.FC = () => {
                   <line x1="12" y1="16" x2="12.01" y2="16"></line>
                 </svg>
               </div>
-              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">完全パーソナル対応</h3>
+              <h3 className="text-xl font-bold text-center mb-3 text-turquoise-700">{t('toyotaCityPilates.reason3Title')}</h3>
               <p className="text-gray-700 text-center">
-                一人ひとりの目標や体の状態に合わせたカスタマイズプログラムをご提供します。
+                {t('toyotaCityPilates.reason3Desc')}
               </p>
             </div>
           </div>
           
           <div className="text-center mt-12">
-
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
+              className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
+            >
+              {t('toyotaCityPilates.trialButton')}
+            </Button>
           </div>
         </Container>
       </Section>

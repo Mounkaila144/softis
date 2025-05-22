@@ -10,7 +10,8 @@
     "blog": "Blog",
     "login": "Connexion",
     "logout": "Déconnexion",
-    "admin": "Administration"
+    "admin": "Administration",
+    "toyotaCityPilates": "Pilates Toyota City"
   },
   "home": {
     "welcome": "Bienvenue à Zen Fitness Tokyo",
@@ -316,5 +317,24 @@
     "answerDate": "Date de réponse",
     "selectQuestion": "Veuillez sélectionner une question",
     "selectFromList": "Sélectionnez une question dans la liste à gauche"
+  },
+  "toyotaCityPilates": {
+    "seoTitle": "Pilates Toyota City | À 1 min de la gare | Dirigé par physiothérapeute | Softis",
+    "seoDescription": "Studio Softis Pilates à 1 minute de la gare de Toyota City. Cours de Pilates entièrement personnalisés par des physiothérapeutes certifiés pour l'amélioration de la posture, la sculpture corporelle et la promotion de la santé. Accompagnement sécurisé pour débutants avec entraînement efficace sur plusieurs appareils Pilates.",
+    "seoKeywords": "Pilates Toyota City, Toyota City, Pilates, Softis, softis, entraînement personnel, physiothérapeute, amélioration posture, sculpture corporelle, promotion santé, près de la gare",
+    "mainTitle": "Studio de Pilates Toyota City Softis",
+    "mainSubtitle": "Situation idéale à 1 minute à pied de la gare de Toyota City. Un studio de Pilates entièrement personnalisé dirigé par des physiothérapeutes pour équilibrer votre corps et votre esprit.",
+    "lookingForTitle": "Pour ceux qui cherchent du Pilates à Toyota City",
+    "description1": "Softis est un studio de Pilates facilement accessible, à seulement 1 minute à pied de la gare de Toyota City. Avec les conseils attentifs d'instructeurs qualifiés en physiothérapie, même les débutants peuvent s'entraîner en toute confiance.",
+    "description2": "Des douleurs corporelles aux problèmes de posture, en passant par la promotion de la santé, nous proposons des programmes personnalisés adaptés aux objectifs de chacun.",
+    "reserveButton": "Réserver une consultation gratuite",
+    "whyChooseTitle": "Pourquoi nous choisir à Toyota City",
+    "reason1Title": "Enseignement par physiothérapeute",
+    "reason1Desc": "Un entraînement sûr et efficace est possible grâce aux conseils de physiothérapeutes dotés de connaissances médicales.",
+    "reason2Title": "À 1 minute à pied de la gare",
+    "reason2Desc": "À seulement 1 minute à pied de la gare de Toyota City. L'accessibilité est un facteur important.",
+    "reason3Title": "Approche entièrement personnalisée",
+    "reason3Desc": "Nous proposons des programmes sur mesure adaptés aux objectifs et à la condition physique de chaque personne.",
+    "trialButton": "Réserver un essai gratuit"
   }
 } 

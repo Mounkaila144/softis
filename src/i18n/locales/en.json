@@ -10,7 +10,8 @@
     "blog": "Blog",
     "login": "Login",
     "logout": "Logout",
-    "admin": "Admin"
+    "admin": "Admin",
+    "toyotaCityPilates": "Toyota City Pilates"
   },
   "home": {
     "welcome": "Welcome to Zen Fitness Tokyo",
@@ -299,5 +300,24 @@
     "editingLanguage": "Editing Language",
     "showMore": "Show more",
     "showLess": "Show less"
+  },
+  "toyotaCityPilates": {
+    "seoTitle": "Toyota City Pilates | 1-Minute Walk From Station | Physiotherapist-Owned | Softis",
+    "seoDescription": "Softis Pilates Studio, just 1 minute from Toyota City Station. Fully personalized Pilates lessons by certified physiotherapists for posture improvement, body sculpting, and health promotion. Safe guidance for beginners with effective training on multiple Pilates machines.",
+    "seoKeywords": "Toyota City Pilates, Toyota City, Pilates, Softis, softis, personal training, physiotherapist, posture improvement, body sculpting, health promotion, near station",
+    "mainTitle": "Toyota City Pilates Studio Softis",
+    "mainSubtitle": "Great location just 1 minute walk from Toyota City Station. A fully personalized Pilates studio run by physiotherapists to balance your body and mind.",
+    "lookingForTitle": "For Those Looking for Pilates in Toyota City",
+    "description1": "Softis is a Pilates studio with convenient access, just 1 minute walk from Toyota City Station. With careful guidance from instructors with physiotherapist qualifications, even beginners can train with confidence.",
+    "description2": "From body pain and posture concerns to health promotion, we offer personalized programs tailored to each individual's goals.",
+    "reserveButton": "Book a Free Consultation",
+    "whyChooseTitle": "Why Choose Us in Toyota City",
+    "reason1Title": "Physiotherapist Instruction",
+    "reason1Desc": "Safe and effective training is possible with guidance from physiotherapists with medical knowledge.",
+    "reason2Title": "1-Minute Walk From Station",
+    "reason2Desc": "Just 1 minute walk from Toyota City Station. Accessibility is an important factor.",
+    "reason3Title": "Fully Personalized Approach",
+    "reason3Desc": "We provide customized programs tailored to each individual's goals and physical condition.",
+    "trialButton": "Book a Free Trial"
   }
 } 

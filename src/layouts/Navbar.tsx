@@ -21,6 +21,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
 
   const navItems = [
     { title: t('common.home'), path: '/' },
+    { title: '豊田市 ピラティス', path: '/toyota-city-pilates' },
     { title: t('common.pricing'), path: '/pricing' },
     { title: t('common.instructors'), path: '/instructors' },
     { title: t('common.contact'), path: '/contact' },

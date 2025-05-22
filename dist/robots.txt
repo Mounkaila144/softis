@@ -1,5 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /admin/
+Disallow: /admin-login/
+Disallow: /firebase-admin/
+Disallow: /translations-admin/
 
 # Sitemap
 Sitemap: https://softis.jp/sitemap.xml

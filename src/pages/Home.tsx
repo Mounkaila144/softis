@@ -31,7 +31,7 @@ const Home: React.FC = () => {
   const studioSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    'name': 'Softis ピラティススタジオ',
+    'name': 'Softis | 豊田市 ピラティススタジオ',
     'description': '豊田市駅徒歩1分の好立地にある、理学療法士が運営するパーソナルピラティススタジオ。姿勢改善、ボディメイク、健康促進をサポートします。',
     'image': '/src/assets/IMG/img.png',
     'address': {
@@ -42,7 +42,9 @@ const Home: React.FC = () => {
       'addressCountry': 'JP'
     },
     'geo': {
-      '@type': 'GeoCoordinates'
+      '@type': 'GeoCoordinates',
+      'latitude': '35.0868',
+      'longitude': '137.1569'
     },
     'url': 'https://softis.jp',
     'telephone': '',
@@ -53,16 +55,18 @@ const Home: React.FC = () => {
       'closes': '20:00'
     },
     'priceRange': '¥¥',
-    'servesCuisine': 'ピラティス, フィットネス, リハビリテーション'
+    'servesCuisine': 'ピラティス, フィットネス, リハビリテーション',
+    'keywords': 'Softis, softis, 豊田市 ピラティス, 豊田市, ピラティス, パーソナルトレーニング, 姿勢改善'
   };
 
   return (
     <>
       <Seo 
-        title="豊田市のパーソナルピラティススタジオ | 理学療法士が指導 | Softis"
-        description="豊田市駅徒歩1分の好立地！理学療法士資格を持つインストラクターによる完全パーソナルピラティスレッスンで、姿勢改善・ボディメイク・健康促進をサポートします。初心者も安心の丁寧な指導と多数のピラティスマシンで効果的なトレーニングを。"
-        keywords="豊田市, ピラティス, パーソナルトレーニング, 理学療法士, 姿勢改善, ボディメイク, 健康促進, ピラティスマシン, リフォーマー, 駅近, 豊田市駅"
+        title="Softis | 豊田市 ピラティス | 理学療法士による専門指導"
+        description="豊田市駅徒歩1分のSoftisピラティススタジオ。理学療法士資格を持つインストラクターによる完全パーソナルピラティスレッスンで、姿勢改善・ボディメイク・健康促進をサポート。初心者も安心の丁寧な指導と多数のピラティスマシンで効果的なトレーニングを。"
+        keywords="Softis, softis, 豊田市 ピラティス, 豊田市, ピラティス, パーソナルトレーニング, 理学療法士, 姿勢改善, ボディメイク, 健康促進, ピラティスマシン, リフォーマー, 駅近, 豊田市駅"
         structuredData={studioSchema}
+        canonical="https://softis.jp/"
       />
       <Hero
         titles={heroTitles}

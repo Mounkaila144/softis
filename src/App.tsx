@@ -13,6 +13,7 @@ import Contact from './pages/Contact';
 import Faq from './pages/Faq';
 import Gallery from './pages/Gallery';
 import Questions from './pages/Questions';
+import ToyotaCityPilates from './pages/ToyotaCityPilates';
 import Admin from './pages/Admin';
 import AdminLogin from './pages/AdminLogin';
 import Blog from './pages/Blog';
@@ -36,6 +37,7 @@ function App() {
             <Route path="faq" element={<Faq />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="questions" element={<Questions />} />
+            <Route path="toyota-city-pilates" element={<ToyotaCityPilates />} />
             <Route path="blog" element={<Blog />} />
             <Route path="blog/:id" element={<BlogPost />} />
             <Route path="blog/new" element={<NewBlogPost />} />

@@ -1,0 +1,31 @@
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Softis | 豊田市 ピラティススタジオ",
+  "description": "豊田市駅徒歩1分の好立地にある、理学療法士が運営するパーソナルピラティススタジオ。姿勢改善、ボディメイク、健康促進をサポートします。",
+  "image": "https://softis.jp/src/assets/IMG/img.png",
+  "url": "https://softis.jp",
+  "telephone": "+81-XXX-XXX-XXXX",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "豊田市",
+    "addressLocality": "愛知県",
+    "postalCode": "",
+    "addressCountry": "JP"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": "35.0868",
+    "longitude": "137.1569"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+    "opens": "10:00",
+    "closes": "20:00"
+  },
+  "priceRange": "¥¥",
+  "keywords": "Softis, softis, 豊田市 ピラティス, 豊田市, ピラティス, パーソナルトレーニング, 姿勢改善",
+  "areaServed": "豊田市",
+  "serviceType": "ピラティス, フィットネス, リハビリテーション"
+} 

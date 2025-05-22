@@ -165,14 +165,7 @@ const ToyotaCityPilates: React.FC = () => {
           </div>
           
           <div className="text-center mt-12">
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
-              className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
-            >
-              無料体験を予約する
-            </Button>
+
           </div>
         </Container>
       </Section>

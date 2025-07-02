@@ -71,9 +71,7 @@ const Home: React.FC = () => {
       <Hero
         titles={heroTitles}
         subtitles={heroSubtitles}
-        ctaText="！オープニングキャンペーン！
-入会金 5500→0円
-初回体験　5000→3000円"
+        ctaText="ご予約はこちら"
         images={heroImages}
         onCtaClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
       />

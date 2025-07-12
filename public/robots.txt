@@ -1,9 +1,65 @@
+# robots.txt pour Softis ピラティススタジオ豊田市
+# https://softis.jp
+
 User-agent: *
 Allow: /
+
+# Pages importantes à indexer en priorité
+Allow: /gallery
+Allow: /contact
+Allow: /instructors
+Allow: /toyota-city-pilates
+Allow: /pricing
+Allow: /blog
+
+# Fichiers techniques autorisés
+Allow: /manifest.webmanifest
+Allow: /sitemap.xml
+Allow: /images/
+Allow: /icons/
+
+# Bloquer les dossiers administratifs et techniques
 Disallow: /admin/
 Disallow: /admin-login/
 Disallow: /firebase-admin/
 Disallow: /translations-admin/
+Disallow: /api/
+Disallow: /src/
+Disallow: /dist/
+Disallow: /_next/
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /*.json$
+Disallow: /*?*utm_*
+
+# Directives spécifiques pour Googlebot
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+# Directives pour Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 2
+
+# Directives pour les moteurs de recherche japonais
+User-agent: Yahoo-jp
+Allow: /
+Crawl-delay: 1
+
+# Bloquer les mauvais bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
 
 # Sitemap
 Sitemap: https://softis.jp/sitemap.xml
+Sitemap: https://softis.jp/sitemap-images.xml
+
+# Host principal
+Host: https://softis.jp

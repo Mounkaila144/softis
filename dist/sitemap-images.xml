@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <!-- Images principales du studio -->
+  <url>
+    <loc>https://softis.jp/</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/ソフティスピラティススタジオ豊田市メイン.png</image:loc>
+      <image:caption>Softis豊田市ピラティススタジオ - 理学療法士による完全パーソナル指導</image:caption>
+      <image:title>豊田市駅徒歩1分のプレミアムピラティススタジオSoftis</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+    
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/ソフティススタジオ全体機器豊田市.jpeg</image:loc>
+      <image:caption>Softisスタジオ全体 - 最新ピラティス機器完備</image:caption>
+      <image:title>豊田市最新のピラティス機器を完備したスタジオ内部</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/ソフティスピラティススタジオロゴ豊田市.png</image:loc>
+      <image:caption>Softis ピラティススタジオ 公式ロゴ</image:caption>
+      <image:title>豊田市ピラティススタジオSoftis公式ロゴ</image:title>
+    </image:image>
+  </url>
+
+  <!-- Images des machines de Pilates -->
+  <url>
+    <loc>https://softis.jp/gallery</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/machine/最新リフォーマーピラティス豊田市.jpeg</image:loc>
+      <image:caption>最新リフォーマーピラティス機器 - 豊田市Softis</image:caption>
+      <image:title>豊田市最新のリフォーマーピラティス機器 - 完全パーソナル指導</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/machine/バレルピラティスマシンソフティス豊田市.jpeg</image:loc>
+      <image:caption>バレルピラティスマシン - 脊椎の柔軟性向上に特化</image:caption>
+      <image:title>豊田市Softis - バレルピラティス専用機器</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/machine/チェアピラティス筋力強化豊田市.jpeg</image:loc>
+      <image:caption>チェアピラティス - 筋力強化とバランス向上</image:caption>
+      <image:title>豊田市Softis - チェアピラティス筋力強化機器</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/machine/タワーピラティス完全マシン豊田市.png</image:loc>
+      <image:caption>タワーピラティス完全マシン - 全身トレーニング対応</image:caption>
+      <image:title>豊田市Softis - タワーピラティス完全マシン</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/machine/脊椎矯正ピラティス器具豊田市.png</image:loc>
+      <image:caption>脊椎矯正ピラティス器具 - 姿勢改善専用</image:caption>
+      <image:title>豊田市Softis - 脊椎矯正ピラティス専用器具</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Images de l'instructrice -->
+  <url>
+    <loc>https://softis.jp/instructors</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/秋間まゆインストラクターソフティスピラティス.jpeg</image:loc>
+      <image:caption>秋間まゆ - 理学療法士・ピラティスインストラクター・Softis代表</image:caption>
+      <image:title>豊田市Softis代表 - 秋間まゆ理学療法士インストラクター</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Images du studio et contact -->
+  <url>
+    <loc>https://softis.jp/contact</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/studio/ソフティススタジオ外観ファサード豊田市.png</image:loc>
+      <image:caption>Softisスタジオ外観 - 豊田市駅徒歩1分の好立地</image:caption>
+      <image:title>豊田市駅徒歩1分 - ピラティススタジオSoftis外観</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Images des séances et entraînements -->
+  <url>
+    <loc>https://softis.jp/</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/ピラティススタジオセッション豊田市1.jpeg</image:loc>
+      <image:caption>ピラティスセッション風景 - 豊田市Softis</image:caption>
+      <image:title>豊田市Softis - ピラティススタジオセッション風景</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/パーソナルピラティストレーニング豊田市.jpeg</image:loc>
+      <image:caption>パーソナルピラティストレーニング - 個別指導風景</image:caption>
+      <image:title>豊田市Softis - パーソナルピラティストレーニング風景</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/IMG/モダンピラティス機器ソフティス豊田市.jpeg</image:loc>
+      <image:caption>モダンピラティス機器 - 最新設備完備</image:caption>
+      <image:title>豊田市Softis - モダンピラティス機器完備</image:title>
+      <image:geo_location>豊田市, 愛知県, 日本</image:geo_location>
+    </image:image>
+  </url>
+
+  <!-- Images informatives sur les bienfaits -->
+  <url>
+    <loc>https://softis.jp/</loc>
+    <image:image>
+      <image:loc>https://softis.jp/images/home2/ピラティス効果姿勢体豊田市.png</image:loc>
+      <image:caption>ピラティスの効果 - 姿勢改善と体幹強化</image:caption>
+      <image:title>豊田市Softis - ピラティス効果説明図</image:title>
+    </image:image>
+
+    <image:image>
+      <image:loc>https://softis.jp/images/home2/ピラティス健康ウェルネス効果豊田市.png</image:loc>
+      <image:caption>ピラティス健康・ウェルネス効果 - 心身の健康促進</image:caption>
+      <image:title>豊田市Softis - ピラティス健康効果説明図</image:title>
+    </image:image>
+  </url>
+
+</urlset>

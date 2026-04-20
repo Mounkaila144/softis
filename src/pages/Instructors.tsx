@@ -14,7 +14,7 @@ const Instructors: React.FC = () => {
         <div className="relative pt-32 pb-16 text-white">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <OptimizedImage
-                src="/src/assets/IMG/IMG_2593.jpeg"
+                src="/images/IMG/IMG_2593.jpeg"
                 alt={t('instructors.title')}
                 className="w-full h-full object-cover"
                 loading="eager"
@@ -53,7 +53,7 @@ const Instructors: React.FC = () => {
               <div className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="h-96 overflow-hidden">
                   <OptimizedImage
-                      src="/src/assets/IMG/IMG_1118.jpeg"
+                      src="/images/IMG/IMG_1118.jpeg"
                       alt={t('instructors.akimaMayu')}
                       className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                       loading="eager"

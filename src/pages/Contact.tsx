@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
         <div className="relative pt-32 pb-16 text-white">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <OptimizedImage
-                src="/src/assets/IMG/IMG_2364.jpeg"
+                src="/images/IMG/IMG_2364.jpeg"
                 alt={t('contact.headerImageAlt')}
                 className="w-full h-full object-cover"
                 loading="eager"
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                 {/* Image du studio */}
                 <div className="rounded-xl overflow-hidden shadow-lg transition-shadow hover:shadow-xl">
                   <OptimizedImage
-                    src="/src/assets/studio/Softis.png"
+                    src="/images/studio/Softis.png"
                     alt={t('contact.studioImage')}
                     className="w-full h-auto"
                     quality={85}
@@ -185,110 +185,6 @@ const Contact: React.FC = () => {
           </Container>
         </Section>
 
-        {/* Contact Form Section */}
-        <Section className="bg-turquoise-100">
-          <Container>
-            <div className="max-w-3xl mx-auto">
-              <div className="text-center mb-12">
-                <h2 className="text-3xl font-serif font-bold text-turquoise-700 mb-4">
-                  {t('contact.title')}
-                </h2>
-                <div className="w-24 h-1 bg-gradient-to-r from-turquoise-300 to-pink-200 rounded-full mx-auto mb-6"></div>
-                <p className="text-gray-800 text-lg bg-white/80 p-3 rounded-lg shadow-sm max-w-2xl mx-auto">
-                  {t('contact.formDescription')}
-                </p>
-              </div>
-
-              <div className="bg-gradient-to-br from-turquoise-50 via-pink-50 to-white/90 border border-turquoise-100 rounded-xl shadow-lg p-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="name" className="block text-neutral-700 text-sm font-medium mb-1">
-                        {t('contact.name')} <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                          type="text"
-                          id="name"
-                          className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-turquoise-300 shadow-sm"
-                          required
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="email" className="block text-neutral-700 text-sm font-medium mb-1">
-                        {t('contact.email')} <span className="text-red-500">*</span>
-                      </label>
-                      <input
-                          type="email"
-                          id="email"
-                          className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-turquoise-300 shadow-sm"
-                          required
-                      />
-                    </div>
-                  </div>
-
-                  <div>
-                    <label htmlFor="phone" className="block text-neutral-700 text-sm font-medium mb-1">
-                      {t('contact.phone')}
-                    </label>
-                    <input
-                        type="tel"
-                        id="phone"
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-turquoise-300 shadow-sm"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-neutral-700 text-sm font-medium mb-1">
-                      {t('contact.subject')} <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                        type="text"
-                        id="subject"
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-turquoise-300 shadow-sm"
-                        required
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="message" className="block text-neutral-700 text-sm font-medium mb-1">
-                      {t('contact.message')} <span className="text-red-500">*</span>
-                    </label>
-                    <textarea
-                        id="message"
-                        rows={6}
-                        className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-turquoise-300 shadow-sm"
-                        required
-                    ></textarea>
-                  </div>
-
-                  <div className="flex items-center">
-                    <input
-                        type="checkbox"
-                        id="privacy"
-                        className="mr-2"
-                        required
-                    />
-                    <label htmlFor="privacy" className="text-sm text-neutral-700">
-                      <span className="text-red-500">*</span> {t('contact.privacyConsent')}
-                    </label>
-                  </div>
-
-                  <div className="text-center">
-                    <Button
-                        variant="primary"
-                        size="lg"
-                        type="submit"
-                        className="shadow-md hover:shadow-lg transform transition hover:-translate-y-1"
-                    >
-                      {t('contact.send')} <Send className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </form>
-              </div>
-            </div>
-          </Container>
-        </Section>
       </>
   );
 };

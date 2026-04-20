@@ -10,52 +10,52 @@ const Gallery: React.FC = () => {
   // Liste de toutes les images disponibles
   const images = [
     {
-      src: "/src/assets/IMG/IMG_2593.jpeg",
+      src: "/images/IMG/IMG_2593.jpeg",
       alt: "Image de studio Pilates 1",
       description: "Notre studio principal avec équipement Pilates"
     },
     {
-      src: "/src/assets/IMG/IMG_2602.jpeg",
+      src: "/images/IMG/IMG_2602.jpeg",
       alt: "Image de studio Pilates 2",
       description: "Espace d'entraînement avec reformer Pilates"
     },
     {
-      src: "/src/assets/IMG/IMG_2364.jpeg",
+      src: "/images/IMG/IMG_2364.jpeg",
       alt: "Image de studio Pilates 3",
       description: "Vue d'ensemble de notre espace d'entraînement"
     },
     {
-      src: "/src/assets/IMG/IMG_1114.jpeg",
+      src: "/images/IMG/IMG_1114.jpeg",
       alt: "Image de studio Pilates 4",
       description: "Séance de Pilates avec instructeur"
     },
     {
-      src: "/src/assets/IMG/IMG_1601.jpeg",
+      src: "/images/IMG/IMG_1601.jpeg",
       alt: "Image de studio Pilates 5",
       description: "Exercices sur équipement spécialisé"
     },
     {
-      src: "/src/assets/IMG/IMG_2616.jpeg",
+      src: "/images/IMG/IMG_2616.jpeg",
       alt: "Image de studio Pilates 6",
       description: "Entraînement personnalisé"
     },
     {
-      src: "/src/assets/IMG/IMG_2628.jpeg",
+      src: "/images/IMG/IMG_2628.jpeg",
       alt: "Image de studio Pilates 7",
       description: "Nos équipements modernes"
     },
     {
-      src: "/src/assets/machine/IMG_6780.jpeg",
+      src: "/images/machine/IMG_6780.jpeg",
       alt: "Reformer Pilates",
       description: "Notre reformer Pilates de dernière génération"
     },
     {
-      src: "/src/assets/machine/IMG_1119.jpeg",
+      src: "/images/machine/IMG_1119.jpeg",
       alt: "Barrel Pilates",
       description: "Barrel pour exercices spécifiques"
     },
     {
-      src: "/src/assets/machine/IMG_8645.jpeg",
+      src: "/images/machine/IMG_8645.jpeg",
       alt: "Chair Pilates",
       description: "Chair Pilates pour renforcement musculaire"
     },
@@ -64,7 +64,7 @@ const Gallery: React.FC = () => {
   return (
     <>
       <OptimizedBackgroundImage
-        src="/src/assets/IMG/IMG_2364.jpeg"
+        src="/images/IMG/IMG_2364.jpeg"
         alt="Fond de la galerie"
         className="pt-32 pb-16"
         overlayColor="rgb(0, 62, 76)"

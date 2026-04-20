@@ -15,8 +15,8 @@ const Home: React.FC = () => {
   const { t } = useTranslation();
 
   const heroImages = [
-    "/src/assets/IMG/img.png",
-    "/src/assets/IMG/IMG_1601.jpeg",
+    "/images/IMG/img.png",
+    "/images/IMG/IMG_1601.jpeg",
   ];
   
   const heroTitles = [
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     '@type': 'LocalBusiness',
     'name': 'Softis | 豊田市 ピラティススタジオ',
     'description': '豊田市駅徒歩1分の好立地にある、理学療法士が運営するパーソナルピラティススタジオ。姿勢改善、ボディメイク、健康促進をサポートします。',
-    'image': '/src/assets/IMG/img.png',
+    'image': '/images/IMG/img.png',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': '豊田市',
@@ -154,7 +154,7 @@ const Home: React.FC = () => {
             <div className="bg-turquoise-100 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/home2/1.png"
+                  src="/images/home2/1.png"
                   alt="白 ブルー シンプル 水彩 ミニマル information Instagramの投稿のコピー - "
                   className="w-full h-full object-cover object-center"
                   quality={55}
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
             <div className="bg-turquoise-100 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/home2/2.png"
+                  src="/images/home2/2.png"
                   alt="白 ブルー シンプル 水彩 ミニマル information Instagramの投稿のコピー - 2(2)"
                   className="w-full h-full object-cover object-center"
                   quality={55}
@@ -190,7 +190,7 @@ const Home: React.FC = () => {
       <Section className="bg-white relative">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <OptimizedImage
-            src="/src/assets/IMG/IMG_2364.jpeg"
+            src="/images/IMG/IMG_2364.jpeg"
             alt="Studio background"
             className="w-full h-full object-cover"
             loading="lazy"
@@ -297,7 +297,7 @@ const Home: React.FC = () => {
             size="lg"
             onClick={() => navigate('/pricing')}
         >
-          {t('home.getStarted')} test
+          {t('home.getStarted')}
         </Button>
       </div>
       {/* ご利用方法 */}
@@ -378,7 +378,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/IMG_6780.jpeg" 
+                  src="/images/machine/IMG_6780.jpeg" 
                   alt="ピラティスリフォーマー" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -405,7 +405,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/IMG_1541.jpeg" 
+                  src="/images/machine/IMG_1541.jpeg" 
                   alt="ピラティスバレル" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -432,7 +432,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/IMG_1542.jpeg" 
+                  src="/images/machine/IMG_1542.jpeg" 
                   alt="ピラティスチェア" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -459,7 +459,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/img.png" 
+                  src="/images/machine/img.png" 
                   alt="ピラティス専用マシン" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -486,7 +486,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/img_1.png" 
+                  src="/images/machine/img_1.png" 
                   alt="ピラティス専用マシン" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -513,7 +513,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/img_2.png" 
+                  src="/images/machine/img_2.png" 
                   alt="ピラティス専用マシン" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
@@ -540,7 +540,7 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/src/assets/machine/img_3.png" 
+                  src="/images/machine/img_3.png" 
                   alt="ピラティス専用マシン" 
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"

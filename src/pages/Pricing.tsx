@@ -69,13 +69,17 @@ const PriceCard: React.FC<PriceCardProps> = ({
             </li>
           ))}
         </ul>
-        
-        <Button 
-          variant={popular ? "gold" : "primary"} 
+
+        {popular ? <Button
+          variant={popular ? "gold" : "primary"}
+          onClick={() => window.open('https://lin.ee/Rvbat7l', '_blank')}
+
           className="w-full"
         >
           {ctaText}
         </Button>
+            :<></>}
+
       </div>
     </motion.div>
   );

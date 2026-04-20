@@ -61,6 +61,11 @@ const Footer: React.FC = () => {
             <p className="text-neutral-300 mt-4">
               {t('footer.stationAccess')}
             </p>
+            <p className="text-neutral-300 mt-4">
+              営業時間<br/>
+              月〜土　日曜定休　10:00-21:00
+            </p>
+
           </div>
         </div>
 

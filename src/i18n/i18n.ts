@@ -12,12 +12,15 @@ import jaStatic from './locales/ja.json';
 export const reloadTranslations = async () => {
   try {
     const translations = await fetchTranslations(true);
-    
+
     // Mise à jour des ressources i18n
     Object.keys(translations).forEach(lang => {
       i18n.addResourceBundle(lang, 'translation', translations[lang], true, true);
     });
-    
+
+    // Déclencher un re-render React en émettant languageChanged
+    await i18n.changeLanguage(i18n.language);
+
     return true;
   } catch (error) {
     console.error('Erreur lors du rechargement des traductions:', error);

@@ -51,7 +51,7 @@ const Navbar: React.FC<NavbarProps> = ({ scrolled }) => {
                 }}
               >
                   <OptimizedImage
-                    src="/src/assets/logo.png"
+                    src="/images/ソフティスピラティススタジオロゴ豊田市.png"
                     alt="Softis Logo"
                     className="h-full w-auto transition-all duration-500 opacity-90"
                     width={250}

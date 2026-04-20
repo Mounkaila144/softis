@@ -20,7 +20,7 @@ const ToyotaCityPilates: React.FC = () => {
     },
     'headline': t('toyotaCityPilates.mainTitle'),
     'description': t('toyotaCityPilates.seoDescription'),
-    'image': 'https://softis.jp/images/IMG/ソフティスピラティススタジオ豊田市メイン.png',
+    'image': 'https://softis.jp/images/IMG/ソフティスピラティススタジオ豊田市メイン2.png',
     'author': {
       '@type': 'Organization',
       'name': 'Softis ピラティススタジオ'
@@ -98,7 +98,7 @@ const ToyotaCityPilates: React.FC = () => {
               className="rounded-xl overflow-hidden shadow-2xl"
             >
               <OptimizedImage 
-                src="/images/IMG/ソフティスピラティススタジオ豊田市メイン.png"
+                src="/images/IMG/ソフティスピラティススタジオ豊田市メイン2.png"
                 alt="豊田市のSoftisピラティススタジオ"
                 className="w-full h-full object-cover"
                 quality={90}

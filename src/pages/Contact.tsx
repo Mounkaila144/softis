@@ -56,7 +56,7 @@ const Contact: React.FC = () => {
         <div className="relative pt-32 pb-16 text-white">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <OptimizedImage
-                src="/images/IMG/IMG_2364.jpeg"
+                src="/images/IMG/ソフティススタジオ全体機器豊田市.jpeg"
                 alt={t('contact.headerImageAlt')}
                 className="w-full h-full object-cover"
                 loading="eager"
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                 {/* Image du studio */}
                 <div className="rounded-xl overflow-hidden shadow-lg transition-shadow hover:shadow-xl">
                   <OptimizedImage
-                    src="/images/studio/Softis.png"
+                    src="/images/studio/ソフティススタジオ外観ファサード豊田市.png"
                     alt={t('contact.studioImage')}
                     className="w-full h-auto"
                     quality={85}

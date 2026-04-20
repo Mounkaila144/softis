@@ -15,32 +15,32 @@ const Gallery: React.FC = () => {
       description: "Notre studio principal avec équipement Pilates"
     },
     {
-      src: "/images/IMG/IMG_2602.jpeg",
+      src: "/images/IMG/リフォーマーピラティストレーニング豊田市.jpeg",
       alt: "Image de studio Pilates 2",
       description: "Espace d'entraînement avec reformer Pilates"
     },
     {
-      src: "/images/IMG/IMG_2364.jpeg",
+      src: "/images/IMG/ソフティススタジオ全体機器豊田市.jpeg",
       alt: "Image de studio Pilates 3",
       description: "Vue d'ensemble de notre espace d'entraînement"
     },
     {
-      src: "/images/IMG/IMG_1114.jpeg",
+      src: "/images/IMG/ピラティススタジオセッション豊田市1.jpeg",
       alt: "Image de studio Pilates 4",
       description: "Séance de Pilates avec instructeur"
     },
     {
-      src: "/images/IMG/IMG_1601.jpeg",
+      src: "/images/IMG/ピラティス専用機器エクササイズ豊田市.jpeg",
       alt: "Image de studio Pilates 5",
       description: "Exercices sur équipement spécialisé"
     },
     {
-      src: "/images/IMG/IMG_2616.jpeg",
+      src: "/images/IMG/パーソナルピラティストレーニング豊田市.jpeg",
       alt: "Image de studio Pilates 6",
       description: "Entraînement personnalisé"
     },
     {
-      src: "/images/IMG/IMG_2628.jpeg",
+      src: "/images/IMG/モダンピラティス機器ソフティス豊田市.jpeg",
       alt: "Image de studio Pilates 7",
       description: "Nos équipements modernes"
     },
@@ -50,12 +50,12 @@ const Gallery: React.FC = () => {
       description: "Notre reformer Pilates de dernière génération"
     },
     {
-      src: "/images/machine/IMG_1119.jpeg",
+      src: "/images/machine/バレルピラティス専用エクササイズ豊田市.jpeg",
       alt: "Barrel Pilates",
       description: "Barrel pour exercices spécifiques"
     },
     {
-      src: "/images/machine/IMG_8645.jpeg",
+      src: "/images/machine/チェアピラティス強化ソフティス豊田市.jpeg",
       alt: "Chair Pilates",
       description: "Chair Pilates pour renforcement musculaire"
     },
@@ -64,7 +64,7 @@ const Gallery: React.FC = () => {
   return (
     <>
       <OptimizedBackgroundImage
-        src="/images/IMG/IMG_2364.jpeg"
+        src="/images/IMG/ソフティススタジオ全体機器豊田市.jpeg"
         alt="Fond de la galerie"
         className="pt-32 pb-16"
         overlayColor="rgb(0, 62, 76)"

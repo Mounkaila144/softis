@@ -15,8 +15,8 @@ const Home: React.FC = () => {
   const { t } = useTranslation();
 
   const heroImages = [
-    "/images/IMG/img.png",
-    "/images/IMG/IMG_1601.jpeg",
+    "/images/IMG/ソフティスピラティススタジオ豊田市メイン.png",
+    "/images/IMG/ピラティス専用機器エクササイズ豊田市.jpeg",
   ];
   
   const heroTitles = [
@@ -33,7 +33,7 @@ const Home: React.FC = () => {
     '@type': 'LocalBusiness',
     'name': 'Softis | 豊田市 ピラティススタジオ',
     'description': '豊田市駅徒歩1分の好立地にある、理学療法士が運営するパーソナルピラティススタジオ。姿勢改善、ボディメイク、健康促進をサポートします。',
-    'image': '/images/IMG/img.png',
+    'image': '/images/IMG/ソフティスピラティススタジオ豊田市メイン.png',
     'address': {
       '@type': 'PostalAddress',
       'streetAddress': '豊田市',
@@ -154,7 +154,7 @@ const Home: React.FC = () => {
             <div className="bg-turquoise-100 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
-                  src="/images/home2/1.png"
+                  src="/images/home2/ピラティス効果姿勢体豊田市.png"
                   alt="白 ブルー シンプル 水彩 ミニマル information Instagramの投稿のコピー - "
                   className="w-full h-full object-cover object-center"
                   quality={55}
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
             <div className="bg-turquoise-100 rounded-xl shadow-lg overflow-hidden h-full hover:shadow-xl transition-shadow duration-300">
               <div className="aspect-[4/5] overflow-hidden">
                 <OptimizedImage 
-                  src="/images/home2/2.png"
+                  src="/images/home2/ピラティス健康ウェルネス効果豊田市.png"
                   alt="白 ブルー シンプル 水彩 ミニマル information Instagramの投稿のコピー - 2(2)"
                   className="w-full h-full object-cover object-center"
                   quality={55}
@@ -190,7 +190,7 @@ const Home: React.FC = () => {
       <Section className="bg-white relative">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <OptimizedImage
-            src="/images/IMG/IMG_2364.jpeg"
+            src="/images/IMG/ソフティススタジオ全体機器豊田市.jpeg"
             alt="Studio background"
             className="w-full h-full object-cover"
             loading="lazy"

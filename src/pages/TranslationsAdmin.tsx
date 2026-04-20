@@ -356,7 +356,7 @@ const TranslationsAdmin: React.FC = () => {
         
         <div className="bg-white rounded-xl shadow-md overflow-hidden mb-4">
           <div className="divide-y divide-gray-200">
-            {filteredTranslations.slice(0, 50).map((item, index) => (
+            {filteredTranslations.map((item, index) => (
               <div 
                 key={item.path} 
                 className={`${item.modified ? 'bg-yellow-50' : ''}`}
@@ -406,13 +406,6 @@ const TranslationsAdmin: React.FC = () => {
           </div>
         </div>
         
-        {filteredTranslations.length > 50 && (
-          <div className="bg-gray-50 px-6 py-3 text-center rounded-lg mb-4">
-            <p className="text-sm text-gray-500">
-              Affichage de 50 traductions sur {filteredTranslations.length}. Utilisez la recherche pour affiner les résultats.
-            </p>
-          </div>
-        )}
       </>
     );
   };
@@ -494,7 +487,7 @@ const TranslationsAdmin: React.FC = () => {
               </tr>
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
-              {filteredTranslations.slice(0, 100).map((item, index) => (
+              {filteredTranslations.map((item, index) => (
                 <tr key={item.path} className={item.modified ? 'bg-yellow-50' : ''}>
                   <td className="px-6 py-4 text-sm text-gray-500 align-top">
                     <div className="flex items-center">

@@ -187,7 +187,19 @@
     "case4": "Sports performance improvement",
     "case5": "Stress reduction",
     "case6": "Body mobility improvement",
-    "quote": "\"True health begins with listening to your body.\nLet's walk together toward your 'ideal body'.\""
+    "quote": "\"True health begins with listening to your body.\nLet's walk together toward your 'ideal body'.\"",
+    "miuraYayoi": "Miura Yayoi",
+    "miuraRole": "Pilates Instructor",
+    "miuraGreeting": "Greeting",
+    "miuraGreetingContent": "Hello, I'm Miura Yayoi. I'm delighted to support your physical and mental well-being through Pilates. I strive to provide attentive, personalized instruction suited to each individual's pace.",
+    "miuraQualifications": "Qualifications",
+    "miuraQual1": "Certified Pilates Instructor",
+    "miuraQual2": "Mat Pilates Certification",
+    "miuraMessage": "Message",
+    "miuraMessageContent": "Pilates is a wonderful exercise that anyone can start regardless of age or fitness level. Beginners are very welcome. Let's work together toward your goals and have fun along the way!",
+    "miuraSpecialty1": "Mat Pilates",
+    "miuraSpecialty2": "Flexibility improvement",
+    "miuraSpecialty3": "Core strengthening"
   },
   "blog": {
     "seoTitle": "Blog - Softis Pilates Studio",

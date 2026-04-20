@@ -150,7 +150,19 @@
     "case4": "Amélioration des performances sportives",
     "case5": "Réduction du stress",
     "case6": "Amélioration de la mobilité corporelle",
-    "quote": "\"La véritable santé commence par écouter son corps.\nCheminons ensemble vers votre 'corps idéal'.\""
+    "quote": "\"La véritable santé commence par écouter son corps.\nCheminons ensemble vers votre 'corps idéal'.\"",
+    "miuraYayoi": "Miura Yayoi",
+    "miuraRole": "Instructrice de Pilates",
+    "miuraGreeting": "Message de bienvenue",
+    "miuraGreetingContent": "Bonjour, je suis Miura Yayoi. Je suis ravie de soutenir votre bien-être physique et mental à travers le Pilates. Je m'efforce de fournir un enseignement attentif et personnalisé adapté au rythme de chaque individu.",
+    "miuraQualifications": "Qualifications",
+    "miuraQual1": "Instructrice certifiée en Pilates",
+    "miuraQual2": "Certification Pilates au sol",
+    "miuraMessage": "Message",
+    "miuraMessageContent": "Le Pilates est un exercice merveilleux que tout le monde peut commencer, quel que soit l'âge ou le niveau de forme physique. Les débutants sont les bienvenus. Travaillons ensemble vers vos objectifs et amusons-nous en chemin !",
+    "miuraSpecialty1": "Pilates au sol",
+    "miuraSpecialty2": "Amélioration de la flexibilité",
+    "miuraSpecialty3": "Renforcement des abdominaux"
   },
   "contact": {
     "title": "Contactez-nous",

@@ -1,0 +1,41 @@
+.language-selector {
+  display: flex;
+  gap: 8px;
+  margin: 0 0.5rem;
+}
+
+.language-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.language-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.language-btn.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  font-weight: 600;
+}
+
+/* Styles pour le thème clair */
+.light-theme .language-btn {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.light-theme .language-btn:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.light-theme .language-btn.active {
+  background-color: rgba(0, 0, 0, 0.1);
+  color: black;
+} 

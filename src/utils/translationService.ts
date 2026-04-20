@@ -2,68 +2,60 @@
  * Service de gestion des traductions
  */
 
-import { initializeApp } from 'firebase/app';
 import { getFirestore, doc, setDoc, getDoc, collection, addDoc } from 'firebase/firestore';
 import app from '../config/firebase';
+
+// Fichiers statiques — source de vérité pour les nouvelles clés
+import frStatic from '../i18n/locales/fr.json';
+import enStatic from '../i18n/locales/en.json';
+import jaStatic from '../i18n/locales/ja.json';
 
 // Initialize Firebase
 const db = getFirestore(app);
 
 /**
- * Récupère les traductions depuis Firestore ou les fichiers statiques
+ * Fusion profonde : base fournit les nouvelles clés, override écrase les clés existantes.
+ * Ainsi Firestore garde la priorité sur ses valeurs éditées,
+ * mais toute nouvelle clé ajoutée au JSON local apparaît automatiquement.
  */
-export const fetchTranslations = async (forceReload = false) => {
+const deepMerge = (base: any, override: any): any => {
+  const result = { ...base };
+  for (const key of Object.keys(override)) {
+    if (override[key] && typeof override[key] === 'object' && !Array.isArray(override[key])) {
+      result[key] = deepMerge(base[key] || {}, override[key]);
+    } else {
+      result[key] = override[key];
+    }
+  }
+  return result;
+};
+
+/**
+ * Récupère les traductions depuis Firestore fusionnées avec les fichiers statiques.
+ * Les nouvelles clés des fichiers locaux sont toujours visibles même si Firestore
+ * ne les contient pas encore.
+ */
+export const fetchTranslations = async (_forceReload = false) => {
   try {
     console.log('Tentative de chargement des traductions depuis Firestore...');
-    
-    // Si forceReload est vrai, on ajoute un paramètre de timestamp pour éviter le cache
-    const cacheBuster = forceReload ? `?_=${new Date().getTime()}` : '';
-    
-    // D'abord, essayer de charger depuis Firestore
+
     const latestDoc = await getDoc(doc(db, 'translations', 'latest'));
-    
+
     if (latestDoc.exists() && latestDoc.data().fr && latestDoc.data().en && latestDoc.data().ja) {
-      console.log('Traductions chargées depuis Firestore avec succès');
+      console.log('Traductions Firestore trouvées — fusion avec les fichiers statiques');
       const data = latestDoc.data();
       return {
-        fr: JSON.parse(data.fr),
-        en: JSON.parse(data.en),
-        ja: JSON.parse(data.ja)
+        fr: deepMerge(frStatic, JSON.parse(data.fr)),
+        en: deepMerge(enStatic, JSON.parse(data.en)),
+        ja: deepMerge(jaStatic, JSON.parse(data.ja))
       };
     }
-    
-    console.log('Aucune donnée trouvée dans Firestore, chargement des fichiers statiques...');
-    // Si pas de données dans Firestore, charger depuis les fichiers
-    const frResponse = await fetch(`/src/i18n/locales/fr.json${cacheBuster}`);
-    const enResponse = await fetch(`/src/i18n/locales/en.json${cacheBuster}`);
-    const jaResponse = await fetch(`/src/i18n/locales/ja.json${cacheBuster}`);
-    
-    const fr = await frResponse.json();
-    const en = await enResponse.json();
-    const ja = await jaResponse.json();
-    
-    console.log('Traductions chargées depuis les fichiers statiques');
-    return { fr, en, ja };
+
+    console.log('Aucune donnée dans Firestore — utilisation des fichiers statiques');
+    return { fr: frStatic, en: enStatic, ja: jaStatic };
   } catch (error) {
-    console.error('Erreur lors du chargement des traductions:', error);
-    
-    // En cas d'erreur, essayer de charger depuis les fichiers statiques
-    try {
-      console.log('Tentative de chargement depuis les fichiers statiques après erreur...');
-      const cacheBuster = forceReload ? `?_=${new Date().getTime()}` : '';
-      const frResponse = await fetch(`/src/i18n/locales/fr.json${cacheBuster}`);
-      const enResponse = await fetch(`/src/i18n/locales/en.json${cacheBuster}`);
-      const jaResponse = await fetch(`/src/i18n/locales/ja.json${cacheBuster}`);
-      
-      const fr = await frResponse.json();
-      const en = await enResponse.json();
-      const ja = await jaResponse.json();
-      
-      return { fr, en, ja };
-    } catch (secondError) {
-      console.error('Échec total du chargement des traductions:', secondError);
-      throw error;
-    }
+    console.error('Erreur Firestore — fallback sur les fichiers statiques:', error);
+    return { fr: frStatic, en: enStatic, ja: jaStatic };
   }
 };
 

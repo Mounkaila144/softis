@@ -376,8 +376,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/IMG_6780.jpeg" 
-                  alt="ピラティスリフォーマー" 
+                  src="/images/machine/最新リフォーマーピラティス豊田市.jpeg"
+                  alt="ピラティスリフォーマー"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -403,8 +403,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/IMG_1541.jpeg" 
-                  alt="ピラティスバレル" 
+                  src="/images/machine/バレルピラティスマシンソフティス豊田市.jpeg"
+                  alt="ピラティスバレル"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -430,8 +430,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/IMG_1542.jpeg" 
-                  alt="ピラティスチェア" 
+                  src="/images/machine/チェアピラティス強化ソフティス豊田市.jpeg"
+                  alt="ピラティスチェア"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -457,8 +457,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/img.png" 
-                  alt="ピラティス専用マシン" 
+                  src="/images/machine/バレルピラティス専用エクササイズ豊田市.jpeg"
+                  alt="ピラティス専用マシン"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -484,8 +484,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/img_1.png" 
-                  alt="ピラティス専用マシン" 
+                  src="/images/machine/タワーピラティス完全マシン豊田市.png"
+                  alt="ピラティス専用マシン"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -511,8 +511,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/img_2.png" 
-                  alt="ピラティス専用マシン" 
+                  src="/images/machine/脊椎矯正ピラティス器具豊田市.png"
+                  alt="ピラティス専用マシン"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}
@@ -538,8 +538,8 @@ const Home: React.FC = () => {
             >
               <div className="h-64 overflow-hidden">
                 <OptimizedImage 
-                  src="/images/machine/img_3.png" 
-                  alt="ピラティス専用マシン" 
+                  src="/images/machine/チェアピラティス筋力強化豊田市.jpeg"
+                  alt="ピラティス専用マシン"
                   className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                   loading="lazy"
                   quality={85}

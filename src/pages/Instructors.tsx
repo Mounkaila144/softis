@@ -14,7 +14,7 @@ const Instructors: React.FC = () => {
         <div className="relative pt-32 pb-16 text-white">
           <div className="absolute inset-0 z-0 overflow-hidden">
             <OptimizedImage
-                src="/images/IMG/IMG_2593.jpeg"
+                src="/images/IMG/メインピラティススタジオ機器豊田市.jpeg"
                 alt={t('instructors.title')}
                 className="w-full h-full object-cover"
                 loading="eager"

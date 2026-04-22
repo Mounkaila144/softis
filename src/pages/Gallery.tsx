@@ -10,7 +10,7 @@ const Gallery: React.FC = () => {
   // Liste de toutes les images disponibles
   const images = [
     {
-      src: "/images/IMG/IMG_2593.jpeg",
+      src: "/images/IMG/メインピラティススタジオ機器豊田市.jpeg",
       alt: "Image de studio Pilates 1",
       description: "Notre studio principal avec équipement Pilates"
     },
@@ -45,7 +45,7 @@ const Gallery: React.FC = () => {
       description: "Nos équipements modernes"
     },
     {
-      src: "/images/machine/IMG_6780.jpeg",
+      src: "/images/machine/最新リフォーマーピラティス豊田市.jpeg",
       alt: "Reformer Pilates",
       description: "Notre reformer Pilates de dernière génération"
     },
